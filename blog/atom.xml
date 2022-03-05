@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chkware.github.io/blog</id>
-    <title>Chkware Blog</title>
+    <title>Chkware Test Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chkware.github.io/blog"/>
-    <subtitle>Chkware Blog</subtitle>
+    <subtitle>Chkware Test Blog</subtitle>
     <icon>https://chkware.github.io/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
