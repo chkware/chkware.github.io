@@ -31,13 +31,13 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/chkware/chkware.github.io',
+          editUrl: 'https://github.com/chkware/chkware.github.io/tree/main',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/chkware/chkware.github.io',
+            'https://github.com/chkware/chkware.github.io/tree/main',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -129,7 +129,9 @@ const config = {
       [
         require.resolve("@easyops-cn/docusaurus-search-local"),
         {
+          indexPages: true,
           hashed: true,
+          highlightSearchTermsOnTargetPage: true,
         },
       ],
     ],
