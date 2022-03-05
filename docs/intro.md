@@ -11,6 +11,8 @@ API tests management is not easy to develop, and maintain. It requires multitude
 
 ## What it is
 
+![Hero banner](./assets/github-hero-01.png)
+
 **Chkware** is an API testing tool, a scriptable HTTP client, and a test specification management tool for the API era.
 
 It is available as a command-line application. You write test specification files in a [YAML](https://yaml.org/)-based [DSL](https://en.wikipedia.org/wiki/Domain-specific_language). In that specification file you will define some structured configurations to be used for the following purpose:
