@@ -41,6 +41,7 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        
       }),
     ],
   ],
@@ -123,6 +124,14 @@ const config = {
         content: `⭐️ If you like Chkware, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chkware/cli">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/chkware" >Twitter</a> ${TwitterSvg}`,
       },
     }),
+    themes: [
+      [
+        require.resolve("@easyops-cn/docusaurus-search-local"),
+        {
+          hashed: true,
+        },
+      ],
+    ],
 };
 
 module.exports = config;
