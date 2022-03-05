@@ -19,6 +19,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'chkware',
   projectName: 'chkware.github.io',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
   presets: [
