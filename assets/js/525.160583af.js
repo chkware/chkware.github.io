@@ -1,1 +1,0 @@
-(self.webpackChunkchkware=self.webpackChunkchkware||[]).push([[525],{6165:function(){}}]);
