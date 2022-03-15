@@ -30,4 +30,4 @@ This command generates static content into the `build` directory and can be serv
 The current status of the website is **under construction**. Please follow us on Twitter [@chkware](https://twitter.com/chkware) for update. Thank you for your patience.
 
 ---
-<small>`chkware` website uses [docusaurus v2.0.0-beta.17](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.17) as CMS backend.</small>
+`chkware` website uses [docusaurus v2.0.0-beta.17](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.17) as CMS backend.
