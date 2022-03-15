@@ -15,7 +15,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
   organizationName: 'chkware',
   projectName: 'chkware.github.io',
   deploymentBranch: 'gh-pages',
@@ -47,7 +47,7 @@ const config = {
         title: 'Chkware',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
