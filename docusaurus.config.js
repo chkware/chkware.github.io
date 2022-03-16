@@ -49,33 +49,35 @@ const config = {
     ({
       navbar: {
         title: 'Chkware',
+        hideOnScroll: false,
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Chkware Logo',
           src: 'img/logo.png',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'introduction',
             position: 'left',
             label: 'Docs',
           },
           {
             href: 'https://github.com/chkware/cli',
-            label: 'GitHub',
             position: 'right',
+            'aria-label': 'GitHub repository',
+            className: 'header-github-link',
           },
         ],
       },
       footer: {
         style: 'dark',
-        /* links: [
+        links: [
           {
-            title: 'Docs',
+            title: 'Issues',
             items: [
               {
-                label: 'Tutorial',
-                to: '/',
+                label: 'Github issues',
+                href: 'https://github.com/chkware/cli/issues',
               },
             ],
           },
@@ -83,33 +85,33 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Question',
+                href: 'https://stackoverflow.com/questions/tagged/chkware-cli',
               },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
+              /* {
+                label: 'Discussion',
+                href: 'https://slack.com/',
+              }, */
             ],
           },
           {
-            title: 'More',
+            title: 'Follow us',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Chkware @ twitter',
+                href: 'https://twitter.com/chkware',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Chkware @ github',
+                href: 'https://github.com/chkware/cli',
+              },
+              {
+                label: 'Chkware @ pypi',
+                href: 'https://pypi.org/project/chk',
               },
             ],
           },
-        ], */
+        ],
         copyright: `Copyright © ${new Date().getFullYear()} Chkware.`,
       },
       prism: {
