@@ -114,6 +114,13 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Chkware.`,
       },
+      metadata: [
+        {
+          name: 'Chkware',
+          content: 'Test management for API era',
+        },
+      ],
+      image: 'img/banner.png',
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
