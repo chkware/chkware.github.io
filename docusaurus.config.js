@@ -121,6 +121,11 @@ const config = {
         },
       ],
       image: 'img/banner.png',
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: false,
+        respectPrefersColorScheme: true,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
