@@ -29,7 +29,7 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
+          breadcrumbs: false,
           editUrl: 'https://github.com/chkware/chkware.github.io/tree/main',
         },
         blog: false,
