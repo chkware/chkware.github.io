@@ -1,12 +1,20 @@
 # `chkware` website
 
-This repository holds source code and publishable website for [**`chkware`**](https://github.com/chkware/cli#readme). Please access using https://chkware.github.io
+This repository holds source code and publishable website for [**`chkware`**](https://github.com/chkware/cli#readme). Please access using https://chkware.github.io.
 
+### Installation
 
-### Installation [TBD]
+Clone the repo:
 
+```sh
+git clone https://github.com/chkware/chkware.github.io.git
+cd chkware.github.io
 ```
-$ npm install
+
+Install dependencies:
+
+```sh
+npm install
 ```
 
 ### Local Development [TBD]
@@ -30,4 +38,5 @@ This command generates static content into the `build` directory and can be serv
 The current status of the website is **under construction**. Please follow us on Twitter [@chkware](https://twitter.com/chkware) for update. Thank you for your patience.
 
 ---
+
 `chkware` website uses [docusaurus v2.0.0-beta.17](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.17) as CMS backend.
