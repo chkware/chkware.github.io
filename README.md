@@ -2,7 +2,7 @@
 
 This repository holds source code and publishable website for [**`chkware`**](https://github.com/chkware/cli#readme). Please access using https://chkware.github.io.
 
-### Installation
+## Installation
 
 Clone the repo:
 
@@ -17,7 +17,7 @@ Install dependencies:
 npm install
 ```
 
-### Local Development [TBD]
+## Local Development
 
 ```
 $ npm start
@@ -25,7 +25,7 @@ $ npm start
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build [TBD]
+## Build
 
 ```
 $ npm run build
@@ -33,7 +33,11 @@ $ npm run build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Status
+## Guides
+
+Learn how to contribute to this website.
+
+## Status
 
 The current status of the website is **under construction**. Please follow us on Twitter [@chkware](https://twitter.com/chkware) for update. Thank you for your patience.
 
