@@ -46,7 +46,7 @@ All the configs can be found in `docusaurus.config.js`.
 Create a Markdown file, `example.md`, and place it under the `docs` directory. Any markdown file will render into the site without needing any extra configuration. It will be displayed alphabetically on the sidebar.
 
 ```bash
-/root # root directory
+root
 ├── docs
 │   └── example.md
 ├── docusaurus.config.js
@@ -60,10 +60,10 @@ Markdown documents can use the Markdown front matter metadata fields, enclosed b
 Creating a `example.md` in a sub folder will create a category in the sidebar.
 
 ```bash
-/root # root directory
+root
 ├── docs
-│	├── sub-folder
-│   	└── example.md
+│	└── sub-folder
+│           └── example.md
 ```
 
 To change the category name or other category meta data, an optional file `_category_.json` can be created in the respective sub folder.
