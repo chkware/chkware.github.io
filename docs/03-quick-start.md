@@ -5,7 +5,7 @@ hide_title: true
 
 To quickly start, let's try something live online.. [REQ|RES](https://reqres.in) is a hosted demo REST api service. Let's call a simple API endpoint from here.
 
-> First [setup chkware](setup).
+> First [setup **chkware**](setup).
 
 Go to https://reqres.in, and find there is an endpoint like **_GET_ SINGLE USER** we'll call this API with Chkware. So, follow these steps:
 
@@ -22,7 +22,7 @@ request:
 3. from terminal run following
 
 ```bash
-$ chk User.chk
+$ chk http User.chk
 ```
 
 See the output like
@@ -66,7 +66,7 @@ request:
 
 ```bash
 $ cd ~/project
-$ chk covid-19.chk
+$ chk http covid-19.chk 
 ```
 
 1. You'll get output like this
