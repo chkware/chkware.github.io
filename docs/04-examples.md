@@ -1,5 +1,5 @@
 ---
-title: More Examples
+title: Examples
 hide_title: true
 ---
 
@@ -10,8 +10,7 @@ hide_title: true
 
 :::
 
-
-## Examples
+Case-wise more example can be found in `tests/resources/storage/sample_config` directory of https://github.com/chkware/cli repository
 
 Following are the examples with HTTP GET method. Although all these example are still valid for POST, PUT, PATCH, DELETE, OPTIONS, HEAD method as well.
 
