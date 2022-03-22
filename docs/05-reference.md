@@ -85,7 +85,12 @@ request:
   body[text]: 'Plain text here'
 
   # to pass as json to body pass a yaml object like
-  body[json]: { user_id: 32, roll_no: 1, class: 2, name: 'Student name' }
+  body[json]: {
+    user_id: 32, 
+    roll_no: 1, 
+    class: 2, 
+    name: 'Student name' 
+  }
 
   # to pass a xml as body use a yaml literal block
   body[xml]: |
