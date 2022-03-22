@@ -62,6 +62,12 @@ const config = {
             label: 'Docs',
           },
           {
+            href: 'https://github.com/chkware/cli/releases/tag/v0.1.5',
+            position: 'left',
+            'aria-label': 'v0.1.5',
+            label: 'v0.1.5',
+          },
+          {
             href: 'https://github.com/chkware/cli',
             position: 'right',
             'aria-label': 'chkware gitHub repository',
