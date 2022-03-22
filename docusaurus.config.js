@@ -127,6 +127,7 @@ const config = {
         respectPrefersColorScheme: true,
       },
       prism: {
+        additionalLanguages: ['http', 'yaml'],
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
