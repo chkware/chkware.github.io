@@ -19,16 +19,15 @@ This page describes some key concepts before you use **chkware**. There are two 
 
 Test specification files are written in YAML, having file extension `.chk`. So, before you start writing any 
 specs, you should have a proper introduction to YAML, if you do not have already. Here is a fine
-[YAML cheatsheet](https://quickref.me/yaml) to grasp some knowledge.We are using this specific extension (`.chk`) so these files do not 
-make you confuse in typical project layout.
+[YAML cheatsheet](https://quickref.me/yaml) to grasp some knowledge. We are using this specific extension (`.chk`) 
+so these files do not make you confuse in typical project layout.
 
-> In the future evolution path of **chkware** we are going to introduce more and more specification options and specification types and versions.
+> In the future evolution path of **chkware** we are going to introduce more and more specification 
+> options and specification types and versions.
 
-Let’s first get you introduced to the (till now) only specification format supported by **chkware**, the Http specification format. As mentioned in the introduction page **_Create reusable offline http request specification._**, the Http specification format is how you express a Http request format. Following are some examples by case to write Http specification file.
-
----
-
-Following yaml blocks can be used to identify different section of a Http specification file.
+Let’s get introduced to the Http specification format supported by **chkware**. The Http specification 
+format is how anyone express a Http request. Following is the full reference to write 
+Http specification file.
 
 ```yaml
 ---
@@ -65,9 +64,6 @@ request:
     password: 'Some-P@$$W03D'
 
   # send request body with the request
-
-  # no body to send
-  body[none]: ~
 
   # to send application/x-www-form-urlencoded form enctype
   body[form]:
