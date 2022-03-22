@@ -1,4 +1,5 @@
 ---
+sidebar_position: 4
 title: More Examples
 hide_title: true
 ---
@@ -120,7 +121,7 @@ request:
 
 ### Examples
 
-Following are the examples with HTTP GET method. Although all these example are still valied for POST, PUT, PATCH, DELETE, OPTIONS, HEAD method as well.
+Following are the examples with HTTP GET method. Although all these example are still valid for POST, PUT, PATCH, DELETE, OPTIONS, HEAD method as well.
 
 #### Minimal request
 

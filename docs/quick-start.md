@@ -1,4 +1,5 @@
 ---
+sidebar_position: 3
 title: Quick Start
 hide_title: true
 ---
