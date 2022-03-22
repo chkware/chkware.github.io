@@ -10,26 +10,12 @@ hide_title: true
 
 :::
 
-This page describes some key concepts before you use **chkware**. There are two parts to this tool.
 
-1. The command line tool that you can run as `chk`
-2. The test specification files: those you write in YAML, in supported DSL.
-
-### Test specifications
-
-Test specification files are written in YAML. So, before you start writing any specs, you should have a proper introduction to YAML, if you do not have already. Here is a fine [YAML cheatsheet](https://quickref.me/yaml) to grasp some knowledge.
-
-> In the future evolution path of **chkware** we are going to introduce more and more specification options and specification types and versions.
-
-Let’s first get you introduced to the (till now) only specification format supported by **chkware**, the Http specification format. As mentioned in the introduction page **_Create reusable offline http request specification._**, the Http specification format is how you express a Http request format. Following are some examples by case to write Http specification file.
-
----
-
-### Examples
+## Examples
 
 Following are the examples with HTTP GET method. Although all these example are still valid for POST, PUT, PATCH, DELETE, OPTIONS, HEAD method as well.
 
-#### Minimal request
+### Minimal request
 
 ```yaml
 ---
@@ -38,7 +24,7 @@ request:
   method: GET
 ```
 
-#### Request with query string
+### Request with query string
 
 ```yaml
 ---
@@ -61,7 +47,7 @@ request:
     two: 2
 ```
 
-#### Request with query string and header
+### Request with query string and header
 
 ```yaml
 ---
@@ -78,7 +64,7 @@ request:
     Accept-Encoding: gzip, deflate
 ```
 
-#### Request with basic authentication header
+### Request with basic authentication header
 
 ```yaml
 ---
@@ -97,7 +83,7 @@ request:
 
 `username` and `password` will be automatically transformed to secret string as per [Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) scheme.
 
-#### Request with bearer authentication header
+### Request with bearer authentication header
 
 ```yaml
 ---
@@ -113,7 +99,7 @@ request:
     token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
 ```
 
-#### Request without a body
+### Request without a body
 
 ```yaml
 ---
@@ -131,7 +117,7 @@ request:
   body[none]: ~
 ```
 
-#### Request with JSON body
+### Request with JSON body
 
 ```yaml
 ---
@@ -149,7 +135,7 @@ request:
   body[json]: { user_id: 32, roll_no: 1, class: 2, name: 'Student name' }
 ```
 
-#### Request with form
+### Request with form
 
 Following example will submit a plain html form POST with encoding type `application/x-www-form-urlencoded`
 
@@ -174,7 +160,7 @@ request:
     photo: file:///home/username/student-photo-01.png # note: this will just pass filepath as string, not the actual file
 ```
 
-#### Request with file upload
+### Request with file upload
 
 Following example will submit a plain html form POST with encoding type `multipart/form-data`
 
@@ -200,7 +186,7 @@ request:
     cover_photo: file:///home/username/student-cvphoto-01.png
 ```
 
-#### Request with XML in body
+### Request with XML in body
 
 Following example will submit a plain html form POST with encoding type `multipart/form-data`
 

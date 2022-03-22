@@ -10,8 +10,23 @@ hide_title: true
 
 :::
 
-All `.chk` file is a valid YAML file. We are using this specific extension so these files do not make you 
-confuse in typical project layout. 
+This page describes some key concepts before you use **chkware**. There are two parts to this tool.
+
+1. The command line tool that you can run as `chk http`
+2. The test specification files: those you write in YAML, have extension `.chk`.
+
+### Test specifications
+
+Test specification files are written in YAML, having file extension `.chk`. So, before you start writing any 
+specs, you should have a proper introduction to YAML, if you do not have already. Here is a fine
+[YAML cheatsheet](https://quickref.me/yaml) to grasp some knowledge.We are using this specific extension (`.chk`) so these files do not 
+make you confuse in typical project layout.
+
+> In the future evolution path of **chkware** we are going to introduce more and more specification options and specification types and versions.
+
+Let’s first get you introduced to the (till now) only specification format supported by **chkware**, the Http specification format. As mentioned in the introduction page **_Create reusable offline http request specification._**, the Http specification format is how you express a Http request format. Following are some examples by case to write Http specification file.
+
+---
 
 Following yaml blocks can be used to identify different section of a Http specification file.
 
