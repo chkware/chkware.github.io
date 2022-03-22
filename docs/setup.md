@@ -6,7 +6,9 @@ hide_title: true
 
 ### Installation
 
-The currently supported python version is **\*Python 3.8.\*\*** You need to have this version of python in your OS to continue any of the following steps.
+
+The currently supported python version is **_Python 3.10.x_** You need to have this version of python in your OS to continue any of the following steps.
+
 
 **Method 1: with pipx**
 
@@ -18,6 +20,12 @@ First, [Install pipx](https://pypa.github.io/pipx/installation/). Then run
 $ pipx install chk
 ```
 
+Then use as following
+
+```bash
+$ chk http SomeFile.chk
+```
+
 **Method 2: with pip (globally)**
 
 Alternatively you can install with `pip` like other regular python package following these step. However, it will install the package globally.
@@ -25,6 +33,12 @@ Alternatively you can install with `pip` like other regular python package follo
 ```bash
 $ python3 -m pip install -U pip # upgrade pip
 $ python3 -m pip install -U chk
+```
+
+Then use as following
+
+```bash
+$ python3 -m chk http SomeFile.chk
 ```
 
 **Method 3: with pip (locally)**
@@ -36,6 +50,13 @@ $ python3 -m venv .venv # create virtual environemnt
 $ source .venv/bin/activate # active virtual environemnt
 $ pip install -U pip # upgrade pip
 $ pip install -U chk
+```
+
+Then use as following
+
+```bash
+$ source .venv/bin/activate
+$ python -m chk http SomeFile.chk
 ```
 
 ---
@@ -54,10 +75,12 @@ Otherwise, if **pip** was used to install then same process given above should w
 
 ### Platform support
 
-For now this tool is developed and tested on **macOS** only. We are working hard to make it available on Linux platform.
+This tool is tested to run on **Linux**, **Windows**, and **macOS** platform.
+
+There is no native binary dependency, therefore it is expected on all the platform where supported Python version works. Please create an issue, if you need additional platform support.
 
 ---
 
 ### Stability
 
-Current stability for this tool is _Pre - Alpha_
+Current stability for this tool is _Alpha_.
