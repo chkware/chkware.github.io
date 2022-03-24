@@ -1,6 +1,5 @@
 ---
 title: Setup
-hide_title: true
 ---
 
 ### Installation
@@ -69,17 +68,3 @@ $ pipx upgrade chk
 ```
 
 Otherwise, if **pip** was used to install then same process given above should work for upgrade as well.
-
----
-
-### Platform support
-
-This tool is tested to run on **Linux**, **Windows**, and **macOS** platform.
-
-There is no native binary dependency, therefore it is expected on all the platform where supported Python version works. Please create an issue, if you need additional platform support.
-
----
-
-### Stability
-
-Current stability for this tool is _Alpha_.

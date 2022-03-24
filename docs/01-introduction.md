@@ -1,7 +1,5 @@
 ---
-slug: /
 title: Introduction
-hide_title: true
 ---
 
 ![chkware | Test management for api era](./assets/github-hero-01.png)
@@ -50,3 +48,17 @@ In practical cases, software testers / QAs, developers, PM/POs, are the people w
 - This project is particularly helpful if you are developing an API oriented project.
 - Test websites or web interfaces are not in the project focus for now.
 - Also, seeding data, validating data in DB is out of this project scope for now.
+
+---
+
+### Platform support
+
+This tool is tested to run on **Linux**, **Windows**, and **macOS** platform.
+
+There is no native binary dependency, therefore it is expected on all the platform where supported Python version works. Please create an issue, if you need additional platform support.
+
+---
+
+### Stability
+
+Current stability for this tool is _Alpha_.
