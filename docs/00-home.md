@@ -4,8 +4,6 @@ title: Home
 hide_title: true
 ---
 
-# chkware
-
 ![chkware | Test management for api era](./assets/github-readme-01.png)
 
 [![PyPI version](https://badge.fury.io/py/chk.svg)](https://badge.fury.io/py/chk)
