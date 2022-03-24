@@ -1,6 +1,5 @@
 ---
 title: Examples
-hide_title: true
 ---
 
 :::note

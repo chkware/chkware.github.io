@@ -1,6 +1,5 @@
 ---
 title: Introduction
-hide_title: true
 ---
 
 ![chkware | Test management for api era](./assets/github-hero-01.png)

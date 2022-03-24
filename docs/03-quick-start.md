@@ -1,6 +1,5 @@
 ---
 title: Quick Start
-hide_title: true
 ---
 
 To quickly start, let's try something live online.. [REQ|RES](https://reqres.in) is a hosted demo REST api service. Let's call a simple API endpoint from here.

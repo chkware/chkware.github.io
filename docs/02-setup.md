@@ -1,6 +1,5 @@
 ---
 title: Setup
-hide_title: true
 ---
 
 ### Installation
