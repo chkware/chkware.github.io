@@ -17,7 +17,7 @@ API tests management is not easy to develop, and maintain. It requires multitude
 
 ***chkware*** (pronounced as */check:ware/*) helps you write accurate, robust, and expressive feature tests for your API in less time.
  
-Read [more value propositions](introduction) here. Find [changelog](changelog) here.
+Read [more value propositions](introduction) here. Find [changelog](https://github.com/chkware/cli/blob/971e7400848f26f9f8d2be5fa9eef5fa80a6ded0/docs/CHANGELOG.md) here.
 
 ### Setup
 
