@@ -10,8 +10,6 @@ It is available as a command-line application. You write test specification file
 
 - Create reusable http request specification. [alpha]
 - Create reusable test specifications. [TBD]
-- Create reusable test flows. [TBD]
-- Create reusable variable files to manage global and scoped data. [TBD]
 
 Afterward, you run those test specification files with **chkware**, and get test results or even reuse them.
 
