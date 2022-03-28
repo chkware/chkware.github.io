@@ -62,12 +62,6 @@ const config = {
             label: 'Docs',
           },
           {
-            href: 'https://github.com/chkware/cli/releases/tag/v0.1.5',
-            position: 'left',
-            'aria-label': 'v0.1.5',
-            label: 'v0.1.5',
-          },
-          {
             href: 'https://github.com/chkware/cli',
             position: 'right',
             'aria-label': 'chkware gitHub repository',
@@ -139,7 +133,9 @@ const config = {
       },
       announcementBar: {
         id: 'support_us',
-        content: `⭐️ If you like chkware, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chkware/cli">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/chkware" >Twitter</a> ${TwitterSvg}`,
+        content: `⭐️ If you like <strong>chkware</strong>, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chkware/cli">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/chkware" >Twitter</a> ${TwitterSvg}`,
+        isCloseable: false,
+        backgroundColor: '#f2f2f2',
       },
     }),
   themes: [
