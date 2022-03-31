@@ -9,7 +9,7 @@ const TwitterSvg =
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Chkware',
+  title: 'chkware',
   tagline: 'Test management for API era',
   url: 'https://chkware.github.io',
   baseUrl: '/',
@@ -48,10 +48,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Chkware',
+        title: 'chkware',
         hideOnScroll: false,
         logo: {
-          alt: 'Chkware Logo',
+          alt: 'chkware Logo',
           src: 'img/logo.png',
         },
         items: [
@@ -64,7 +64,7 @@ const config = {
           {
             href: 'https://github.com/chkware/cli',
             position: 'right',
-            'aria-label': 'GitHub repository',
+            'aria-label': 'chkware gitHub repository',
             className: 'header-github-link',
           },
         ],
@@ -98,25 +98,25 @@ const config = {
             title: 'Follow us',
             items: [
               {
-                label: 'Chkware @ twitter',
+                label: 'chkware @ twitter',
                 href: 'https://twitter.com/chkware',
               },
               {
-                label: 'Chkware @ github',
+                label: 'chkware @ github',
                 href: 'https://github.com/chkware/cli',
               },
               {
-                label: 'Chkware @ pypi',
+                label: 'chkware @ pypi',
                 href: 'https://pypi.org/project/chk',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Chkware.`,
+        copyright: `Copyright © ${new Date().getFullYear()} chkware.`,
       },
       metadata: [
         {
-          name: 'Chkware',
+          name: 'chkware',
           content: 'Test management for API era',
         },
       ],
@@ -133,7 +133,9 @@ const config = {
       },
       announcementBar: {
         id: 'support_us',
-        content: `⭐️ If you like Chkware, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chkware/cli">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/chkware" >Twitter</a> ${TwitterSvg}`,
+        content: `⭐️ If you like <strong>chkware</strong>, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chkware/cli">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/chkware" >Twitter</a> ${TwitterSvg}`,
+        isCloseable: false,
+        backgroundColor: '#f2f2f2',
       },
     }),
   themes: [
