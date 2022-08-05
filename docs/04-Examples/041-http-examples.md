@@ -1,5 +1,5 @@
 ---
-title: Http spec examples
+title: Http spec. examples
 ---
 
 :::note
@@ -17,7 +17,7 @@ Following are the examples with HTTP GET method. Although all these example are 
 
 ```yaml
 ---
-
+version: default:http:0.7.2
 request:
   url: https://example.org/api/path
   method: GET
