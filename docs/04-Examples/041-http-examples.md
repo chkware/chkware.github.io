@@ -3,17 +3,15 @@ title: Http spec. examples
 ---
 
 :::note
-
 - This page should be use as reference for specification files.
 - This page is subject to change. It is requested to check this page frequently.
-
 :::
 
-Case-wise more example can be found in `tests/resources/storage/sample_config` directory of https://github.com/chkware/cli repository
+Case-wise more example can be found in `tests/resources/storage/sample_config` directory of [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config) repository
 
-Following are the examples with HTTP GET method. Although all these example are still valid for POST, PUT, PATCH, DELETE, OPTIONS, HEAD method as well.
+Following are the examples with HTTP _GET_ method. Although all these example are still valid for _POST_, _PUT_, _PATCH_, _DELETE_, _OPTIONS_, _HEAD_ method as well.
 
-### Minimal request
+### Minimal request with HTTP GET method
 
 ```yaml
 ---
@@ -27,8 +25,9 @@ request:
 
 ```yaml
 ---
-# put variables on the path
+version: default:http:0.7.2
 request:
+  # put variables on the path for query string
   url: https://example.org/api/path?foo=bar&two=2
   method: GET
 ```
@@ -37,10 +36,12 @@ or you can also do like:
 
 ```yaml
 ---
-# put variables as url_params entry
+version: default:http:0.7.2
 request:
   url: https://example.org/api/path
   method: GET
+
+  # put variables as url_params entry for query string
   url_params:
     foo: bar
     two: 2
@@ -50,6 +51,8 @@ request:
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/action
   method: GET
@@ -67,6 +70,8 @@ request:
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/id
   method: GET
@@ -86,6 +91,8 @@ request:
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/id
   method: GET
@@ -102,6 +109,8 @@ request:
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/action
   method: POST
@@ -120,6 +129,8 @@ request:
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/action
   method: POST
@@ -136,17 +147,22 @@ request:
 
 ### Request with form
 
-Following example will submit a plain html form POST with encoding type `application/x-www-form-urlencoded`
+Following example will submit a form with POST method. You do not need to set any special header for this.
+
+You can override `Content-Type` headers if you want, however that will override `Content-Type: application/x-www-form-urlencoded` header which is automatically set.
+
+Note, that you can not upload files in this way. See **Request with file upload** section for that purpose.
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/action
   method: POST
 
   headers:
     Accept-Encoding: gzip, deflate
-    Content-Type: application/json
 
   auth[bearer]:
     token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
@@ -156,22 +172,31 @@ request:
     roll_no: 1,
     class: 2,
     name: 'Student name'
-    photo: file:///home/username/student-photo-01.png # note: this will just pass filepath as string, not the actual file
+
+    # note: this will just set photo with file path as string, 
+    # but will not upload the actual file
+    photo: file:///home/username/student-photo-01.png
 ```
 
 ### Request with file upload
 
-Following example will submit a plain html form POST with encoding type `multipart/form-data`
+Following example will submit a form with binary image data in POST method. You do not need to set any special header for this.
+
+You can override `Content-Type` headers if you want, however that will override `Content-Type: multipart/form-data` header which is automatically set.
+
+Note, that you can upload files in this way. Please follow [this section on wikipedia](https://en.wikipedia.org/wiki/File_URI_scheme#Examples) on `file://` to set path on different OS platform.
+
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/id
   method: PUT
 
   headers:
     Accept-Encoding: gzip, deflate
-    Content-Type: application/json
 
   auth[bearer]:
     token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
@@ -181,23 +206,28 @@ request:
     roll_no: 1,
     class: 2,
     name: 'Student name'
-    photo: file:///home/username/student-photo-01.png # note: this will actually upload the file
+
+    # note: this will actually upload the file
+    photo: file:///home/username/student-photo-01.png
     cover_photo: file:///home/username/student-cvphoto-01.png
 ```
 
 ### Request with XML in body
 
-Following example will submit a plain html form POST with encoding type `multipart/form-data`
+Following example will POST a plain xml content.
+
+You can override `Content-Type` headers if you want, however that will override ``Content-Type: application/xml` header which is automatically set.
 
 ```yaml
 ---
+version: default:http:0.7.2
+
 request:
   url: https://example.org/api/resource/action
   method: POST
 
   headers:
     Accept-Encoding: gzip, deflate
-    Content-Type: application/xml
 
   body[xml]: |
     <?xml version="1.0"?>
