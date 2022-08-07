@@ -32,7 +32,6 @@ Jump to the [setup guide](setup) for different ways to install ***chkware***.
 ### Usage
 
 [Get started](quick-start) quickly here.
-Find [More examples](examples) here
 
 ### Ask anything
 

@@ -2,7 +2,10 @@
 title: Quick Start
 ---
 
-**Prerequisite**: First [setup **chkware**](setup).
+:::note
+- **Prerequisite**: First, [setup **chkware**](setup) to continue
+- Find [More **`http`** examples](Examples/http-examples) here
+:::
 
 Let's call an API that returns current bitcoin price in USD. Please do following:
 
