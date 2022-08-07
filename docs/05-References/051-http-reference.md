@@ -97,4 +97,11 @@ request:
           of the world.</description>
       </book>
     </catalog>
+
+  # returns given part of the response after
+  # the request have been executed and got response
+  #
+  # supported values: 'version', 'code', 'reason', 'headers', 'body'
+  # if not available, or set as null, returns all parts of response
+  return: ~ 
 ```

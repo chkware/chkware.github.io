@@ -47,6 +47,9 @@ request:
   url_params:
     foo: bar
     two: 2
+
+  # get only response code
+  return: .code
 ```
 
 ### Request with query string and header
@@ -123,8 +126,6 @@ request:
 
   auth[bearer]:
     token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
-
-  body[none]: ~
 ```
 
 ### Request with JSON body
@@ -145,6 +146,9 @@ request:
     token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
 
   body[json]: { user_id: 32, roll_no: 1, class: 2, name: 'Student name' }
+  
+  # get every thing out of response received
+  return: ~
 ```
 
 ### Request with form
@@ -178,6 +182,9 @@ request:
     # note: this will just set photo with file path as string, 
     # but will not upload the actual file
     photo: file:///home/username/student-photo-01.png
+
+  # get only response body; response headers, code, etc will be dropped
+  return: .body
 ```
 
 ### Request with file upload
