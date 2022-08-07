@@ -1,35 +1,13 @@
 ---
-title: Http spec. reference
+title: Http specification reference
 ---
 
 :::note
-
 - This page should be use as reference for specification files.
 - This page is subject to change. It is requested to check this page frequently.
-
 :::
 
-This page describes some key concepts before you use **chkware**. There are two parts to this tool.
-
-1. The command line tool that you can run as `chk http`
-2. The test specification files: those you write in YAML, have extension `.chk`.
-
-### Specification files
-
-Test specification files are written in YAML, having file extension `.chk`. So, before you start writing any 
-specs, you should have a proper introduction to YAML, if you do not have already. Here is a fine
-[YAML cheatsheet](https://quickref.me/yaml) to grasp some knowledge. We are using this specific extension (`.chk`) 
-so these files do not make you confuse in typical project layout.
-
-> In the future evolution path of **chkware** we are going to introduce more and more specification 
-> options and specification types and versions.
-
-
-### Http specification
-
-Let’s get introduced to the Http specification format supported by **chkware**. The Http specification 
-format is how anyone express a Http request. Following is the full reference to write 
-Http specification file.
+Let’s get introduced to the Http specification format. The Http specification format is how anyone express a Http request. Following is the full reference to write Http specification file.
 
 ```yaml
 ---
@@ -53,8 +31,8 @@ request:
     'Accept-Encoding': 'gzip, deflate'
     accept: '*/*'
 
-  # send authentication header.
-  # two supported type: auth[bearer], auth[basic]:
+  # ==== send authentication header ====
+  # two supported type: auth[bearer], auth[basic]
 
   # auth[bearer] example
   auth[bearer]:
@@ -65,7 +43,8 @@ request:
     username: Some_USER
     password: 'Some-P@$$W03D'
 
-  # send request body with the request
+  # ==== send request body with the request ====
+  # There are 5 supported type: body[form], body[form-data], body[json], body[xml], body[text]
 
   # to send application/x-www-form-urlencoded form enctype
   body[form]:
