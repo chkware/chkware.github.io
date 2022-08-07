@@ -7,9 +7,11 @@ title: Http spec. examples
 - This page is subject to change. It is requested to check this page frequently.
 :::
 
+:::note
 Case-wise more example can be found in `tests/resources/storage/sample_config` directory of [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config) repository
+:::
 
-Following are the examples with HTTP _GET_ method. Although all these example are still valid for _POST_, _PUT_, _PATCH_, _DELETE_, _OPTIONS_, _HEAD_ method as well.
+Following examples are using HTTP _GET_ and _POST_ method. Although all these example are still valid for _POST_, _PUT_, _PATCH_, _DELETE_, _OPTIONS_, _HEAD_ method as well. You can still send a request body with _GET_ or _HEAD_ method for the sake of testing API.
 
 ### Minimal request with HTTP GET method
 
