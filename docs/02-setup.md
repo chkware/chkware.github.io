@@ -87,10 +87,3 @@ $ pipx upgrade chk
 ```
 
 Otherwise, if **pip** was used to install then same process given above should work for upgrade as well.
-
----
-### chkware IDE extension installation
-
-**chkware** will have your favorite IDE / editor integration so that it is easy for you to write `.chk` files. We are currently actively developing a Visual Studio Code extension. We will update this section with usage, once it's released.
-
-[TBD]
