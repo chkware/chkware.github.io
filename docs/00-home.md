@@ -24,7 +24,7 @@ Read [more value propositions](introduction) here. Find [changelog](https://gith
 With [**Python 3.10**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) preinstalled, run following in your terminal to get ***chkware*** installed.
 
 ```bash
-$ python -m pipx install chk
+$ pipx install chk
 ```
 
 Jump to the [setup guide](setup) for different ways to install ***chkware***.
@@ -32,7 +32,10 @@ Jump to the [setup guide](setup) for different ways to install ***chkware***.
 ### Usage
 
 [Get started](quick-start) quickly here.
-Find [More examples](examples) here
+
+### Ask anything
+
+Please use tag `chkware-cli` with the question on [stackoverflow.com](https://stackoverflow.com/questions/tagged/chkware-cli) to ask or discuss anything. Follow the tag if you want to help others with your knowledge.
 
 ### Contribute
 

@@ -2,93 +2,100 @@
 title: Quick Start
 ---
 
-To quickly start, let's try something live online.. [REQ|RES](https://reqres.in) is a hosted demo REST api service. Let's call a simple API endpoint from here.
+:::note
+- **Prerequisite**: First, [setup **chkware**](setup) to continue
+- Find [More **`http`** examples](Examples/http-examples) here
+:::
 
-> First [setup **chkware**](setup).
+Let's call an API that returns current bitcoin price in USD. Please do following:
 
-Go to https://reqres.in, and find there is an endpoint like **_GET_ SINGLE USER** we'll call this API with Chkware. So, follow these steps:
+- Create a file called `bitcoin-usd.chk`
+- Open `bitcoin-usd.chk` file, and add following data
 
-1. Create a file called `User.chk`.
-2. Put following content
+  ```yaml
+  ---
+  version: default:http:0.7.2
+  request:
+    url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
+    method: GET
+  ```
 
-```yaml
----
-request:
-  url: https://reqres.in/api/users/2
-  method: GET
-```
+- Hit enter after writing following command on terminal
 
-3. from terminal run following
+  ```bash
+  $ chk http bitcoin-usd.chk
+  ```
+
+- You'll get output like following. Data will vary depending on the day you are doing it.
+
+  ```bash
+  File: bitcoin-usd.chk
+
+  Executing request
+
+  - Making request [Success]
+  ====
+  HTTP/1.1 200 OK
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 510
+  Connection: keep-alive
+  Date: Sun, 07 Aug 2022 06:05:23 GMT
+  X-Powered-By: Express
+  Access-Control-Allow-Origin: *
+  ETag: W/"1fe-daabae46"
+  X-Cache: Miss from cloudfront
+  Via: 1.1 02d36a84a910749e0e01cf16e7e1a02a.cloudfront.net (CloudFront)
+  X-Amz-Cf-Pop: SIN5-C1
+  X-Amz-Cf-Id: es7o2_gllNtjITVD3QM3Y5EH3ASHfg1sjav2o5RSSJKH8Mo3Dv_8BA==
+
+  {'coin': {'id': 'bitcoin', 'icon': 'https://static.coinstats.app/coins/1650455588819.png', 'name': 'Bitcoin', 'symbol': 'BTC', 'rank': 1, 'price': 22991.80131938709, 'priceBtc': 1, 'volume': 17847616879.01853, 'marketCap': 439482097425.5293, 'availableSupply': 19114731, 'totalSupply': 21000000, 'priceChange1h': 0.11, 'priceChange1d': -0.92, 'priceChange1w': -3.04, 'websiteUrl': 'http://www.bitcoin.org', 'twitterUrl': 'https://twitter.com/bitcoin', 'exp': ['https://blockchair.com/bitcoin/', 'https://btc.com/', 'https://btc.tokenview.com/']}}
+  ```
+
+- Now If you add `--result` flag to the command: it should show you the raw result output.
+
+  ```bash
+  $ chk http --result bitcoin-usd.chk
+  HTTP/1.1 200 OK
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 510
+  Connection: keep-alive
+  Date: Sun, 07 Aug 2022 06:10:39 GMT
+  X-Powered-By: Express
+  Access-Control-Allow-Origin: *
+  ETag: W/"1fe-779b4c2b"
+  X-Cache: Miss from cloudfront
+  Via: 1.1 14193a789201b44415bebb86f9e5fe9c.cloudfront.net (CloudFront)
+  X-Amz-Cf-Pop: SIN5-C1
+  X-Amz-Cf-Id: IodB70Lc4gtw_oinJwEIQnzgu9q-HCW_OCVfiAzYUUgmlrJr9CaiGA==
+
+  {'coin': {'id': 'bitcoin', 'icon': 'https://static.coinstats.app/coins/1650455588819.png', 'name': 'Bitcoin', 'symbol': 'BTC', 'rank': 1, 'price': 22981.487132414983, 'priceBtc': 1, 'volume': 17816663920.88816, 'marketCap': 439284944516.0738, 'availableSupply': 19114731, 'totalSupply': 21000000, 'priceChange1h': 0.03, 'priceChange1d': -0.9, 'priceChange1w': -3.09, 'websiteUrl': 'http://www.bitcoin.org', 'twitterUrl': 'https://twitter.com/bitcoin', 'exp': ['https://blockchair.com/bitcoin/', 'https://btc.com/', 'https://btc.tokenview.com/']}}
+  ```
+
+- If you open `bitcoin-usd.chk` change like following, you should only get the API response body.
+
+  ```yaml
+  ---
+  version: default:http:0.7.2
+  request:
+    url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
+    method: GET
+    return: .body  # <-- to get body of response
+  ```
+
+  ```bash
+  $ chk http --result bitcoin-usd.chk
+  {'coin': {'id': 'bitcoin', 'icon': 'https://static.coinstats.app/coins/1650455588819.png', 'name': 'Bitcoin', 'symbol': 'BTC', 'rank': 1, 'price': 22981.487132414983, 'priceBtc': 1, 'volume': 17816663920.88816, 'marketCap': 439284944516.0738, 'availableSupply': 19114731, 'totalSupply': 21000000, 'priceChange1h': 0.03, 'priceChange1d': -0.9, 'priceChange1w': -3.09, 'websiteUrl': 'http://www.bitcoin.org', 'twitterUrl': 'https://twitter.com/bitcoin', 'exp': ['https://blockchair.com/bitcoin/', 'https://btc.com/', 'https://btc.tokenview.com/']}}
+  ```
+
+- now we will use `jq` json parser to get price data. [jq website](https://stedolan.github.io/jq/) here.
 
 ```bash
-$ chk http User.chk
-```
+  $ chk http --result bitcoin-usd.chk | jq '.coin.price'
+  22981.487132414983 # <-- depends on the current value
+  ```
+---
+We just fetched a live API. You can use `chk http` as your scriptable http client like this :rocket::star2:.
 
-See the output like
-
-```text
-HTTP/1.1 200 OK
-Date: Sat, 29 Jan 2022 16:46:26 GMT
-Content-Type: application/json; charset=utf-8
-Transfer-Encoding: chunked
-...truncated-headers...
-alt-svc: h3=":443"; ma=86400, h3-29=":443"; ma=86400
-
-{'data': {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_name': 'Janet', 'last_name': 'Weaver', 'avatar': 'https://reqres.in/img/faces/2-image.jpg'}, 'support': {'url': 'https://reqres.in/#support-heading', 'text': 'To keep ReqRes free, contributions towards server costs are appreciated!'}}
-```
+Going further, you should save these `.chk` files in git repo, so that you can run it later, from anywhere where **chkware** is installed. Cheers.
 
 :wink::tada::confetti_ball:
-
----
-
-Now let's try a more complex API. Let's call COVID-19 data from RapidAPI. You can call this api for any country with a two letter country code. Let's do the following to fetch covid-19 data for Bangladesh:
-
-1. Register or login to https://rapidapi.com
-2. Subscribe to https://rapidapi.com/Gramzivi/api/covid-19-data/ this source.
-3. Create a directory called `~/project` and `covid-19.chk` in it
-4. Now open `covid-19.chk` file and add following data
-
-```yaml
----
-request:
-  url: https://covid-19-data.p.rapidapi.com/report/country/code
-  url_params:
-    code: bd
-    date: '2020-04-01'
-  method: GET
-  headers:
-    X-RapidAPI-Host: 'covid-19-data.p.rapidapi.com'
-    X-RapidAPI-Key: '<your X-RapidAPI-Key>'
-```
-
-1. hit enter writing following command on terminal
-
-```bash
-$ cd ~/project
-$ chk http covid-19.chk 
-```
-
-1. You'll get output like this
-
-```text
-HTTP/1.1 200 OK
-Cache-Control: no-cache, private
-Content-Type: application/json
-Date: Sun, 23 Jan 2022 04:28:35 GMT
-ETag: "69236d0ee4cbd7e37314028f0a8b01be"
-Server: RapidAPI-1.2.8
-Vary: Accept
-X-RapidAPI-Region: AWS - ap-southeast-1
-X-RapidAPI-Version: 1.2.8
-X-RateLimit-Requests-Limit: 50000
-X-RateLimit-Requests-Remaining: 49988
-X-RateLimit-Requests-Reset: 2175151
-Content-Length: 182
-Connection: keep-alive
-
-[{'country': 'Bangladesh', 'provinces': [{'province': 'Bangladesh', 'confirmed': 54, 'recovered': 25, 'deaths': 6, 'active': 23}], 'latitude': 23.684994, 'longitude': 90.356331, 'date': '2020-04-01'}]
-```
-
-:wink::tada::confetti_ball:
-
-You just fetch a live API. Going further, you should save these `.chk` files in git repo, so that you can run it later, from anywhere where **chkware** is installed. Cheers.
