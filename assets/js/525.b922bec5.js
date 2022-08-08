@@ -1,0 +1,1 @@
+(self.webpackChunkchkware=self.webpackChunkchkware||[]).push([[525],{5525:()=>{}}]);
