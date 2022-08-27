@@ -59,4 +59,7 @@ There is no native binary dependency, therefore it is expected on all the platfo
 
 ### Stability
 
-Current stability for this tool is _Alpha_.
+`chkware` is a tool collection. Followings are stability by tools:
+
+- Http specification [_`Alpha`_]
+- Testcase specification [_`Pre-Alpha`_]
