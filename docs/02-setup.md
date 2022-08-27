@@ -2,19 +2,11 @@
 title: Setup
 ---
 
-## User installation guide
+### Install `chkware` toolset with Pipx
 
-This section describe the process on installation when you intent to use **chkware**. 
+This section describe the installation process for [`chkware`](https://github.com/chkware/cli). The currently supported python version is **_Python 3.10.x_** You need to have this version of python in your OS to continue.
 
-### chkware toolset installation
-
-
-The currently supported python version is **_Python 3.10.x_** You need to have this version of python in your OS to continue any of the following steps.
-
-
-**Method 1: with pipx**
-
-The best way to setup any python app is manage it via [pipx](https://pypa.github.io/pipx/). Pipx is a standard pypi python application manager.
+The best way to setup any python app is manage it via [pipx](https://pypa.github.io/pipx/). Pipx is a standard PyPi python application manager.
 
 First, [Install pipx](https://pypa.github.io/pipx/installation/). Then run
 
@@ -28,62 +20,36 @@ Then use as following
 $ chk http some_file.chk
 ```
 
-**Method 2: with pip (globally)**
+### `chkware` toolset upgrade
 
-Alternatively you can install with `pip` like other regular python package following these step. However, it will install the package globally.
-
-```bash
-$ python3 -m pip install -U chk
-```
-
-Then use as following
-
-```bash
-$ chk http some_file.chk
-```
-
-**Method 3: with pip (locally)**
-
-To install under a separate environment, that don't change your global package space. You should install under a virtual environment.
-
-```bash
-$ python3 -m venv .venv # create virtual environemnt
-$ source .venv/bin/activate # active virtual environemnt
-$ pip install -U chk
-```
-
-Then use as following
-
-```bash
-$ chk http some_file.chk
-```
-
-**Method 4: with pip (locally) from git**
-
-To install latest version or a specific version from source code, under a separate environment, that don't change your global package space. Try following:
-
-```bash
-$ python3 -m venv .venv
-$ source .venv/bin/activate
-$ pip install -U https://github.com/chkware/cli/archive/main.tar.gz
-```
-
-Then use as following
-
-```bash
-$ chk http some_file.chk
-```
-
-Read more about this process in [‘pip install’ From a Git Repository](https://adamj.eu/tech/2019/03/11/pip-install-from-a-git-repository/)
-
----
-
-### chkware toolset upgrade
-
-If you have installed with **pipx** then use following to upgrade to latest released version.
+If you have installed with _pipx_ then use following to upgrade to latest released version.
 
 ```bash
 $ pipx upgrade chk
 ```
 
-Otherwise, if **pip** was used to install then same process given above should work for upgrade as well.
+Otherwise, if _pip_ was used to install then same process given above should work for upgrade as well.
+
+---
+
+### Install `chkware` extension for Visual Studio Code
+
+Get started writing `chkware` configurations with VS Code in three steps:
+
+- Step 1: If you haven't done so already, install [chkware](#install-chkware-toolset-with-pipx)
+
+- Step 2: Install the `chkware` extension for VS Code
+
+New to `chkwere`? Read the `chkware` [**quick start**](quick-start) guide here.
+
+### Setup development environment for `chkware` extension
+
+Make sure you are doing following to develop this extension further in your machine.
+
+- Run `npm install` to install dependencies for the first time
+- Run `npm run watch`
+- Press `f5`
+- Wait for the new window to be opened
+- Open command palette by pressing `ctrl` + `shift` + `p`
+- Search for `chkware` commands
+- After code changes, run `Developer: Reload Window` in the new window from command palette
