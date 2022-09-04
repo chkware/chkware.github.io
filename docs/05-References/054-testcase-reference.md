@@ -115,7 +115,9 @@ spec:
 
 ## Assertions
 
-Following are currently supported assertions.
+Following are currently supported assertions. Variable or values supplied in the `actual` field must contain JSON.
+
+[TBD] will support other data interchange format.
 
 ### AssertEqual
 
@@ -357,6 +359,10 @@ spec:
   ...
   asserts:
     - { type: AssertMapContains, actual: $StudentObject, expected: 10 }
+
+    - type: AssertMapContains
+      actual: $StudentObject
+      expected: {'teacher': {'id': 11, 'name': 'Some one'}}
 ```
 
 ### AssertMapHasKey
@@ -383,7 +389,7 @@ spec:
 
 ### AssertMapKeyCount
 
-Checks if data given in `actual` is a JSON object or dictionary. If so, does it have same number of key given in `expected`.
+Checks if data given in `actual` is a JSON object or dictionary. If so, does it have same number of keys given in `expected`.
 
 ```yaml
 spec:
