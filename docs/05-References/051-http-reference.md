@@ -3,11 +3,11 @@ title: Http specification reference
 ---
 
 :::note
-- This page should be use as reference for specification files.
+- This page should be use as reference for http specification files.
 - This page is subject to change. It is requested to check this page frequently.
 :::
 
-Let’s get introduced to the Http specification format. The Http specification format is how anyone express a Http request. Following is the full reference to write Http specification file.
+The Http specification format is how anyone express a Http request. Following is the full reference to write Http specification file.
 
 Http specification document is a versioned document, meaning there MUST be a `version:` key on the document. 
 
@@ -112,6 +112,13 @@ request:
 ```
 
 ---
+### `version` (<small>_`required`_</small>)
+
+`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/References/version-reference).
+
+### `variables`
+
+`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/References/variable-reference).
 
 ### `request` (<small>_`required`_</small>)
 
