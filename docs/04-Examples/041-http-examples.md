@@ -1,5 +1,5 @@
 ---
-title: Http spec. examples
+title: Http examples
 ---
 
 :::note
