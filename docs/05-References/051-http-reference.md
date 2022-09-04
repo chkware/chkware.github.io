@@ -165,7 +165,7 @@ request:
 
 ### `request.auth[basic]`
 
-`request.auth[basic]` is a sub-block, that is used to send basic authentication informaions with the request. It's to be used for [basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme). It only supports key value data, where both key and value should be scaler values. only `username` and `password` is supported. Adding any other value to it is expected to be fruitless.
+`request.auth[basic]` is a sub-block, that is used to send basic authentication informations with the request. It's to be used for [basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme). It only supports key value data, where both key and value should be scaler values. only `username` and `password` is supported. Adding any other value to it is expected to be fruitless.
 
 > If a document already have `request.auth[bearer]` defined along with this block, `chk` will behave unexpectedly.
 
