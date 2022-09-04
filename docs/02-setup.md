@@ -34,7 +34,7 @@ Otherwise, if _pip_ was used to install then same process given above should wor
 
 ### Install `chkware` extension for Visual Studio Code
 
-Get started writing `chkware` configurations with VS Code in three steps:
+Get started writing `chkware` configurations with VS Code doing following steps:
 
 - Step 1: If you haven't done so already, install [chkware](#install-chkware-toolset-with-pipx)
 

@@ -8,7 +8,7 @@ title: Http spec. examples
 :::
 
 :::note
-Case-wise more example can be found in `tests/resources/storage/sample_config` directory of [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config) repository
+Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config) repository
 :::
 
 
