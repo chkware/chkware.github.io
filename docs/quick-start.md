@@ -3,8 +3,8 @@ title: Quick Start
 ---
 
 :::note
-- **Prerequisite**: First, [setup **chkware**](setup) to continue
-- Find [More **`http`** examples](Examples/http-examples) here
+- **Prerequisite**: First, [setup **chkware**](/setup) to continue
+- Find [More `http` examples](/examples/http-examples) here
 :::
 
 Let's call an API that returns current bitcoin price in USD. Please do following:
@@ -96,6 +96,8 @@ Let's call an API that returns current bitcoin price in USD. Please do following
 ---
 We just fetched a live API. You can use `chk http` as your scriptable http client like this :rocket::star2:.
 
-Going further, you should save these `.chk` files in git repo, so that you can run it later, from anywhere where **chkware** is installed. Cheers.
+Going further you can customize different parameters for `request` block, [see here](/examples/http-examples), and write testcases [see here](/examples/testcase-examples). 
+
+Based on your workflow, you should save these `.chk` files in git repository. So that you can re-run it later, from anywhere where **chkware** is installed. Cheers.
 
 :wink::tada::confetti_ball:
