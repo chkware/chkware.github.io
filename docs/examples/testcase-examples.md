@@ -11,6 +11,8 @@ title: Testcase examples
 Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/blob/main/tests/resources/storage/sample_config/bitcoin-usd-testcase.chk) repository
 :::
 
+[Testcase specification document reference](/references/testcase-reference)
+
 ## Testcase examples:
 
 Testcase is an experimental feature, in _`PRE_ALPHA`_ stage.
@@ -46,3 +48,5 @@ spec:
     - {type: AssertEqual, actual: $Response.code, expected: 201}
     - {type: AssertIsMap, actual: $Response.body}
 ```
+
+Assertion [reference with examples](/references/testcase-reference#assertions) can be found here.

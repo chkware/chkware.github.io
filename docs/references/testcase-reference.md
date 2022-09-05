@@ -8,7 +8,7 @@ title: Testcase specification reference
 - Currently JSON response is only supported type for assertions.
 :::
 
-The Testcase specification format is how anyone express one or more Testcase/s for a given Http specification. Following is the full reference to write Testcase specification file.
+The Testcase specification format is how anyone express one or more Testcase(s) for a given Http specification. Following is the full reference to write Testcase specification file.
 
 ## Testcase specification
 

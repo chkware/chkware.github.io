@@ -11,6 +11,7 @@ title: Http examples
 Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config) repository
 :::
 
+[Http specification document reference](/references/http-reference)
 
 ## Request examples
 
