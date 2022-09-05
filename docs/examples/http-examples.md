@@ -13,8 +13,6 @@ Case-wise more example can be found in [https://github.com/chkware/cli](https://
 
 [Http specification document reference](/references/http-reference)
 
-## Request examples
-
 Following examples are using HTTP _GET_ and _POST_ method. Although all these example are still valid for _POST_, _PUT_, _PATCH_, _DELETE_, _OPTIONS_, _HEAD_ method as well. You can still send a request body with _GET_ or _HEAD_ method for the sake of testing API.
 
 ### Minimal request with HTTP GET method
@@ -255,55 +253,4 @@ request:
           with XML.</description>
       </book>
     </catalog>
-```
-
----
-## Request using variable examples
-
-We can also use variables inside a http specification file. See examples below. 
-
-** * This is highly experimental. Report any bug you can find.**
-
-### Request with query string using variables
-
-```yaml
----
-version: default:http:0.7.2
-
-# define local variables
-variables:
-  Foo: 'bar'
-  Two: 2
-  Server: https://example.org/api
-
-request:
-  # put variables on the path for query string
-  url: {$Server}/path?foo={$Foo}&two={$Two}
-  method: GET
-```
-
-### Request with basic authentication header using variables
-
-```yaml
----
-version: default:http:0.7.2
-
-# define local variables
-variables:
-  userName: Some_USER
-  password: Some-P@$$W03D
-  content_type: application/json
-  Server: https://example.org/api
-
-request:
-  url: {$Server}/resource/id
-  method: GET
-
-  headers:
-    Accept-Encoding: gzip, deflate
-    Content-Type: {$content_type}
-
-  auth[basic]:
-    username: {$userName}
-    password: {$password}
 ```

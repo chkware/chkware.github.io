@@ -25,6 +25,7 @@ const sidebars = {
       items: [
         'examples/http-examples',
         'examples/testcase-examples',
+        'examples/variable-examples',
       ],
     },
     {

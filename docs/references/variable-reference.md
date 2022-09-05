@@ -28,5 +28,5 @@ Variables can be defined in two ways:
 
 ### Supported specification document
 
-- [Http specification document examples](/examples/http-examples#variable-examples) | [More example](https://github.com/chkware/cli/tree/0272b83c2975349fd3f0d94e1646cc27b603eaf5/tests/resources/storage/sample_config/pass_cases/variables)
-- [Testcase specification document examples](/examples/testcase-examples) | [More example](https://github.com/chkware/cli/tree/890c2a6c11c5b16be4678ac27083befa1ef0986c/tests/resources/storage/sample_config/pass_cases/UserCreate)
+- [Http specification document examples](/examples/http-examples#variable-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/variables)
+- [Testcase specification document examples](/examples/testcase-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/UserCreate)

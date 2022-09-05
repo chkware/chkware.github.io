@@ -13,10 +13,7 @@ Case-wise more example can be found in [https://github.com/chkware/cli](https://
 
 [Testcase specification document reference](/references/testcase-reference)
 
-## Testcase examples:
-
 Testcase is an experimental feature, in _`PRE_ALPHA`_ stage.
-
 
 ### Testcase with in-file request
 
