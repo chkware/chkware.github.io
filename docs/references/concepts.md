@@ -15,7 +15,7 @@ There are two parts to **`chkware`** tool.
   
   This sub command runs a file written in [http specification file](http-reference) format.
   
-  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `request.result` key. see [usage](/Examples/http-examples#request-with-form) and [documentation](/References/http-reference).
+  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `request.result` key. see [usage](/examples/http-examples#request-with-form) and [documentation](/references/http-reference).
 
   **[Options]**
   - `--result` <small>***optional***</small>: When you put this option, the you'll see only the result.
@@ -27,7 +27,7 @@ There are two parts to **`chkware`** tool.
   
   This sub command runs a file written in [testcase specification file](testcase-reference) format.
   
-  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/Examples/testcase-examples).
+  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/examples/testcase-examples).
 
   **[Arguments]**
   - `[FILE].chk` <small>***required***</small>: File that you want to execute.

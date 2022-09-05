@@ -114,11 +114,11 @@ request:
 ---
 ### `version` (<small>_`required`_</small>)
 
-`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/References/version-reference).
+`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/references/version-reference).
 
 ### `variables`
 
-`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/References/variable-reference).
+`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/references/variable-reference).
 
 ### `request` (<small>_`required`_</small>)
 
