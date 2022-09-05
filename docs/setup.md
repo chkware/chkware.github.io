@@ -40,7 +40,17 @@ Get started writing `chkware` configurations with VS Code doing following steps:
 
 - Step 2: Install the `chkware` extension for VS Code
 
-New to `chkwere`? Read the `chkware` [**quick start**](quick-start) guide here.
+New to `chkwere`? Read the `chkware` [quick start](/quick-start) guide here.
+
+### Using `chkware` extension for Visual Studio Code
+
+Using VS Code command palette you can quickly select a snippet from added samples.
+
+- Use `Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows, and `Ctrl+Shift+P` on Linux to bring up command palette.
+- Select a sample you desire to use. <br />
+
+![chkware vscode ext](https://user-images.githubusercontent.com/45073703/187077383-7083de1a-affe-4fed-845a-d71d69d03034.gif)
+
 
 ### Setup development environment for `chkware` extension
 
