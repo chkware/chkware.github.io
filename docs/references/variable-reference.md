@@ -15,7 +15,7 @@ Variables are ways to hold value or computed values, like in programming languag
 
 Variables can be defined in two ways:
 
-1. Variable specification file. Files with `version: default:variable:x.x.x` [**WIP**]
+1. Variable specification file. Files with `version: default:variable:x.x.x` [**WIP** - not available yet]
 2. `variables` section on a supported specification document. See below.
     ```yaml
     version: default:http:0.7.2
@@ -28,4 +28,5 @@ Variables can be defined in two ways:
 
 ### Supported specification document
 
-- [Http specification document examples](/Examples/http-examples#variable-examples) | [More example](https://github.com/chkware/cli/tree/0272b83c2975349fd3f0d94e1646cc27b603eaf5/tests/resources/storage/sample_config/pass_cases/variables)
+- [Http specification document examples](/examples/http-examples#variable-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/variables)
+- [Testcase specification document examples](/examples/testcase-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/UserCreate)

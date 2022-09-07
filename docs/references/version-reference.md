@@ -9,6 +9,7 @@ title: Version specification reference
 
 ### Introduction
 
+**`important`** This node have to be available on each document.
 
 The Version specification format is how someone write a document version. Usually we encourage user to write document version on the very top of a specification document, so that you don't miss it. However it can be written as a top-level key on any place of the document. This is how it looks like:
 
@@ -23,10 +24,10 @@ Document version specifies which version of document current specification conte
 $ chk
 Usage: ...
 
-  v0.2.0 | version strings: 0.7.2
+  v0.4.0 | version strings: 0.7.2
 ...
 ```
-  - V0.2.0 is the tool version here
+  - V0.4.0 is the tool version here
   - 0.7.2 is the document version it supports
 
 If you have a document that have `version: default:http:0.8.0`, then this command would not be able to run it.
@@ -38,8 +39,6 @@ This version string have 3 parts: `<plugin>:<module>:<number>`, e.g: `default:ht
 - plugin: Name of the plugin that supports current specification. `default` means it part of core system. If you see other value it would mean you need to install that plugin to use the document.
 - module: A plugin can install multiple module on registration. So, `http` is the module name in `chk http ..`. Usually these are registered as sub-commands to `chk`.
 - number: the document version in [SEMVER](https://semver.org/) format.
-
-**`important`** This node have to be available on each document.
 
 ### Support document versions:
     - 0.7.2

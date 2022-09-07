@@ -23,7 +23,7 @@ API automation is playing a key role in this era. The benefits of API automation
 
 API testing tools are costly as well, in-term of licensing, setup and maintenance. Some tools are available for free for simple use-cases, but have complex licensing for increased usage, most of the time that aren't worthwhile. Also, commercial applications have limited community support, and knowledge exchange medium. Above that, of course, there are less and less open-source tools to cover these scenarios.
 
-For these reasons, the solutions are less scaling for actual use-cases. With additional business knowledge (that is evergrowing) required to start and maintain tests, you also need:
+For these reasons, the solutions are less scaling for actual use-cases. With additional business knowledge (that is ever-growing) required to start and maintain tests, you also need:
 
 1. Specific programming language knowledge, so it is not easy to jump-in quick
 2. Added complexity of maintaining supporting software stack, so there are side effects 
@@ -59,4 +59,9 @@ There is no native binary dependency, therefore it is expected on all the platfo
 
 ### Stability
 
-Current stability for this tool is _Alpha_.
+`chkware` is a tool collection. Followings are stability by tools:
+
+Command name | Specification document | Stability
+---|---|---
+`http`| Http | _`Alpha`_
+`testcase`| Testcase | _`Pre-Alpha`_
