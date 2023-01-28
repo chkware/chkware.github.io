@@ -1,6 +1,6 @@
-# `chkware` website
+# CHKware website
 
-This repository holds source code and publishable website for [**`chkware`**](https://github.com/chkware/cli#readme). Please access using https://chkware.github.io.
+This repository holds source code and publishable website for [**`CHKware`**](https://github.com/chkware/cli#readme). Please access using https://chkware.github.io.
 
 ### Installation
 
@@ -108,7 +108,7 @@ In addition to the basic Markdown syntax, Docusaurus use [remark-admonitions](ht
 
 To update Docusaurus version, manually change the version number in `package.json` to the desired version. Then run `npm run install`.
 
-Any required change/depricated message will be shown on the terminal when running the command `npm run start`. More [here](https://docusaurus.io/docs/next/installation#updating-your-docusaurus-version).
+Any required change / deprecated message will be shown on the terminal when running the command `npm run start`. More [here](https://docusaurus.io/docs/next/installation#updating-your-docusaurus-version).
 
 ### Status
 
@@ -116,4 +116,4 @@ The current status of the website is **under construction**. Please follow us on
 
 ---
 
-`chkware` website uses [docusaurus v2.0.0-beta.17](https://github.com/facebook/docusaurus/releases/tag/v2.0.0-beta.17) as CMS backend.
+*CHKware* website uses [docusaurus v2.3.0](https://github.com/facebook/docusaurus/releases/tag/v2.3.0) as CMS backend.
