@@ -23,7 +23,7 @@ Let's call an API that returns current bitcoin price in USD. Please do following
 - Hit enter after writing following command on terminal
 
   ```bash
-  $ chk http bitcoin-usd.chk
+  chk http bitcoin-usd.chk
   ```
 
 - You'll get output like following. Data will vary depending on the day you are doing it.
@@ -54,7 +54,7 @@ Let's call an API that returns current bitcoin price in USD. Please do following
 - Now If you add `--result` flag to the command: it should show you the raw result output.
 
   ```bash
-  $ chk http --result bitcoin-usd.chk
+  chk http --result bitcoin-usd.chk
   HTTP/1.1 200 OK
   Content-Type: application/json; charset=utf-8
   Content-Length: 510
@@ -83,14 +83,14 @@ Let's call an API that returns current bitcoin price in USD. Please do following
   ```
 
   ```bash
-  $ chk http --result bitcoin-usd.chk
+  chk http --result bitcoin-usd.chk
   {'coin': {'id': 'bitcoin', 'icon': 'https://static.coinstats.app/coins/1650455588819.png', 'name': 'Bitcoin', 'symbol': 'BTC', 'rank': 1, 'price': 22981.487132414983, 'priceBtc': 1, 'volume': 17816663920.88816, 'marketCap': 439284944516.0738, 'availableSupply': 19114731, 'totalSupply': 21000000, 'priceChange1h': 0.03, 'priceChange1d': -0.9, 'priceChange1w': -3.09, 'websiteUrl': 'http://www.bitcoin.org', 'twitterUrl': 'https://twitter.com/bitcoin', 'exp': ['https://blockchair.com/bitcoin/', 'https://btc.com/', 'https://btc.tokenview.com/']}}
   ```
 
 - now we will use `jq` json parser to get price data. [jq website](https://stedolan.github.io/jq/) here.
 
 ```bash
-  $ chk http --result bitcoin-usd.chk | jq '.coin.price'
+  chk http --result bitcoin-usd.chk | jq '.coin.price'
   22981.487132414983 # <-- depends on the current value
   ```
 ---

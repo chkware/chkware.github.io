@@ -20,7 +20,7 @@ npm install
 ### Local Development
 
 ```
-$ npm start
+npm start
 ```
 
 This command starts a local development server and opens up a browser window. You can also follow `http://localhost:3000/` URL in any browser.
@@ -30,7 +30,7 @@ Most changes are reflected live reload without having to restart the server.
 ### Build
 
 ```
-$ npm run build
+npm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
