@@ -15,13 +15,32 @@
 const sidebars = {
 
   docs: [
-    'home',
-    'introduction',
-    'setup',
-    'quick-start',
+    {
+      type: 'doc',
+      label: '🏡 Home',
+      id: 'home',
+    },
+    {
+      type: 'doc',
+      label: '💡 Introduction',
+      id: 'introduction',
+    },
     {
       type: 'category',
-      label: 'Examples',
+      label: '⚒️ Setup docs',
+      items: [
+        'setup',
+        'setup/setup-ext',
+      ],
+    },
+    {
+      type: 'doc',
+      label: '🏃‍♂️ Quick start',
+      id: 'quick-start',
+    },
+    {
+      type: 'category',
+      label: '🏊‍♂️ Examples',
       items: [
         'examples/http-examples',
         'examples/testcase-examples',
@@ -30,13 +49,21 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'References',
+      label: '🗂 References',
       items: [
         'references/concepts',
         'references/version-reference',
         'references/variable-reference',
         'references/http-reference',
         'references/testcase-reference',
+      ],
+    },
+    {
+      type: 'category',
+      label: '👩‍💻 Developers',
+      items: [
+        'setup/setup-ext-dev',
+        'setup/setup-cli-dev',
       ],
     },
   ],
