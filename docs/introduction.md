@@ -4,17 +4,17 @@ title: Introduction
 
 ![chkware | Test management for api era](./assets/github-hero-01.png)
 
-**chkware** (pronounced as */check:ware/*) is an API testing tool, a scriptable HTTP client, and a test specification management tool for the API era.
+
+*CHKware* (pronounced as */check:ware/*) is a low-code API testing tool, a script-able HTTP client, and an API test automation tool for the API era.
 
 It is available as a command-line application. You write test specification files in a [YAML](https://yaml.org/)-based [DSL](https://en.wikipedia.org/wiki/Domain-specific_language). In that specification file you will define some structured configurations to be used for the following purpose:
 
 - Create reusable http request specification. [alpha]
-- Create reusable test specifications. [TBD]
+- Create reusable test specifications. [alpha]
 
-Afterward, you run those test specification files with **chkware**, and get test results or even reuse them.
+Afterward, you run those test specification files with *CHKware*, and get test results or even reuse them.
 
 ---
-
 ### Motivation
 
 In today's world, API is one of the key fuels that drive business. It is the way web applications consume services from self-hosted or 3rd-party vendors. Recent technology movements are going to a fluid internet direction, where *vendor_A* have one API, *vendor_B* is another API provider, while we are the consumers (e-commerce, fin-tech) of those vendor APIs. We use those APIs to host our contents based on those APIs. Maybe we are *vendor_U* hosting more complex APIs on top of those. So, with the upcoming complexity of integration we need better tooling for API testing. Testing tools for modularize api testing.
@@ -29,13 +29,13 @@ For these reasons, the solutions are less scaling for actual use-cases. With add
 2. Added complexity of maintaining supporting software stack, so there are side effects 
 3. Above all, maintaining test cases based on code is more complex if you don't design your test code architecture well in the early days.
 
-So, clearly enough I think this situation needs to be improved. This is the motivation for **chkware**.
+So, clearly enough I think this situation needs to be improved. This is the motivation for *CHKware*.
 
 ---
 
 ### Audiences
 
-The focused users of **chkware** are everyone involved in an API project, given they have some testing basics. 
+The focused users of **CHKware** are everyone involved in an API project, given they have some testing basics. 
 
 - People with zero programming knowledge need a tool that does not get in their way. 
 - We need a tool that is relatively easy to write specifications, expressive, and customizable to the very core. 
@@ -44,7 +44,7 @@ The focused users of **chkware** are everyone involved in an API project, given 
 In practical cases, software testers / QAs, developers, PM/POs, are the people who should be able to use it rigorously.
 
 - This project is particularly helpful if you are developing an API oriented project.
-- Test websites or web interfaces are not in the project focus for now.
+- Writing specification to test websites, or web interfaces are not in the project focus for now.
 - Also, seeding data, validating data in DB is out of this project scope for now.
 
 ---
@@ -63,5 +63,5 @@ There is no native binary dependency, therefore it is expected on all the platfo
 
 Command name | Specification document | Stability
 ---|---|---
-`http`| Http | _`Alpha`_
-`testcase`| Testcase | _`Pre-Alpha`_
+`http`| Http | _alpha_
+`testcase`| Testcase | _alpha_
