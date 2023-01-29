@@ -42,7 +42,7 @@ const sidebars = {
           type: "category",
           label: "Tutorial",
           items: [
-            "tutorial/http-client",
+            "tutorials/http-client",
           ],
         },
         "examples/http-examples",
