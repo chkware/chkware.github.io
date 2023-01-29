@@ -13,58 +13,61 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-
   docs: [
     {
-      type: 'doc',
-      label: '🏡 Home',
-      id: 'home',
+      type: "doc",
+      label: "🏡 Home",
+      id: "home",
     },
     {
-      type: 'doc',
-      label: '💡 Introduction',
-      id: 'introduction',
+      type: "doc",
+      label: "💡 Introduction",
+      id: "introduction",
     },
     {
-      type: 'category',
-      label: '⚒️ Setup docs',
+      type: "category",
+      label: "⚒️ Setup docs",
+      items: ["setup", "setup/setup-ext"],
+    },
+    {
+      type: "doc",
+      label: "🏃‍♂️ Quick start",
+      id: "quick-start",
+    },
+    {
+      type: "category",
+      label: "👨‍🏫 Tutorials and Examples",
       items: [
-        'setup',
-        'setup/setup-ext',
+        {
+          type: "category",
+          label: "Tutorial",
+          items: [
+            "tutorial/http-client",
+          ],
+        },
+        "examples/http-examples",
+        "examples/testcase-examples",
+        "examples/variable-examples",
       ],
     },
     {
-      type: 'doc',
-      label: '🏃‍♂️ Quick start',
-      id: 'quick-start',
-    },
-    {
-      type: 'category',
-      label: '🏊‍♂️ Examples',
+      type: "category",
+      label: "🗂 References",
       items: [
-        'examples/http-examples',
-        'examples/testcase-examples',
-        'examples/variable-examples',
+        "references/concepts",
+        "references/version-reference",
+        "references/variable-reference",
+        "references/http-reference",
+        "references/testcase-reference",
       ],
     },
     {
-      type: 'category',
-      label: '🗂 References',
+      type: "category",
+      label: "👩‍💻 Developers",
       items: [
-        'references/concepts',
-        'references/version-reference',
-        'references/variable-reference',
-        'references/http-reference',
-        'references/testcase-reference',
-      ],
-    },
-    {
-      type: 'category',
-      label: '👩‍💻 Developers',
-      items: [
-        'setup/setup-ext-dev',
-        'setup/setup-cli-dev',
-        'setup/setup-site-dev',
+        "setup/setup-ext-dev",
+        "setup/setup-cli-dev",
+        "setup/setup-site-dev",
       ],
     },
   ],

@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-![chkware | Test management for api era](./assets/github-hero-01.png)
+![CHKware | Low-code API quality testing, and automation toolbox](./assets/github-hero-01.png)
 
 
 *CHKware* (pronounced as */check:ware/*) is a low-code API testing tool, a script-able HTTP client, and an API test automation tool for the API era.
