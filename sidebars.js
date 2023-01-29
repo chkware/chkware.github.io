@@ -43,6 +43,7 @@ const sidebars = {
           label: "Tutorial",
           items: [
             "tutorials/http-client",
+            "tutorials/feature-test",
           ],
         },
         "examples/http-examples",
