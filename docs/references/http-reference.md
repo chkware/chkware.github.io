@@ -7,39 +7,45 @@ title: Http specification reference
 - This page is subject to change. It is requested to check this page frequently.
 :::
 
-The Http specification format is how anyone express a Http request. Following is the full reference to write Http specification file.
+The **Http specification format** is how anyone express a Http request. Following is the full reference to write Http specification file.
 
-Http specification document is a versioned document, meaning there MUST be a `version:` key on the document. 
+Http specification document is a _**versioned document**_, meaning there MUST be a `version:` key on the document.
 
-> [TBD] It's also an exposable document meaning, you can expose local variables to whatever other spec. document it's called from.
+It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/references/variable-reference)
 
-### Reference as example
+### All supported nodes in http specification document
 
 ```yaml
+# Version of the document
+version: "default:http:X.X.X"
+
+# Define HTTP request with this node
 request:
   # valid URL
   url: https://httpbin.org/get
 
-  # for query string or url parameters
+  # To be used for query string or url parameters
+  # above URL becomes https://httpbin.org/get?one=1&two=true
   url_params:
     one: 1
     two: true
 
-  # http method to use
+  # Http method to use
   method: GET # or POST, PUT, PATCH, DELETE, OPTIONS, HEAD
 
-  # send requst headers
-  # add any numbers of headers
-  # Causion: some values or keys need to be wrapped with single (') or double (") quote
+  # Send request headers, add any numbers of headers
+  # Caution: some values or keys need to be wrapped with single (') or double (") quote
+  # Please use quotation marks substitution
   headers:
     User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'
     'Accept-Encoding': 'gzip, deflate'
     accept: '*/*'
 
-  # ==== send authentication header ====
+  # ==== Send authentication header ====
   # two supported type: auth[bearer], auth[basic]
 
   # auth[bearer] example
+  # Send a bearer token this way
   auth[bearer]:
     token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 
@@ -48,8 +54,14 @@ request:
     username: Some_USER
     password: 'Some-P@$$W03D'
 
-  # ==== send request body with the request ====
-  # There are 5 supported type: body[form], body[form-data], body[json], body[xml], body[text]
+  # ==== Send request body with the request ====
+  # There are 5 supported form type: 
+  # 
+  # body[form] -> Send encoded form body with the request
+  # body[form-data] -> Send multipart body with the request
+  # body[json] -> Send JSON body with the request
+  # body[xml] -> Send XML body with the request
+  # body[text] -> Send plain text body with the request
 
   # to send application/x-www-form-urlencoded form enctype
   body[form]:
@@ -103,26 +115,23 @@ request:
       </book>
     </catalog>
 
-  # returns given part of the response after
-  # the request have been executed and got response
-  #
-  # supported values: 'version', 'code', 'reason', 'headers', 'body'
-  # if not available, or set as null, returns all parts of response
-  return: ~ 
+expose: ~ 
 ```
 
 ---
 ### `version` (<small>_`required`_</small>)
 
-`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/references/version-reference).
+`version` is a top-level block that defines a document version. How to write a `version:` block is already defined in [_version reference_](/references/version-reference). 
 
 ### `variables`
 
-`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/references/variable-reference).
+`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block is already defined in [_variable-reference_](/references/variable-reference).
+
+One special local variable named `_response` get added after the response received successfully. This local variable is accessible under [_exposable block_](/references/variable-reference#exposable).
 
 ### `request` (<small>_`required`_</small>)
 
-`request` is a `_required_` block that defines a http request. It's also a returnable block, meaning it have some scoped variables (namely `return:` sub-block) those represents several sub-part of response received afterward. See [`return:`](#requestreturn) for details.
+`request` is a `_required_` block that defines a http request. This holds many other nodes that constructs an http request.
 
 ```yaml
 request:
@@ -153,9 +162,12 @@ request:
 
 ```yaml
 request:
+  url: https://httpbin.org/get
   url_params:
     sort_by: 'projects'
     sort_order: 'DESC'
+
+  # https://httpbin.org/get?sort_by=projects&sort_order=DESC
 ```
 
 ### `request.headers`
@@ -180,7 +192,14 @@ request:
 request:
   auth[basic]:
     username: admin
-    password: 'test1234' # NEVER use this
+    password: 'test1234'
+```
+  This is same as writing following
+
+```yaml
+request:
+  headers:
+    Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
 ```
 
 ### `request.auth[bearer]`
@@ -280,22 +299,6 @@ request:
       ...
     </catalog>
 ```
+### `expose`
 
-### `request.return`
-
-`request.return` is a sub-block. It's actually not a part of `request` block, meaning it don't define any request parameter unlike others mentioned above. Rather, this block is used to mention what data to return after the response have been received.
-
-Supported values: 
-
-- `.version`
-- `.code`
-- `.reason`
-- `.headers`
-- `.body`
-
-If not available, or set as null, returns all parts of response.
-
-```yaml
-request:
-  return: ~
-```
+See docs on [expose node](/references/variable-reference#expose-node)

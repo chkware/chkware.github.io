@@ -51,7 +51,8 @@ request:
     two: 2
 
   # get only response code
-  return: .code
+expose: 
+  - $_response.code
 ```
 
 ### Request with query string and header
@@ -149,8 +150,9 @@ request:
 
   body[json]: { user_id: 32, roll_no: 1, class: 2, name: 'Student name' }
   
-  # get every thing out of response received
-  return: ~
+# get every thing out of response received
+# not writing the following statement also does similar behavior
+expose: ~
 ```
 
 ### Request with form
@@ -185,8 +187,8 @@ request:
     # but will not upload the actual file
     photo: file:///home/username/student-photo-01.png
 
-  # get only response body; response headers, code, etc will be dropped
-  return: .body
+# get only response body; response headers, code, etc will be dropped
+expose: $_response.body
 ```
 
 ### Request with file upload
