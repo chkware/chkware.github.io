@@ -64,6 +64,7 @@ const sidebars = {
       items: [
         'setup/setup-ext-dev',
         'setup/setup-cli-dev',
+        'setup/setup-site-dev',
       ],
     },
   ],
