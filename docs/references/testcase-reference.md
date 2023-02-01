@@ -14,7 +14,7 @@ The Testcase specification format is how anyone express one or more Testcase(s) 
 
 Testcase specification document is a versioned document, meaning there MUST be a `version:` key on the document. 
 
-> [TBD] It's also an exposable document meaning, you can expose local variables to whatever other spec. document it's called from.
+It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/references/variable-reference)
 
 ### Reference as example
 
@@ -46,6 +46,9 @@ spec:
   asserts:
     - {type: AssertEqual, actual: $Response.code, expected: 201}
     - {type: AssertIsMap, actual: $Response.body}
+
+expose:
+  - $_assertion_results
 ```
 
 ---
@@ -432,3 +435,10 @@ spec:
       actual: $StudentObject
       expected: ['name', 'section', 'class', 'class_teacher_id']
 ```
+
+
+### `expose`
+
+`expose` is a sub-block, that can be used to expose local variable of this file to outer scope. For testcase specification document have a local variable called `$_assertion_results` which holds after assertion output.
+
+See docs on [expose node](/references/variable-reference#expose-node)

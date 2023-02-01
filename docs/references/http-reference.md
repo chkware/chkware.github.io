@@ -115,7 +115,8 @@ request:
       </book>
     </catalog>
 
-expose: ~ 
+expose:
+  - $_response
 ```
 
 ---
@@ -300,5 +301,7 @@ request:
     </catalog>
 ```
 ### `expose`
+
+`expose` is a sub-block, that can be used to expose local variable of this file to outer scope. For specification document that support http request also have a local variable called `$_response` which holds successful response in parsed format.
 
 See docs on [expose node](/references/variable-reference#expose-node)
