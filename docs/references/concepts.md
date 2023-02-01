@@ -11,23 +11,29 @@ There are two parts to **`CHKware`** tool.
 
 ### Supported sub-commands
 
-- `chk http [--result] [FILE].chk`
+- `chk http [Options] [FILE].chk [VARIABLEn=VALUEn]`
   
   This sub command runs a file written in [http specification file](http-reference) format.
   
-  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `request.result` key. see [usage](/examples/http-examples#request-with-form) and [documentation](/references/http-reference).
+  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `expose` key. see [usage](/examples/http-examples#request-with-form) and [documentation](/references/http-reference).
 
   **[Options]**
-  - `--result` <small>***optional***</small>: When you put this option, the you'll see only the result.
+  - `--result, -r` <small>***optional***</small>: When you put this option, the you'll see only the result.
+  - `--no-format, -nf` <small>***optional***</small>: When you put this option, the result will not be formatter.
 
   **[Arguments]**
   - `[FILE].chk` <small>***required***</small>: File that you want to execute.
+  - `[VARIABLEn=VALUEn]` <small>***optional***</small>: Pass variables from command-line. format: _variableName1=value1_[space]_variableName2=value2_
 
-- `chk testcase [FILE].chk`
+- `chk testcase [Options] [FILE].chk`
   
   This sub command runs a file written in [testcase specification file](testcase-reference) format.
   
   After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/examples/testcase-examples).
+
+  **[Options]**
+  - `--result, -r` <small>***optional***</small>: When you put this option, the you'll see only the result.
+  - `--no-format, -nf` <small>***optional***</small>: When you put this option, the result will not be formatter.
 
   **[Arguments]**
   - `[FILE].chk` <small>***required***</small>: File that you want to execute.
@@ -36,7 +42,7 @@ There are two parts to **`CHKware`** tool.
 
 Test specification files are written in YAML, having file extension `.chk`. So, before you start writing any specification file, you MUST have a proper knowledge of YAML, see [YAML cheatsheet](https://quickref.me/yaml). We are using this specific extension (`.chk`) so these files do not make you confuse in typical project layout.
 
-> In the future evolution path of **chkware** we are going to introduce more and more specification options and specification types and versions.
+> In the future evolution path of **CHKware** we are going to introduce more and more specification options and specification types and versions.
 
 - [Http specification file](http-reference)
 - [Testcase specification file](testcase-reference)
