@@ -60,6 +60,7 @@ const sidebars = {
         "references/variable-reference",
         "references/http-reference",
         "references/testcase-reference",
+        "references/assertion-reference",
       ],
     },
     {
