@@ -56,7 +56,7 @@ expose:
 ```yaml
 # file: some-request.chk
 ---
-version: 'default:testcase:0.7.2'
+version: 'default:http:0.7.2'
 
 variables:
   Name: 'Morpheus'

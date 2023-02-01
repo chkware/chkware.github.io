@@ -55,7 +55,7 @@ Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-cli
 
   Let us go through the testcase spec. we wrote. If you call the API `https://xkcd.com/614/info.0.json` in any Firefox, the response will be shown like this:
 
-  ![CHKware](../assets/http-resp-xkcdcom.png)
+  ![xkcd.com response](../assets/http-resp-xkcdcom.png)
 
   Please notice that the response contains node `num` and `year` on it. Thus on the spec. in `asserts` we are doing three assertions.
   - If response we got, has code 200; otherwise whether the response was successful.
