@@ -2,9 +2,9 @@
 title: Core concepts and usage
 ---
 
-This page describes some key concepts before you use **`chkware`**.
+This page describes some key concepts before you use **`CHKware`**.
 
-There are two parts to **`chkware`** tool.
+There are two parts to **`CHKware`** tool.
 
 1. The command line tool `chk`, that you can run. `chk` [supported sub-commands](#supported-sub-commands) are listed below.
 2. The [specification files](#specification-files) those contains configuration in _YAML based dsl_. These files have extension `.chk`.

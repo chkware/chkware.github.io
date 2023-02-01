@@ -59,7 +59,7 @@ There is no native binary dependency, therefore it is expected on all the platfo
 
 ### Stability
 
-`chkware` is a tool collection. Followings are stability by tools:
+`CHKware` is a tool collection. Followings are stability by tools:
 
 Command name | Specification document | Stability
 ---|---|---
