@@ -302,6 +302,8 @@ request:
 ```
 ### `expose`
 
-`expose` is a sub-block, that can be used to expose local variable of this file to outer scope. For specification document that support http request also have a local variable called `$_response` which holds successful response in parsed format.
+`expose` is a sub-block, that can be used to expose local variable of this file to outer scope.
+
+For http specification document local variable called `$_response` which holds successful response, is available.
 
 See docs on [expose node](/references/variable-reference#expose-node)
