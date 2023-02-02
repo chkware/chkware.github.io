@@ -8,15 +8,21 @@ title: Testcase specification reference
 - Currently JSON response is only supported type for assertions.
 :::
 
-The Testcase specification format is how anyone express one or more Testcase(s) for a given Http specification. Following is the full reference to write Testcase specification file.
+The _Testcase specification_ format is how anyone express one or more test case(s) for a given _Http specification_. Following is the full reference to write _Testcase specification_ file.
 
 ## Testcase specification
 
 Testcase specification document is a versioned document, meaning there MUST be a `version:` key on the document. 
 
-> [TBD] It's also an exposable document meaning, you can expose local variables to whatever other spec. document it's called from.
+It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/references/variable-reference)
 
 ### Reference as example
+
+There are 2 ways Testcase doc can be written. 1) `request` is in-file, 2) `request` in separate http file.
+
+#### 1) `request` is in-file
+
+1st way is to write a `request` (that defines the http request) and `spec` (that defines what to assert) in same file. E.g:
 
 ```yaml
 ---
@@ -25,7 +31,6 @@ version: 'default:testcase:0.7.2'
 variables:
   Name: 'Morpheus'
   Job: 'leader'
-  Response: ~
   Server: https://reqres.in/api/v1
 
 request:
@@ -35,17 +40,58 @@ request:
     'name': $Name,
     'job': $Job,
   }
-  return: ~
+
+spec:
+  asserts:
+    - {type: AssertEqual, actual: $_response.code, expected: 201}
+    - {type: AssertIsMap, actual: $_response.body}
+
+expose:
+  - $_assertion_results
+  - $_response
+```
+
+2) `request` in separate http file
+
+```yaml
+# file: some-request.chk
+---
+version: 'default:http:0.7.2'
+
+variables:
+  Name: 'Morpheus'
+  Job: 'leader'
+  Server: https://reqres.in/api/v1
+
+request:
+  url: "{$Server}/users"
+  method: POST
+  body[json]: {
+    'name': $Name,
+    'job': $Job,
+  }
+```
+
+and a separate testcase file
+
+```yaml
+# file: some-testcase.chk
+---
+version: 'default:testcase:0.7.2'
 
 spec:
   execute:
-    file: ~
-    with: ~
-    result: $Response
+    file: some-request.chk
+    with:
+      Name: 'Neo'
+      Job: 'The chosen one'
 
   asserts:
-    - {type: AssertEqual, actual: $Response.code, expected: 201}
-    - {type: AssertIsMap, actual: $Response.body}
+    - {type: AssertEqual, actual: $_response.code, expected: 201}
+    - {type: AssertIsMap, actual: $_response.body}
+
+expose: ~
+
 ```
 
 ---
@@ -56,10 +102,12 @@ spec:
 
 ### `request`
 
-- _`required`_ if `spec.execute.file` is empty
-- _`optional`_ if `spec.execute.file` if a http specification doc is linked
+- _`required`_ if no external http spec. doc to be linked
+- _`must not`_ if `spec.execute.file` if a http specification doc is linked
 
 `request` is a top-level block that defines a http request. How to write a `request:` block, is [already defined here](/references/http-reference#request-required).
+
+`request` block, and `spec.execute.file` MUST NOT stay on same file. System will throw an error on that case.
 
 ### `variables`
 
@@ -78,8 +126,7 @@ spec:
 
 `spec.execute` is a sub-block that defines a testcase spec's pre-requisite http request execution before making assertion(s). It has following components:
 
-- `spec.execute.file` is used to point the file that contains http specification to run before assertion. If unavailable, or set to null, then execute current file `request` block.
-  > [TBD] External file not supported now
+- `spec.execute.file` is used to point the file that contains http specification to run before assertion. If unavailable, or set to null, then system executes any `request` block from current file.
 - `spec.execute.with` is used to pass local scoped variables to external linked file on `spec.execute.file` before execution happen. Not supported for locally linked `request` block.
 - `spec.execute.result` is used to store result(s) of the execution. Here we can put a locally scoped variable to receive data to store after request is done.
 
@@ -90,8 +137,10 @@ variables:
 
 spec:
   execute:
-    file: ~
-    with: ~
+    file: some-request.chk
+    with:
+      Name: 'Neo'
+      Job: 'The chosen one'
     result: $Response
 ```
 
@@ -113,322 +162,13 @@ spec:
       actual: $Response
 ```
 
-## Assertions
+[More about assertions](/references/assertion-reference) can be found here.
 
-Following are currently supported assertions. Variable or values supplied in the `actual` field must contain JSON.
 
-[TBD] will support other data interchange format.
+### `expose`
 
-### AssertEqual
+`expose` is a sub-block, that can be used to expose local variable of this file to outer scope. 
 
-Checks if `actual` and `expected` is equal.
+For testcase specification document local variable called `$_assertion_results` which holds after assertion output, and `$_response` which holds response after request execute, are available.
 
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertEqual, actual: $Response.code, expected: 201}
-```
-
-### AssertNotEqual
-
-Checks if `actual` and `expected` is not equal.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertNotEqual, actual: $Response.code, expected: 200}
-```
-
-### AssertEmpty
-
-Checks if `actual` is empty.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertEmpty, actual: $Response.varOne}
-```
-
-### AssertFalse
-
-Checks if `actual` is _False_.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertFalse, actual: $Response.var_2}
-```
-
-### AssertTrue
-
-Checks if `actual` is _True_.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertTrue, actual: $Response.varOne}
-```
-
-### AssertIsInt
-
-Checks if `actual` is of type integer.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertIsInt, actual: $Response.varOne}
-```
-
-### AssertIsString
-
-Checks if `actual` is of type string.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertIsString, actual: $Response.varOne}
-```
-
-### AssertIsFloat
-
-Checks if `actual` is of type floating point.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertIsFloat, actual: $Response.varOne}
-```
-
-### AssertIsBool
-
-Checks if `actual` is of type boolean, meaning either _True_ or _False_.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertIsBool, actual: $Response.varOne}
-```
-
-### AssertCount
-
-Checks if `actual` is countable, and have the number of elements given in `expected`. One particular use-case is to test short list of paginated items. Let's say a JSON node `articles` should contains a list of 5 items, then someone would write that as:
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertCount
-      actual: $Response.articles
-      expected: 5
-```
-
-`AssertCount` also can be use to check a JSON object have given number of keys, as well.
-
-### AssertGreater
-
-Checks if `actual` is only greater than `expected` value. Integer, floating point, decimal values can be compared.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertGreater
-      actual: $Price
-      expected: 500
-```
-
-### AssertGreaterOrEqual
-
-Checks if `actual` is greater than or equal to `expected` value. Integer, floating point, decimal values can be compared.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertGreaterOrEqual
-      actual: $Price
-      expected: 500
-```
-
-### AssertLess
-
-Checks if `actual` is only less than `expected` value. Integer, floating point, decimal values can be compared.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertLess
-      actual: $Price
-      expected: 500
-```
-
-### AssertLessOrEqual
-
-Checks if `actual` is less than or equal to `expected` value. Integer, floating point, decimal values can be compared.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertLessOrEqual
-      actual: $Price
-      expected: 500
-```
-
-### AssertStrContains
-
-Checks if data given in `actual` is a string. If so, does it contains the substring given in `expected`.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertStrContains
-      actual: "testing is great for code"
-      expected: 'code'
-```
-
-### AssertIsList
-
-Checks if `actual` is of type dictionary. Usually, JSON lists are list.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertIsList, actual: $Response}
-```
-
-### AssertListContains
-
-Checks if data given in `actual` is a list. If so, does it contains the value given in `expected`.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertListContains
-      actual: $Countries
-      expected: 'GB'
-
-    - type: AssertListContains
-      actual: $Currency
-      expected: {"country": "GB", "currency": "GBP"}
-```
-
-### AssertListHasIndex
-
-Checks if data given in `actual` is a list. If so, does it contains `expected` index.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertListHasIndex
-      actual: $Articles
-      expected: 6
-```
-
-### AssertIsMap
-
-Checks if `actual` is of type dictionary. Usually, JSON objects are dictionary.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - {type: AssertIsMap, actual: $Response}
-```
-
-### AssertMapContains
-
-Checks if data given in `actual` is a JSON object or dictionary. If so, does it contains a value given in `expected`.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - { type: AssertMapContains, actual: $StudentObject, expected: 10 }
-
-    - type: AssertMapContains
-      actual: $StudentObject
-      expected: {'teacher': {'id': 11, 'name': 'Some one'}}
-```
-
-### AssertMapHasKey
-
-Checks if data given in `actual` is a JSON object or dictionary. If so, does it contains a key given in `expected`.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - { type: AssertMapHasKey, actual: $StudentObject, expected: 'name' }
-```
-
-### AssertMapDoNotHasKey
-
-Checks if data given in `actual` is a JSON object or dictionary. If so, does it DOES NOT contains a key given in `expected`.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - { type: AssertMapDoNotHasKey, actual: $StudentObject, expected: 'salary' }
-```
-
-### AssertMapKeyCount
-
-Checks if data given in `actual` is a JSON object or dictionary. If so, does it have same number of keys given in `expected`.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - { type: AssertMapKeyCount, actual: $StudentObject, expected: 10 }
-```
-
-### AssertMapHasKeys
-
-Checks if data given in `actual` is a JSON object or dictionary. If so, does it contains all of keys given in `expected`. `expected` have to be a list of string.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - { type: AssertMapHasKeys, actual: $StudentObject, expected: ['name', 'section', 'class'] }
-```
-
-### AssertMapDoNotHasKeys
-
-Checks if data given in `actual` is a JSON object or dictionary. If so, it DOES NOT contains any of keys given in `expected`. `expected` have to be a list of string.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - { type: AssertMapDoNotHasKeys, actual: $StudentObject, expected: ['salary', 'year_of_experience'] }
-```
-
-### AssertMapExactKeys
-
-Checks if data given in `actual` is a JSON object or dictionary. If so, it only contains keys given in `expected`. `expected` have to be a list of string.
-
-```yaml
-spec:
-  ...
-  asserts:
-    - type: AssertMapExactKeys
-      actual: $StudentObject
-      expected: ['name', 'section', 'class', 'class_teacher_id']
-```
+See docs on [expose node](/references/variable-reference#expose-node)

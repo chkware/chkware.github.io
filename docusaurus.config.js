@@ -9,14 +9,14 @@ const TwitterSvg =
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'chkware',
-  tagline: 'Test management for API era',
+  title: 'CHKware',
+  tagline: 'Low-code API quality testing, and automation toolbox',
   url: 'https://chkware.github.io',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/logo.png',
-  organizationName: 'chkware',
+  organizationName: 'CHKware',
   projectName: 'chkware.github.io',
   deploymentBranch: 'gh-pages',
   trailingSlash: false,
@@ -48,10 +48,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'chkware',
+        title: 'CHKware',
         hideOnScroll: false,
         logo: {
-          alt: 'chkware Logo',
+          alt: 'CHKware Logo',
           src: 'img/logo.png',
         },
         items: [
@@ -64,7 +64,7 @@ const config = {
           {
             href: 'https://github.com/chkware/cli',
             position: 'right',
-            'aria-label': 'chkware gitHub repository',
+            'aria-label': 'CHKware gitHub repository',
             className: 'header-github-link',
           },
         ],
@@ -98,26 +98,26 @@ const config = {
             title: 'Follow us',
             items: [
               {
-                label: 'chkware @ twitter',
+                label: 'CHKware @ twitter',
                 href: 'https://twitter.com/chkware',
               },
               {
-                label: 'chkware @ github',
+                label: 'CHKware @ github',
                 href: 'https://github.com/chkware/cli',
               },
               {
-                label: 'chkware @ pypi',
+                label: 'CHKware @ pypi',
                 href: 'https://pypi.org/project/chk',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} chkware.`,
+        copyright: `Copyright © ${new Date().getFullYear()} CHKware.`,
       },
       metadata: [
         {
-          name: 'chkware',
-          content: 'Test management for API era',
+          name: 'CHKware',
+          content: 'Low-code API quality testing, and automation toolbox',
         },
       ],
       image: 'img/banner.png',
@@ -133,7 +133,7 @@ const config = {
       },
       announcementBar: {
         id: 'support_us',
-        content: `⭐️ If you like <strong>chkware</strong>, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chkware/cli">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/chkware" >Twitter</a> ${TwitterSvg}`,
+        content: `⭐️ If you like <strong>CHKware</strong>, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/chkware/cli">GitHub</a> and follow us on <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/chkware" >Twitter</a> ${TwitterSvg}`,
         isCloseable: false,
         backgroundColor: '#f2f2f2',
       },

@@ -13,30 +13,63 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-
   docs: [
-    'home',
-    'introduction',
-    'setup',
-    'quick-start',
     {
-      type: 'category',
-      label: 'Examples',
+      type: "doc",
+      label: "🏡 Home",
+      id: "home",
+    },
+    {
+      type: "doc",
+      label: "💡 Introduction",
+      id: "introduction",
+    },
+    {
+      type: "category",
+      label: "⚒️ Setup docs",
+      items: ["setup", "setup/setup-ext"],
+    },
+    {
+      type: "doc",
+      label: "🏃‍♂️ Quick start",
+      id: "quick-start",
+    },
+    {
+      type: "category",
+      label: "👨‍🏫 Tutorials and Examples",
       items: [
-        'examples/http-examples',
-        'examples/testcase-examples',
-        'examples/variable-examples',
+        {
+          type: "category",
+          label: "Tutorial",
+          items: [
+            "tutorials/http-client",
+            "tutorials/feature-test",
+          ],
+        },
+        "examples/http-examples",
+        "examples/testcase-examples",
+        "examples/variable-examples",
       ],
     },
     {
-      type: 'category',
-      label: 'References',
+      type: "category",
+      label: "🗂 References",
       items: [
-        'references/concepts',
-        'references/version-reference',
-        'references/variable-reference',
-        'references/http-reference',
-        'references/testcase-reference',
+        "references/concepts",
+        "references/version-reference",
+        "references/variable-reference",
+        "references/http-reference",
+        "references/testcase-reference",
+        "references/assertion-reference",
+      ],
+    },
+    {
+      type: "category",
+      label: "👩‍💻 Developers",
+      items: [
+        "setup/setup-ext-dev",
+        "setup/setup-cli-dev",
+        "setup/setup-site-dev",
       ],
     },
   ],

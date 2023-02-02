@@ -2,32 +2,31 @@
 slug: /
 title: Home
 hide_title: true
----
 
-![chkware | Test management for api era](./assets/github-readme-01.png)
+---
+![CHKware | Low-code API quality testing, and automation toolbox](./assets/github-readme-01.png)
 
 [![PyPI version](https://badge.fury.io/py/chk.svg)](https://badge.fury.io/py/chk)
-[![Python 3.8](https://img.shields.io/badge/python-3.10-red.svg)](https://www.python.org/downloads/release/python-3102/)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-red.svg)](https://www.python.org/downloads/)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/chkware.svg?style=social&label=Follow%20%40chkware)](https://twitter.com/chkware)
-> Test management for API era.
 
 ### Introduction
 
-API tests management is not easy to develop, and maintain. It requires multitude of knowledge of programming libraries, business scenarios, infrastructure details, etc - unless you use ***chkware***.
+API quality test, and automation management is not easy to develop, and maintain. It requires multitude of knowledge of programming libraries, business scenarios, infrastructure details, etc - unless you use ***CHKware***. 
 
-***chkware*** (pronounced as */check:ware/*) helps you write accurate, robust, and expressive feature tests for your API in less time.
+***CHKware*** (pronounced as */tʃek-wer/*, i.e. *check-ware*) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
  
-Read [more value propositions](/introduction) here. Find [changelog](https://github.com/chkware/cli/blob/main/docs/CHANGELOG.md) here.
+Read [about the problems](/introduction) *CHKware* addresses. Find [changelog](https://github.com/chkware/cli/blob/main/docs/CHANGELOG.md).
 
 ### Setup
 
-With [**Python 3.10**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) preinstalled, run following in your terminal to get ***chkware*** installed.
+With [**Python 3.11**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) preinstalled, run following in your terminal to get *CHKware* installed.
 
 ```bash
-$ pipx install chk
+pipx install chk
 ```
 
-Jump to the [setup guide](/setup) for different ways to install ***chkware***.
+Jump to the [setup guide](/setup) for different ways to install ***CHKware***.
 
 ### Usage
 
