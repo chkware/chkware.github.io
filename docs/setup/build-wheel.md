@@ -16,7 +16,7 @@ Follow the steps to do a manual release on PyPi.
 
     ```bash
     cd cli-wheel
-    ``` 
+    ```
 
 - Update version number on `setup.cfg`
 
@@ -30,9 +30,9 @@ Follow the steps to do a manual release on PyPi.
     """v0.X.X | supported version strings: 0.7.2, ..."""
     ```
 
-- Update [_docs/CHANGELOG.md_](CHANGELOG.md) with the release _0.X.X_ information
+- Update *docs/CHANGELOG.md* with the release *0.X.X* information
 
-- Make directory for local _virtualenv_ setup
+- Make directory for local *virtualenv* setup
 
     ```bash
     mkdir ./.venv
