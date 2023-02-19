@@ -4,17 +4,17 @@ title: Introduction
 
 ![CHKware | Low-code API quality testing, and automation toolbox](./assets/github-hero-01.png)
 
-
 *CHKware* (pronounced as */check:ware/*) is a low-code API testing tool, a script-able HTTP client, and an API test automation tool for the API era.
 
 It is available as a command-line application. You write test specification files in a [YAML](https://yaml.org/)-based [DSL](https://en.wikipedia.org/wiki/Domain-specific_language). In that specification file you will define some structured configurations to be used for the following purpose:
 
-- Create reusable http request specification. [alpha]
-- Create reusable test specifications. [alpha]
+- Create reusable http request specification.
+- Create reusable test specifications.
 
 Afterward, you run those test specification files with *CHKware*, and get test results or even reuse them.
 
 ---
+
 ### Motivation
 
 In today's world, API is one of the key fuels that drive business. It is the way web applications consume services from self-hosted or 3rd-party vendors. Recent technology movements are going to a fluid internet direction, where *vendor_A* have one API, *vendor_B* is another API provider, while we are the consumers (e-commerce, fin-tech) of those vendor APIs. We use those APIs to host our contents based on those APIs. Maybe we are *vendor_U* hosting more complex APIs on top of those. So, with the upcoming complexity of integration we need better tooling for API testing. Testing tools for modularize api testing.
@@ -63,5 +63,5 @@ There is no native binary dependency, therefore it is expected on all the platfo
 
 Command name | Specification document | Stability
 ---|---|---
-`http`| Http | _alpha_
-`testcase`| Testcase | _alpha_
+`chk http`| Http | *alpha*
+`chk testcase`| Testcase | *alpha*
