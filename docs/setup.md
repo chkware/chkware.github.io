@@ -23,3 +23,5 @@ pipx upgrade chk
 ```
 
 Otherwise, if _pip_ was used to install then same process given above should work for upgrade as well.
+
+Alternatively, chkware tool can be build and use as a zipapp, [following this instruction](/setup/build-zipapp).
