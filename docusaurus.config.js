@@ -11,7 +11,7 @@ const TwitterSvg =
 const config = {
   title: 'CHKware',
   tagline: 'Low-code API quality testing, and automation toolbox',
-  url: 'https://chkware.github.io',
+  url: 'https://docs.chkware.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

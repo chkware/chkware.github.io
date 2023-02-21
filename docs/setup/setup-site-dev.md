@@ -4,7 +4,7 @@ title: Setup for website developer
 
 ### Local development environment setup for *CHKware* documentation site
 
-This repository holds source code and publishable website for [**`CHKware`**](https://github.com/chkware/cli#readme). Please access using https://chkware.github.io.
+This repository holds source code and publishable website for [**`CHKware`**](https://github.com/chkware/cli#readme). Please access using https://docs.chkware.com.
 
 ### Installation
 
