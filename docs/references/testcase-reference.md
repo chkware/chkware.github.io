@@ -124,7 +124,6 @@ spec: ...
 - `spec.execute.result` is used to store result(s) of the execution. Here we can put a locally scoped variable to receive data to store after request is done.
 
 ```yaml
-
 ---
 variables:
   Response: ~
@@ -148,7 +147,6 @@ spec:
 - `expected` what is expect value
 
 ```yaml
-
 ---
 spec:
   asserts:

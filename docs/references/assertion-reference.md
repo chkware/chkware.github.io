@@ -22,7 +22,6 @@ It supports a list of assertions to be supplied. Each of the list item consists 
 e.g.
 
 ```yaml
-
 ---
 spec:
   asserts:
