@@ -41,10 +41,7 @@ const sidebars = {
         {
           type: "category",
           label: "Tutorial",
-          items: [
-            "tutorials/http-client",
-            "tutorials/feature-test",
-          ],
+          items: ["tutorials/http-client", "tutorials/feature-test"],
         },
         "examples/http-examples",
         "examples/testcase-examples",

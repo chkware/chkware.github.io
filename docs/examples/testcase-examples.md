@@ -3,9 +3,10 @@ title: Testcase examples
 ---
 
 :::note
+
 - This page should be use as reference for specification files.
 - This page is subject to change. It is requested to check this page frequently.
-:::
+  :::
 
 :::note
 Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/blob/main/tests/resources/storage/sample_config/bitcoin-usd-testcase.chk) repository
@@ -17,20 +18,17 @@ Case-wise more example can be found in [https://github.com/chkware/cli](https://
 
 ```yaml
 ---
-version: 'default:testcase:0.7.2'
+version: "default:testcase:0.7.2"
 
 request:
   url: "https://reqres.in/api/users"
   method: POST
-  body[json]: {
-    'name': My Name,
-    'job': My Job,
-  }
+  body[json]: { "name": My Name, "job": My Job }
 
 spec:
   asserts:
-    - {type: AssertEqual, actual: $_response.code, expected: 201}
-    - {type: AssertIsMap, actual: $_response.body}
+    - { type: AssertEqual, actual: $_response.code, expected: 201 }
+    - { type: AssertIsMap, actual: $_response.body }
 ```
 
 The above testcase spec. doc define a request that makes a `POST` call to `https://reqres.in/api/users` URL with a body `{"name": "My Name", "job": "My Job"}`.
@@ -53,15 +51,12 @@ A http spec. doc can be written on separate file, that does same as above reques
 ```yaml
 # file: same-request.chk
 ---
-version: 'default:http:0.7.2'
+version: "default:http:0.7.2"
 
 request:
   url: "https://reqres.in/api/users"
   method: POST
-  body[json]: {
-    'name': My Name,
-    'job': My Job,
-  }
+  body[json]: { "name": My Name, "job": My Job }
 ```
 
 Now we can point out above file to execute before make assertions like below (assuming both file lives on same directory).
@@ -69,14 +64,14 @@ Now we can point out above file to execute before make assertions like below (as
 ```yaml
 # file: same-testcase.chk
 ---
-version: 'default:testcase:0.7.2'
+version: "default:testcase:0.7.2"
 
 spec:
   execute:
     file: "./same-request.chk"
   asserts:
-    - {type: AssertEqual, actual: $_response.code, expected: 201}
-    - {type: AssertIsMap, actual: $_response.body}
+    - { type: AssertEqual, actual: $_response.code, expected: 201 }
+    - { type: AssertIsMap, actual: $_response.body }
 ```
 
 Please notice the `$_response` in the testcase doc. This variable is available after the request gets executed as local variable.
@@ -88,7 +83,7 @@ To pass data from a testcase spec. doc to a http spec. doc, we first need to add
 ```yaml
 # file: same-request.chk
 ---
-version: 'default:http:0.7.2'
+version: "default:http:0.7.2"
 
 variables:
   name: My Name
@@ -97,10 +92,7 @@ variables:
 request:
   url: "https://reqres.in/api/users"
   method: POST
-  body[json]: {
-    'name': $name,
-    'job': $job,
-  }
+  body[json]: { "name": $name, "job": $job }
 ```
 
 Now we can point out which value we want to pass using `with` statement in `execute` block.
@@ -108,7 +100,7 @@ Now we can point out which value we want to pass using `with` statement in `exec
 ```yaml
 # file: same-testcase.chk
 ---
-version: 'default:testcase:0.7.2'
+version: "default:testcase:0.7.2"
 
 spec:
   execute:
@@ -117,8 +109,8 @@ spec:
       name: Her Name
       job: Her Job
   asserts:
-    - {type: AssertEqual, actual: $_response.code, expected: 201}
-    - {type: AssertIsMap, actual: $_response.body}
+    - { type: AssertEqual, actual: $_response.code, expected: 201 }
+    - { type: AssertIsMap, actual: $_response.body }
 ```
 
 Please notice that if we do not set a `with` then request will be sent with default value.

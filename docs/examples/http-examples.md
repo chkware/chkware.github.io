@@ -3,9 +3,10 @@ title: Http examples
 ---
 
 :::note
+
 - This page should be use as reference for specification files.
 - This page is subject to change. It is requested to check this page frequently.
-:::
+  :::
 
 :::note
 Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config) repository
@@ -51,7 +52,7 @@ request:
     two: 2
 
   # get only response code
-expose: 
+expose:
   - $_response.code
 ```
 
@@ -70,7 +71,7 @@ request:
     two: 2
 
   headers:
-    User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
     Accept-Encoding: gzip, deflate
 ```
 
@@ -90,7 +91,7 @@ request:
 
   auth[basic]:
     username: Some_USER
-    password: 'Some-P@$$W03D'
+    password: "Some-P@$$W03D"
 ```
 
 `username` and `password` will be automatically transformed to secret string as per [Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) scheme.
@@ -148,8 +149,8 @@ request:
   auth[bearer]:
     token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
 
-  body[json]: { user_id: 32, roll_no: 1, class: 2, name: 'Student name' }
-  
+  body[json]: { user_id: 32, roll_no: 1, class: 2, name: "Student name" }
+
 # get every thing out of response received
 # not writing the following statement also does similar behavior
 expose: ~
@@ -181,9 +182,9 @@ request:
     user_id: 32,
     roll_no: 1,
     class: 2,
-    name: 'Student name'
+    name: "Student name"
 
-    # note: this will just set photo with file path as string, 
+    # note: this will just set photo with file path as string,
     # but will not upload the actual file
     photo: file:///home/username/student-photo-01.png
 
@@ -198,7 +199,6 @@ Following example will submit a form with binary image data in POST method. You 
 You can override `Content-Type` headers if you want, however that will override `Content-Type: multipart/form-data` header which is automatically set.
 
 Note, that you can upload files in this way. Please follow [this section on wikipedia](https://en.wikipedia.org/wiki/File_URI_scheme#Examples) on `file://` to set path on different OS platform.
-
 
 ```yaml
 ---
@@ -218,7 +218,7 @@ request:
     user_id: 32,
     roll_no: 1,
     class: 2,
-    name: 'Student name'
+    name: "Student name"
 
     # note: this will actually upload the file
     photo: file:///home/username/student-photo-01.png

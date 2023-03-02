@@ -3,9 +3,10 @@ title: Variable examples
 ---
 
 :::note
+
 - This page should be use as reference for specification files.
 - This page is subject to change. It is requested to check this page frequently.
-:::
+  :::
 
 :::note
 Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/variables) repository
@@ -13,9 +14,9 @@ Case-wise more example can be found in [https://github.com/chkware/cli](https://
 
 [Variable specification document reference](/references/variable-reference)
 
-We can also use variables inside a http and testcase specification file. See examples below. 
+We can also use variables inside a http and testcase specification file. See examples below.
 
-** * This is highly experimental. Report any bug you can find.**
+** \* This is highly experimental. Report any bug you can find.**
 
 ### Request with query string using variables
 
@@ -67,21 +68,18 @@ request:
 
 ```yaml
 ---
-version: 'default:testcase:0.7.2'
+version: "default:testcase:0.7.2"
 
 variables:
-  Name: 'Morpheus'
-  Job: 'leader'
+  Name: "Morpheus"
+  Job: "leader"
   Response: ~
   Server: https://reqres.in/api/v1
 
 request:
   url: "{$Server}/users"
   method: POST
-  body[json]: {
-    'name': $Name,
-    'job': $Job,
-  }
+  body[json]: { "name": $Name, "job": $Job }
   return: ~
 
 spec:
@@ -90,7 +88,6 @@ spec:
     result: $Response
 
   asserts:
-    - {type: AssertEqual, actual: $Response.code, expected: 201}
-    - {type: AssertIsMap, actual: $Response.body}
-
+    - { type: AssertEqual, actual: $Response.code, expected: 201 }
+    - { type: AssertIsMap, actual: $Response.body }
 ```
