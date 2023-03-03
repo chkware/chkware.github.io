@@ -1,8 +1,8 @@
 ---
-title: Setup for website developer 
+title: Setup for website developer
 ---
 
-### Local development environment setup for *CHKware* documentation site
+### Local development environment setup for _CHKware_ documentation site
 
 This repository holds source code and publishable website for [**`CHKware`**](https://github.com/chkware/cli#readme). Please access using https://docs.chkware.com.
 
@@ -120,4 +120,4 @@ The current status of the website is **under construction**. Please follow us on
 
 ---
 
-*CHKware* website uses [docusaurus v2.3.0](https://github.com/facebook/docusaurus/releases/tag/v2.3.0) as CMS backend.
+_CHKware_ website uses [docusaurus v2.3.0](https://github.com/facebook/docusaurus/releases/tag/v2.3.0) as CMS backend.

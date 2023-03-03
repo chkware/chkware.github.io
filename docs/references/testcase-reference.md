@@ -3,16 +3,17 @@ title: Testcase specification reference
 ---
 
 :::note
+
 - This page should be use as reference for testcase specification files.
 - This page is subject to change. It is requested to check this page frequently.
 - Currently JSON response is only supported type for assertions.
-:::
+  :::
 
 The _Testcase specification_ format is how anyone express one or more test case(s) for a given _Http specification_. Following is the full reference to write _Testcase specification_ file.
 
 ## Testcase specification
 
-Testcase specification document is a versioned document, meaning there MUST be a `version:` key on the document. 
+Testcase specification document is a versioned document, meaning there MUST be a `version:` key on the document.
 
 It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/references/variable-reference)
 
@@ -26,50 +27,44 @@ There are 2 ways Testcase doc can be written. 1) `request` is in-file, 2) `reque
 
 ```yaml
 ---
-version: 'default:testcase:0.7.2'
+version: "default:testcase:0.7.2"
 
 variables:
-  Name: 'Morpheus'
-  Job: 'leader'
+  Name: "Morpheus"
+  Job: "leader"
   Server: https://reqres.in/api/v1
 
 request:
   url: "{$Server}/users"
   method: POST
-  body[json]: {
-    'name': $Name,
-    'job': $Job,
-  }
+  body[json]: { "name": $Name, "job": $Job }
 
 spec:
   asserts:
-    - {type: AssertEqual, actual: $_response.code, expected: 201}
-    - {type: AssertIsMap, actual: $_response.body}
+    - { type: AssertEqual, actual: $_response.code, expected: 201 }
+    - { type: AssertIsMap, actual: $_response.body }
 
 expose:
   - $_assertion_results
   - $_response
 ```
 
-2) `request` in separate http file
+2. `request` in separate http file
 
 ```yaml
 # file: some-request.chk
 ---
-version: 'default:http:0.7.2'
+version: "default:http:0.7.2"
 
 variables:
-  Name: 'Morpheus'
-  Job: 'leader'
+  Name: "Morpheus"
+  Job: "leader"
   Server: https://reqres.in/api/v1
 
 request:
   url: "{$Server}/users"
   method: POST
-  body[json]: {
-    'name': $Name,
-    'job': $Job,
-  }
+  body[json]: { "name": $Name, "job": $Job }
 ```
 
 and a separate testcase file
@@ -77,21 +72,20 @@ and a separate testcase file
 ```yaml
 # file: some-testcase.chk
 ---
-version: 'default:testcase:0.7.2'
+version: "default:testcase:0.7.2"
 
 spec:
   execute:
     file: some-request.chk
     with:
-      Name: 'Neo'
-      Job: 'The chosen one'
+      Name: "Neo"
+      Job: "The chosen one"
 
   asserts:
-    - {type: AssertEqual, actual: $_response.code, expected: 201}
-    - {type: AssertIsMap, actual: $_response.body}
+    - { type: AssertEqual, actual: $_response.code, expected: 201 }
+    - { type: AssertIsMap, actual: $_response.body }
 
 expose: ~
-
 ```
 
 ---
@@ -118,8 +112,7 @@ expose: ~
 `spec` is a top-level block that defines a testcase specification.
 
 ```yaml
-spec:
-  ...
+spec: ...
 ```
 
 ### `spec.execute` (<small>_`required`_</small>)
@@ -131,7 +124,7 @@ spec:
 - `spec.execute.result` is used to store result(s) of the execution. Here we can put a locally scoped variable to receive data to store after request is done.
 
 ```yaml
-...
+---
 variables:
   Response: ~
 
@@ -139,8 +132,8 @@ spec:
   execute:
     file: some-request.chk
     with:
-      Name: 'Neo'
-      Job: 'The chosen one'
+      Name: "Neo"
+      Job: "The chosen one"
     result: $Response
 ```
 
@@ -154,20 +147,19 @@ spec:
 - `expected` what is expect value
 
 ```yaml
-...
+---
 spec:
   asserts:
-    - {type: AssertEqual, actual: $Response.code, expected: 201}
+    - { type: AssertEqual, actual: $Response.code, expected: 201 }
     - type: assertIsMap
       actual: $Response
 ```
 
 [More about assertions](/references/assertion-reference) can be found here.
 
-
 ### `expose`
 
-`expose` is a sub-block, that can be used to expose local variable of this file to outer scope. 
+`expose` is a sub-block, that can be used to expose local variable of this file to outer scope.
 
 For testcase specification document local variable called `$_assertion_results` which holds after assertion output, and `$_response` which holds response after request execute, are available.
 

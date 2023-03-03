@@ -3,9 +3,10 @@ title: Http specification reference
 ---
 
 :::note
+
 - This page should be use as reference for http specification files.
 - This page is subject to change. It is requested to check this page frequently.
-:::
+  :::
 
 The **Http specification format** is how anyone express a Http request. Following is the full reference to write Http specification file.
 
@@ -37,9 +38,9 @@ request:
   # Caution: some values or keys need to be wrapped with single (') or double (") quote
   # Please use quotation marks substitution
   headers:
-    User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'
-    'Accept-Encoding': 'gzip, deflate'
-    accept: '*/*'
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+    "Accept-Encoding": "gzip, deflate"
+    accept: "*/*"
 
   # ==== Send authentication header ====
   # two supported type: auth[bearer], auth[basic]
@@ -52,11 +53,11 @@ request:
   # auth[basic] example
   auth[basic]:
     username: Some_USER
-    password: 'Some-P@$$W03D'
+    password: "Some-P@$$W03D"
 
   # ==== Send request body with the request ====
-  # There are 5 supported form type: 
-  # 
+  # There are 5 supported form type:
+  #
   # body[form] -> Send encoded form body with the request
   # body[form-data] -> Send multipart body with the request
   # body[json] -> Send JSON body with the request
@@ -65,30 +66,25 @@ request:
 
   # to send application/x-www-form-urlencoded form enctype
   body[form]:
-    'var 1': 'var str 1'
-    var-2: 'var str 2'
+    "var 1": "var str 1"
+    var-2: "var str 2"
     # note: this will just pass filepath as value
     var_3: file:///home/username/.vimrc
 
   # to upload file as part of body use multipart/form-data like
   body[form-data]:
-    'var 1': 'var str 1'
-    var-2: 'var str 2'
+    "var 1": "var str 1"
+    var-2: "var str 2"
     # note this will actually upload a file
     # we use file protocol (file://) scheme to identify a file
     var_3: file:///home/username/.vimrc
     var4: file:///home/username/Documents/CID-25601.IpPhone.rtf
 
   # to send plain text
-  body[text]: 'Plain text here'
+  body[text]: "Plain text here"
 
   # to pass as json to body pass a yaml object like
-  body[json]: {
-    user_id: 32, 
-    roll_no: 1, 
-    class: 2, 
-    name: 'Student name' 
-  }
+  body[json]: { user_id: 32, roll_no: 1, class: 2, name: "Student name" }
 
   # to pass a xml as body use a yaml literal block
   body[xml]: |
@@ -120,9 +116,10 @@ expose:
 ```
 
 ---
+
 ### `version` (<small>_`required`_</small>)
 
-`version` is a top-level block that defines a document version. How to write a `version:` block is already defined in [_version reference_](/references/version-reference). 
+`version` is a top-level block that defines a document version. How to write a `version:` block is already defined in [_version reference_](/references/version-reference).
 
 ### `variables`
 
@@ -135,8 +132,7 @@ One special local variable named `_response` get added after the response receiv
 `request` is a `_required_` block that defines a http request. This holds many other nodes that constructs an http request.
 
 ```yaml
-request:
-  ...
+request: ...
 ```
 
 ### `request.url` (<small>_`required`_</small>)
@@ -165,8 +161,8 @@ request:
 request:
   url: https://httpbin.org/get
   url_params:
-    sort_by: 'projects'
-    sort_order: 'DESC'
+    sort_by: "projects"
+    sort_order: "DESC"
 
   # https://httpbin.org/get?sort_by=projects&sort_order=DESC
 ```
@@ -178,9 +174,9 @@ request:
 ```yaml
 request:
   headers:
-      User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36'
-      Accept-Encoding: 'gzip, deflate'
-      Accept: '*/*'
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
 ```
 
 ### `request.auth[basic]`
@@ -193,9 +189,10 @@ request:
 request:
   auth[basic]:
     username: admin
-    password: 'test1234'
+    password: "test1234"
 ```
-  This is same as writing following
+
+This is same as writing following
 
 ```yaml
 request:
@@ -224,8 +221,8 @@ You can override `Content-Type` headers if you want, however that will override 
 ```yaml
 request:
   body[form]:
-    'var 1': 'var str 1'
-    var-2: 'var str 2'
+    "var 1": "var str 1"
+    var-2: "var str 2"
     var_3: file:///home/username/.vimrc # note: this will just pass filepath as value
 ```
 
@@ -240,8 +237,8 @@ Note, that you can upload files in this way. Please follow [this section on wiki
 ```yaml
 request:
   body[form-data]:
-    'var 1': 1
-    var-2: 'var str 2'
+    "var 1": 1
+    var-2: "var str 2"
     var_3: file:///home/username/.vimrc
     var4: file:///home/username/Documents/CID-25601.IpPhone.rtf
 ```
@@ -249,7 +246,6 @@ request:
 ### `request.body[text]`
 
 `request.body[text]` is a sub-block, that is used to submit a plain text form. More accurately send `text/plain` form `enctype`. It only supports string. Multiple line of string is also supported.
-
 
 ```yaml
 request:
@@ -276,7 +272,7 @@ request:
     roll_no: 1
     person:
       class: 2
-      name: 'Student name'
+      name: "Student name"
 ```
 
 ### `request.body[xml]`
@@ -300,6 +296,7 @@ request:
       ...
     </catalog>
 ```
+
 ### `expose`
 
 `expose` is a sub-block, that can be used to expose local variable of this file to outer scope.

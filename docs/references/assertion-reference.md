@@ -3,14 +3,15 @@ title: Assertion reference
 ---
 
 :::note
+
 - This page should be use as reference for asserts used in testcase specification files.
 - This page is subject to change. It is requested to check this page frequently.
 - Currently JSON response is only supported type for assertions.
-:::
+  :::
 
 Assertions are integral part of [Testcase spec.](/references/testcase-reference) Following are the assertion keys supported in most latest version of Testcase spec.
 
-Assertions are used to validate data in testcase specification after http request execution has successfully returned the response. 
+Assertions are used to validate data in testcase specification after http request execution has successfully returned the response.
 
 It supports a list of assertions to be supplied. Each of the list item consists of assertion object. Assertion object have following components:
 
@@ -18,19 +19,17 @@ It supports a list of assertions to be supplied. Each of the list item consists 
 - `actual` what to assert, usually a local variable or one of it's node.
 - `expected` what is expect value, for some `types` this is not required.
 
-e.g. 
+e.g.
 
 ```yaml
-...
+---
 spec:
   asserts:
-    - {type: AssertEqual, actual: $Response.code, expected: 201}
+    - { type: AssertEqual, actual: $Response.code, expected: 201 }
 
     - type: assertIsMap
       actual: $Response
 ```
-
-
 
 ## Assertions
 
