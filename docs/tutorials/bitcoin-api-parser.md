@@ -26,7 +26,7 @@ Please follow the below steps:
 - Change the `url: ...` to look like following
 
   ```yml
-  ...
+  ---
   request:
     url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
   ```
@@ -34,22 +34,22 @@ Please follow the below steps:
 - Then add a `expose:` section to just expose the response body after request is successful.
 
   ```yml
-  ...
+  ---
   expose:
     - $_response.body
   ```
 
 - Now the final file should look like this
 
-    ```yml
-    ---
-    version: default:http:0.7.2
-    request:
-      url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
-      method: GET
-    expose:
-        - $_response.body
-    ```
+  ```yml
+  ---
+  version: default:http:0.7.2
+  request:
+    url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
+    method: GET
+  expose:
+    - $_response.body
+  ```
 
 - Now again in the command pallet search and hit `CHKware: Run file` to see the response as output. :smiley:
 
@@ -86,4 +86,4 @@ Run the script in the command line like
 python bitcoin_sample_01.py
 ```
 
-> ** Please create an github issue if you want to share your sample script included in the project.
+> \*\* Please create an github issue if you want to share your sample script included in the project.

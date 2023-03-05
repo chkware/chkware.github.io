@@ -45,6 +45,7 @@ const sidebars = {
             "tutorials/http-client",
             "tutorials/feature-test",
             "tutorials/bitcoin-api-parser",
+            "tutorials/automate-chucknorris-jokes",
           ],
         },
         "examples/http-examples",
