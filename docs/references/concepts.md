@@ -1,5 +1,5 @@
 ---
-title: Core concepts and usage
+title: Command-line reference
 ---
 
 This page describes some key concepts before you use **`CHKware`**.
@@ -17,15 +17,17 @@ There are two parts to **`CHKware`** tool.
 
   After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `expose` key. see [usage](/examples/http-examples#request-with-form) and [documentation](/references/http-reference).
 
-  **[Options]**
+#### Options
 
-  - `--result, -r` <small>**_optional_**</small>: When you put this option, the you'll see only the result.
-  - `--no-format, -nf` <small>**_optional_**</small>: When you put this option, the result will not be formatter.
+- `--result, -r` <small>**_optional_**</small>: When you put this option, the you'll see only the result.
+- `--no-format, -nf` <small>**_optional_**</small>: When you put this option, the result will not be formatter.
 
-  **[Arguments]**
+#### Arguments
 
-  - `[FILE].chk` <small>**_required_**</small>: File that you want to execute.
-  - `[VARIABLEn=VALUEn]` <small>**_optional_**</small>: Pass variables from command-line. format: _variableName1=value1_[space]_variableName2=value2_
+- `[FILE].chk` <small>**_required_**</small>: File that you want to execute.
+- `[VARIABLEn=VALUEn]` <small>**_optional_**</small>: Pass variables from command-line. format: _variableName1=value1_[space]_variableName2=value2_
+
+---
 
 - `chk testcase [Options] [FILE].chk`
 
@@ -33,14 +35,15 @@ There are two parts to **`CHKware`** tool.
 
   After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/examples/testcase-examples).
 
-  **[Options]**
+#### Options
 
-  - `--result, -r` <small>**_optional_**</small>: When you put this option, the you'll see only the result.
-  - `--no-format, -nf` <small>**_optional_**</small>: When you put this option, the result will not be formatter.
+- `--result, -r` <small>**_optional_**</small>: When you put this option, the you'll see only the result.
+- `--no-format, -nf` <small>**_optional_**</small>: When you put this option, the result will not be formatter.
 
-  **[Arguments]**
+#### Arguments
 
-  - `[FILE].chk` <small>**_required_**</small>: File that you want to execute.
+- `[FILE].chk` <small>**_required_**</small>: File that you want to execute.
+- `[VARIABLEn=VALUEn]` <small>**_optional_**</small>: Pass variables from command-line. format: _variableName1=value1_[space]_variableName2=value2_
 
 ### Specification files
 
