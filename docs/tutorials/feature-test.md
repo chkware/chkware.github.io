@@ -5,8 +5,9 @@ title: Write feature test for API
 :::note
 
 - **Prerequisite**: First, [setup **CHKware**](/setup) to continue
-- Find [More `testcase` examples](/examples/testcase-examples) here
-  :::
+- Find [more `testcase` examples](/examples/testcase-examples) here
+
+:::
 
 Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-client) that we covered earlier. Please do as follows:
 
