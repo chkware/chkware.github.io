@@ -53,7 +53,7 @@ request:
 
   # get only response code
 expose:
-  - $_response.code
+  - "{$_response.code}"
 ```
 
 ### Request with query string and header
@@ -189,7 +189,8 @@ request:
     photo: file:///home/username/student-photo-01.png
 
 # get only response body; response headers, code, etc will be dropped
-expose: $_response.body
+expose:
+  - "{$_response.body}"
 ```
 
 ### Request with file upload

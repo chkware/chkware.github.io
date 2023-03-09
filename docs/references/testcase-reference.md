@@ -7,7 +7,8 @@ title: Testcase specification reference
 - This page should be use as reference for testcase specification files.
 - This page is subject to change. It is requested to check this page frequently.
 - Currently JSON response is only supported type for assertions.
-  :::
+
+:::
 
 The _Testcase specification_ format is how anyone express one or more test case(s) for a given _Http specification_. Following is the full reference to write _Testcase specification_ file.
 
@@ -19,9 +20,19 @@ It's also an _**exposable document**_ meaning you can expose local data using `e
 
 ### Reference as example
 
-There are 2 ways Testcase doc can be written. 1) `request` is in-file, 2) `request` in separate http file.
+There are only 2 things we define in a testcase spec. doc.
 
-#### 1) `request` is in-file
+- How to make the API request
+- What to expect from the response that got returned as API response
+
+There are 2 ways anyone can define how to do an API request.
+
+1. with an in-file `request`
+2. `request` in separate http spec. doc.
+
+In the testcase spec. doc. `spec.asserts` section defines what to expect from the response that got returned as API response. It is a list of assertions that one can make against response.
+
+#### 1. With in-file `request`
 
 1st way is to write a `request` (that defines the http request) and `spec` (that defines what to assert) in same file. E.g:
 
@@ -37,19 +48,19 @@ variables:
 request:
   url: "{$Server}/users"
   method: POST
-  body[json]: { "name": $Name, "job": $Job }
+  body[json]: { "name": "{$Name}", "job": "{$Job}" }
 
 spec:
   asserts:
-    - { type: AssertEqual, actual: $_response.code, expected: 201 }
-    - { type: AssertIsMap, actual: $_response.body }
+    - { type: AssertEqual, actual: "{$_response.code}", expected: 201 }
+    - { type: AssertIsMap, actual: "{$_response.body}" }
 
 expose:
-  - $_assertion_results
-  - $_response
+  - "{$_assertion_results}"
+  - "{$_response}"
 ```
 
-2. `request` in separate http file
+#### 2. `request` in separate http spec. doc.
 
 ```yaml
 # file: some-request.chk
@@ -64,10 +75,10 @@ variables:
 request:
   url: "{$Server}/users"
   method: POST
-  body[json]: { "name": $Name, "job": $Job }
+  body[json]: { "name": "{$Name}", "job": "{$Job}" }
 ```
 
-and a separate testcase file
+and a separate testcase file referencing the `some-request.chk` http spec. doc. in `spec.execute.file`.
 
 ```yaml
 # file: some-testcase.chk
@@ -82,8 +93,8 @@ spec:
       Job: "The chosen one"
 
   asserts:
-    - { type: AssertEqual, actual: $_response.code, expected: 201 }
-    - { type: AssertIsMap, actual: $_response.body }
+    - { type: AssertEqual, actual: "{$_response.code}", expected: 201 }
+    - { type: AssertIsMap, actual: "{$_response.body}" }
 
 expose: ~
 ```
@@ -121,7 +132,7 @@ spec: ...
 
 - `spec.execute.file` is used to point the file that contains http specification to run before assertion. If unavailable, or set to null, then system executes any `request` block from current file.
 - `spec.execute.with` is used to pass local scoped variables to external linked file on `spec.execute.file` before execution happen. Not supported for locally linked `request` block.
-- `spec.execute.result` is used to store result(s) of the execution. Here we can put a locally scoped variable to receive data to store after request is done.
+- `spec.execute.result` is used to store result(s) of the execution. Here we can put a locally scoped variable to receive data to store after request is done. If a testcase spec. contains an in-file request, then this section is not allowed.
 
 ```yaml
 ---
@@ -134,13 +145,16 @@ spec:
     with:
       Name: "Neo"
       Job: "The chosen one"
-    result: $Response
+    result: "{@Response}"
 ```
 
 ### `spec.assertions` (<small>_`required`_</small>)
 
 `spec.assertions` is a sub-block that defines a testcase spec's post http request execution assertion(s). It supports a list of assertions to be supplied. Each of the list item consists of assertion object. Assertion object have following components:
-{type: AssertEqual, actual: $Response.code, expected: 201}
+
+```yaml
+{ type: AssertEqual, actual: "{$Response.code}", expected: 201 }
+```
 
 - `type` of assertion to be executed.
 - `actual` what to assert, usually a local variable or one of it's node.
@@ -150,9 +164,9 @@ spec:
 ---
 spec:
   asserts:
-    - { type: AssertEqual, actual: $Response.code, expected: 201 }
+    - { type: AssertEqual, actual: "{$Response.code}", expected: 201 }
     - type: assertIsMap
-      actual: $Response
+      actual: "{$Response}"
 ```
 
 [More about assertions](/references/assertion-reference) can be found here.
@@ -161,6 +175,6 @@ spec:
 
 `expose` is a sub-block, that can be used to expose local variable of this file to outer scope.
 
-For testcase specification document local variable called `$_assertion_results` which holds after assertion output, and `$_response` which holds response after request execute, are available.
+For testcase specification document local variable called `_assertion_results` which holds after assertion output, and `_response` which holds response after request execute, are available.
 
 See docs on [expose node](/references/variable-reference#expose-node)

@@ -7,7 +7,8 @@ title: Assertion reference
 - This page should be use as reference for asserts used in testcase specification files.
 - This page is subject to change. It is requested to check this page frequently.
 - Currently JSON response is only supported type for assertions.
-  :::
+
+:::
 
 Assertions are integral part of [Testcase spec.](/references/testcase-reference) Following are the assertion keys supported in most latest version of Testcase spec.
 
@@ -25,10 +26,10 @@ e.g.
 ---
 spec:
   asserts:
-    - { type: AssertEqual, actual: $Response.code, expected: 201 }
+    - { type: AssertEqual, actual: "{$Response.code}", expected: 201 }
 
     - type: assertIsMap
-      actual: $Response
+      actual: "{$Response}"
 ```
 
 ## Assertions
@@ -45,7 +46,7 @@ Checks if `actual` and `expected` is equal.
 spec:
   ...
   asserts:
-    - {type: AssertEqual, actual: $Response.code, expected: 201}
+    - {type: AssertEqual, actual: "{$Response.code}", expected: 201}
 ```
 
 ### AssertNotEqual
@@ -56,7 +57,7 @@ Checks if `actual` and `expected` is not equal.
 spec:
   ...
   asserts:
-    - {type: AssertNotEqual, actual: $Response.code, expected: 200}
+    - {type: AssertNotEqual, actual: "{$Response.code}", expected: 200}
 ```
 
 ### AssertEmpty
@@ -67,7 +68,7 @@ Checks if `actual` is empty.
 spec:
   ...
   asserts:
-    - {type: AssertEmpty, actual: $Response.varOne}
+    - {type: AssertEmpty, actual: "{$Response.varOne}"}
 ```
 
 ### AssertFalse
@@ -78,7 +79,7 @@ Checks if `actual` is _False_.
 spec:
   ...
   asserts:
-    - {type: AssertFalse, actual: $Response.var_2}
+    - {type: AssertFalse, actual: "{$Response.var_2}"}
 ```
 
 ### AssertTrue
@@ -89,7 +90,7 @@ Checks if `actual` is _True_.
 spec:
   ...
   asserts:
-    - {type: AssertTrue, actual: $Response.varOne}
+    - {type: AssertTrue, actual: "{$Response.varOne}"}
 ```
 
 ### AssertIsInt
@@ -100,7 +101,7 @@ Checks if `actual` is of type integer.
 spec:
   ...
   asserts:
-    - {type: AssertIsInt, actual: $Response.varOne}
+    - {type: AssertIsInt, actual: "{$Response.varOne}"}
 ```
 
 ### AssertIsString
@@ -111,7 +112,7 @@ Checks if `actual` is of type string.
 spec:
   ...
   asserts:
-    - {type: AssertIsString, actual: $Response.varOne}
+    - {type: AssertIsString, actual: "{$Response.varOne}"}
 ```
 
 ### AssertIsFloat
@@ -122,7 +123,7 @@ Checks if `actual` is of type floating point.
 spec:
   ...
   asserts:
-    - {type: AssertIsFloat, actual: $Response.varOne}
+    - {type: AssertIsFloat, actual: "{$Response.varOne}"}
 ```
 
 ### AssertIsBool
@@ -133,7 +134,7 @@ Checks if `actual` is of type boolean, meaning either _True_ or _False_.
 spec:
   ...
   asserts:
-    - {type: AssertIsBool, actual: $Response.varOne}
+    - {type: AssertIsBool, actual: "{$Response.varOne}"}
 ```
 
 ### AssertCount
@@ -145,7 +146,7 @@ spec:
   ...
   asserts:
     - type: AssertCount
-      actual: $Response.articles
+      actual: "{$Response.articles}"
       expected: 5
 ```
 
@@ -160,7 +161,7 @@ spec:
   ...
   asserts:
     - type: AssertGreater
-      actual: $Price
+      actual: "{$Price}"
       expected: 500
 ```
 
@@ -173,7 +174,7 @@ spec:
   ...
   asserts:
     - type: AssertGreaterOrEqual
-      actual: $Price
+      actual: "{$Price}"
       expected: 500
 ```
 
@@ -186,7 +187,7 @@ spec:
   ...
   asserts:
     - type: AssertLess
-      actual: $Price
+      actual: "{$Price}"
       expected: 500
 ```
 
@@ -199,7 +200,7 @@ spec:
   ...
   asserts:
     - type: AssertLessOrEqual
-      actual: $Price
+      actual: "{$Price}"
       expected: 500
 ```
 
@@ -224,7 +225,7 @@ Checks if `actual` is of type dictionary. Usually, JSON lists are list.
 spec:
   ...
   asserts:
-    - {type: AssertIsList, actual: $Response}
+    - {type: AssertIsList, actual: "{$Response}"}
 ```
 
 ### AssertListContains
@@ -236,11 +237,11 @@ spec:
   ...
   asserts:
     - type: AssertListContains
-      actual: $Countries
+      actual: "{$Countries}"
       expected: 'GB'
 
     - type: AssertListContains
-      actual: $Currency
+      actual: "{$Currency}"
       expected: {"country": "GB", "currency": "GBP"}
 ```
 
@@ -253,7 +254,7 @@ spec:
   ...
   asserts:
     - type: AssertListHasIndex
-      actual: $Articles
+      actual: "{$Articles}"
       expected: 6
 ```
 
@@ -265,7 +266,7 @@ Checks if `actual` is of type dictionary. Usually, JSON objects are dictionary.
 spec:
   ...
   asserts:
-    - {type: AssertIsMap, actual: $Response}
+    - {type: AssertIsMap, actual: "{$Response}"}
 ```
 
 ### AssertMapContains
@@ -276,10 +277,10 @@ Checks if data given in `actual` is a JSON object or dictionary. If so, does it 
 spec:
   ...
   asserts:
-    - { type: AssertMapContains, actual: $StudentObject, expected: 10 }
+    - { type: AssertMapContains, actual: "{$StudentObject}", expected: 10 }
 
     - type: AssertMapContains
-      actual: $StudentObject
+      actual: "{$StudentObject}"
       expected: {'teacher': {'id': 11, 'name': 'Some one'}}
 ```
 
@@ -291,7 +292,7 @@ Checks if data given in `actual` is a JSON object or dictionary. If so, does it 
 spec:
   ...
   asserts:
-    - { type: AssertMapHasKey, actual: $StudentObject, expected: 'name' }
+    - { type: AssertMapHasKey, actual: "{$StudentObject}", expected: 'name' }
 ```
 
 ### AssertMapDoNotHasKey
@@ -302,7 +303,7 @@ Checks if data given in `actual` is a JSON object or dictionary. If so, does it 
 spec:
   ...
   asserts:
-    - { type: AssertMapDoNotHasKey, actual: $StudentObject, expected: 'salary' }
+    - { type: AssertMapDoNotHasKey, actual: "{$StudentObject}", expected: 'salary' }
 ```
 
 ### AssertMapKeyCount
@@ -313,7 +314,7 @@ Checks if data given in `actual` is a JSON object or dictionary. If so, does it 
 spec:
   ...
   asserts:
-    - { type: AssertMapKeyCount, actual: $StudentObject, expected: 10 }
+    - { type: AssertMapKeyCount, actual: "{$StudentObject}", expected: 10 }
 ```
 
 ### AssertMapHasKeys
@@ -324,7 +325,7 @@ Checks if data given in `actual` is a JSON object or dictionary. If so, does it 
 spec:
   ...
   asserts:
-    - { type: AssertMapHasKeys, actual: $StudentObject, expected: ['name', 'section', 'class'] }
+    - { type: AssertMapHasKeys, actual: "{$StudentObject}", expected: ['name', 'section', 'class'] }
 ```
 
 ### AssertMapDoNotHasKeys
@@ -335,7 +336,7 @@ Checks if data given in `actual` is a JSON object or dictionary. If so, it DOES 
 spec:
   ...
   asserts:
-    - { type: AssertMapDoNotHasKeys, actual: $StudentObject, expected: ['salary', 'year_of_experience'] }
+    - { type: AssertMapDoNotHasKeys, actual: "{$StudentObject}", expected: ['salary', 'year_of_experience'] }
 ```
 
 ### AssertMapExactKeys
@@ -347,6 +348,6 @@ spec:
   ...
   asserts:
     - type: AssertMapExactKeys
-      actual: $StudentObject
+      actual: "{$StudentObject}"
       expected: ['name', 'section', 'class', 'class_teacher_id']
 ```

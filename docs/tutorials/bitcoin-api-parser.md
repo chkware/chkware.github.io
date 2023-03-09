@@ -36,7 +36,7 @@ Please follow the below steps:
   ```yml
   ---
   expose:
-    - $_response.body
+    - "{$_response.body}"
   ```
 
 - Now the final file should look like this
@@ -48,7 +48,7 @@ Please follow the below steps:
     url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
     method: GET
   expose:
-    - $_response.body
+    - "{$_response.body}"
   ```
 
 - Now again in the command pallet search and hit `CHKware: Run file` to see the response as output. :smiley:

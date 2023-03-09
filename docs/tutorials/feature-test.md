@@ -25,9 +25,9 @@ Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-cli
 
   spec:
     asserts:
-      - { type: AssertEqual, actual: $_response.code, expected: 200 }
-      - { type: AssertIsInt, actual: $_response.body.num }
-      - { type: AssertEqual, actual: $_response.body.year, expected: 2009 }
+      - { type: AssertEqual, actual: "{$_response.code}", expected: 200 }
+      - { type: AssertIsInt, actual: "{$_response.body.num}" }
+      - { type: AssertEqual, actual: "{$_response.body.year}", expected: 2009 }
   ```
 
   Here notice the `verison` string **`version: default:testcase:0.7.2`**, this is important for this specification to be a [testcase specification](/references/testcase-reference).
@@ -48,9 +48,9 @@ Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-cli
   - Prepare exposable [Success]
 
   ---
-  -> Running `AssertEqual` on `$_response.code` [Success]
-  -> Running `AssertIsInt` on `$_response.body.num` [Success]
-  -> Running `AssertEqual` on `$_response.body.year` [Success]
+  -> Running `AssertEqual` on `{$_response.code}` [Success]
+  -> Running `AssertIsInt` on `{$_response.body.num}` [Success]
+  -> Running `AssertEqual` on `{$_response.body.year}` [Success]
   ```
 
   You just tested a live API :rocket::star2:.
@@ -74,9 +74,9 @@ Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-cli
   You should be able to see following if no exception occurs.
 
   ```bash
-  -> Running `AssertEqual` on `$_response.code` [Success]
-  -> Running `AssertIsInt` on `$_response.body.num` [Success]
-  -> Running `AssertEqual` on `$_response.body.year` [Success]
+  -> Running `AssertEqual` on `{$_response.code}` [Success]
+  -> Running `AssertIsInt` on `{$_response.body.num}` [Success]
+  -> Running `AssertEqual` on `{$_response.body.year}` [Success]
   ```
 
 - These above response are coming as formatted output. If you want to see all JSON just pass the `--no-fomat` or `-nf` option flag.

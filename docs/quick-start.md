@@ -6,7 +6,8 @@ title: Quick Start
 
 - **Prerequisite**: First, [setup **CHKware**](/setup) to continue
 - Find [More `http` examples](/examples/http-examples) here
-  :::
+
+:::
 
 ### Sample
 
@@ -25,8 +26,8 @@ Let's call an API that returns current bitcoin price in USD, and test it. Please
 
   spec:
     asserts:
-      - { type: AssertEqual, actual: $_response.code, expected: 200 }
-      - { type: AssertIsInt, actual: $_response.body.coin.priceBtc }
+      - { type: AssertEqual, actual: "{$_response.code}", expected: 200 }
+      - { type: AssertIsInt, actual: "{$_response.body.coin.priceBtc}" }
   ```
 
 - Hit enter after writing following command on terminal
@@ -45,8 +46,8 @@ Let's call an API that returns current bitcoin price in USD, and test it. Please
   - Prepare exposable [Success]
 
   ---
-  -> Running `AssertEqual` on `$_response.code` [Success]
-  -> Running `AssertIsInt` on `$_response.body.coin.priceBtc` [Success]
+  -> Running `AssertEqual` on `{$_response.code}` [Success]
+  -> Running `AssertIsInt` on `{$_response.body.coin.priceBtc}` [Success]
   ```
 
 - Congratulation! You have just tested an API. :wink::tada::confetti_ball:

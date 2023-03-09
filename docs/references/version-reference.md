@@ -6,7 +6,8 @@ title: Version specification reference
 
 - This page should be use as reference for specification files.
 - This page is subject to change. It is requested to check this page frequently.
-  :::
+
+:::
 
 ### Introduction
 
@@ -18,17 +19,17 @@ The Version specification format is how someone write a document version. Usuall
 version: default:http:0.7.2
 ```
 
-Document version specifies which version of document current specification contents are written in. Simply think that, if someone wrote a document in a version that is not supported by the `chk` toolset currently installed: It will exit with an error. For example, if you run following in command-line:
+Document version specifies which version of document current specification contents are written in. Simply think that, if someone wrote a document in a version that is not supported by the `chk` toolbox currently installed: It will exit with an error. For example, if you run following in command-line:
 
 ```bash
-$ chk
+chk
 Usage: ...
 
   v0.4.0 | version strings: 0.7.2
 ...
 ```
 
-- V0.4.0 is the tool version here
+- v0.4.0 is the tool version here
 - 0.7.2 is the document version it supports
 
 If you have a document that have `version: default:http:0.8.0`, then this command would not be able to run it.
@@ -43,4 +44,4 @@ This version string have 3 parts: `<plugin>:<module>:<number>`, e.g: `default:ht
 
 ### Support document versions:
 
-    - 0.7.2
+- 0.7.2
