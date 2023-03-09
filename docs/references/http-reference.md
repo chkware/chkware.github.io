@@ -6,7 +6,8 @@ title: Http specification reference
 
 - This page should be use as reference for http specification files.
 - This page is subject to change. It is requested to check this page frequently.
-  :::
+
+:::
 
 The **Http specification format** is how anyone express a Http request. Following is the full reference to write Http specification file.
 
@@ -112,7 +113,7 @@ request:
     </catalog>
 
 expose:
-  - $_response
+  - "{$_response}"
 ```
 
 ---
@@ -301,6 +302,6 @@ request:
 
 `expose` is a sub-block, that can be used to expose local variable of this file to outer scope.
 
-For http specification document local variable called `$_response` which holds successful response, is available.
+For http specification document local variable called `_response` which holds successful response, is available.
 
 See docs on [expose node](/references/variable-reference#expose-node)

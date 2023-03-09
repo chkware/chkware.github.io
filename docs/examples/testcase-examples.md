@@ -6,10 +6,13 @@ title: Testcase examples
 
 - This page should be use as reference for specification files.
 - This page is subject to change. It is requested to check this page frequently.
-  :::
+
+:::
 
 :::note
+
 Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/blob/main/tests/resources/storage/sample_config/bitcoin-usd-testcase.chk) repository
+
 :::
 
 [Testcase specification document reference](/references/testcase-reference)
@@ -27,8 +30,8 @@ request:
 
 spec:
   asserts:
-    - { type: AssertEqual, actual: $_response.code, expected: 201 }
-    - { type: AssertIsMap, actual: $_response.body }
+    - { type: AssertEqual, actual: "{$_response.code}", expected: 201 }
+    - { type: AssertIsMap, actual: "{$_response.body}" }
 ```
 
 The above testcase spec. doc define a request that makes a `POST` call to `https://reqres.in/api/users` URL with a body `{"name": "My Name", "job": "My Job"}`.
@@ -46,7 +49,7 @@ Assertion [reference with examples](/references/testcase-reference#assertions) c
 
 ### A minimal Testcase with out-file request
 
-A http spec. doc can be written on separate file, that does same as above request. Let's call it `same-request.chk`. The http spec. doc by default exposes `$_response` object.
+A http spec. doc can be written on separate file, that does same as above request. Let's call it `same-request.chk`. The http spec. doc by default exposes `_response` object.
 
 ```yaml
 # file: same-request.chk
@@ -70,11 +73,11 @@ spec:
   execute:
     file: "./same-request.chk"
   asserts:
-    - { type: AssertEqual, actual: $_response.code, expected: 201 }
-    - { type: AssertIsMap, actual: $_response.body }
+    - { type: AssertEqual, actual: "{$_response.code}", expected: 201 }
+    - { type: AssertIsMap, actual: "{$_response.body}" }
 ```
 
-Please notice the `$_response` in the testcase doc. This variable is available after the request gets executed as local variable.
+Please notice the `_response` in the testcase doc. This variable is available after the request gets executed as local variable.
 
 ### A Testcase with out-file request passing data
 
@@ -92,7 +95,7 @@ variables:
 request:
   url: "https://reqres.in/api/users"
   method: POST
-  body[json]: { "name": $name, "job": $job }
+  body[json]: { "name": "{$name}", "job": "{$job}" }
 ```
 
 Now we can point out which value we want to pass using `with` statement in `execute` block.
@@ -109,8 +112,8 @@ spec:
       name: Her Name
       job: Her Job
   asserts:
-    - { type: AssertEqual, actual: $_response.code, expected: 201 }
-    - { type: AssertIsMap, actual: $_response.body }
+    - { type: AssertEqual, actual: "{$_response.code}", expected: 201 }
+    - { type: AssertIsMap, actual: "{$_response.body}" }
 ```
 
 Please notice that if we do not set a `with` then request will be sent with default value.

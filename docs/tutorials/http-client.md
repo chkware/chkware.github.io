@@ -5,8 +5,9 @@ title: Use as HTTP client
 :::note
 
 - **Prerequisite**: First, [setup **CHKware**](/setup) to continue
-- Find [More `http` examples](/examples/http-examples) here
-  :::
+- Find [more `http` examples](/examples/http-examples) here
+
+:::
 
 Let's call the [_XKCD.com JSON API_](https://xkcd.com/json.html) that returns a joke for given ID. Please do as follows:
 
