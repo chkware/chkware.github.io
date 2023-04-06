@@ -67,14 +67,16 @@ Date: 2023-02-03
 Date: 2022-09-07
 
 ### Added
-- Build `zipapp`  [#132](https://github.com/chkware/cli/issues/132)
+
+- Build `zipapp` [#132](https://github.com/chkware/cli/issues/132)
 - create a automated release system [#96](https://github.com/chkware/cli/issues/96)
-- More Assert* function needed in AssertionCase [#116](https://github.com/chkware/cli/issues/116)
+- More Assert_x function needed in AssertionCase [#116](https://github.com/chkware/cli/issues/116)
 - Test specification [#88](https://github.com/chkware/cli/issues/88)
 - Formatted result output for `testcase` [#115](https://github.com/chkware/cli/issues/115)
 - Handle dangling key for variable on variable replace [#112](https://github.com/chkware/cli/issues/112)
 
 ### Changed
+
 - install_requires in the `setup.cfg` needs to be updated. [#136](https://github.com/chkware/cli/issues/136)
 - Improve variables `replace_values` functionality [#127](https://github.com/chkware/cli/issues/127)
 
