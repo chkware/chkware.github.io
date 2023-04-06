@@ -76,6 +76,11 @@ const sidebars = {
         "setup/build-zipapp",
       ],
     },
+    {
+      type: "category",
+      label: "⛵️ CHANGELOG",
+      items: ["changelogs/cli"],
+    },
   ],
 };
 
