@@ -79,9 +79,7 @@ const sidebars = {
     {
       type: "category",
       label: "⛵️ CHANGELOG",
-      items: [
-        "changelogs/cli",
-      ],
+      items: ["changelogs/cli"],
     },
   ],
 };
