@@ -60,6 +60,10 @@ const config = {
             label: "Docs",
           },
           {
+            type: "docsVersionDropdown",
+            position: "right",
+          },
+          {
             href: "https://github.com/chkware/cli",
             position: "right",
             "aria-label": "CHKware gitHub repository",
