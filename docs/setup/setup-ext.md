@@ -21,4 +21,4 @@ Using VS Code command palette you can quickly select a snippet from added sample
 - Use `Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows, and `Ctrl+Shift+P` on Linux to bring up command palette.
 - Select a sample you need to use. More information about [vscode extension](https://github.com/chkware/vscode-ext/blob/main/README.md) here.
 
-![CHKware visual studio code extension](https://user-images.githubusercontent.com/45073703/219438462-a9cfb5e2-a2a9-4c1d-8a34-78fb1cb3fe83.gif)
+![CHKware visual studio code extension](../assets/vsc-extension-usage.gif)
