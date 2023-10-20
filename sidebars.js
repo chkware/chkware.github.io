@@ -26,7 +26,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "⚒️ Setup docs",
+      label: "⚒️ Setup CHKware",
       items: ["setup", "setup/setup-ext"],
     },
     {
