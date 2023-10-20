@@ -21,8 +21,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "💡 Introduction",
-      id: "introduction",
+      label: "💡 About CHKware",
+      id: "about-chkware",
     },
     {
       type: "category",
