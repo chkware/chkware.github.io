@@ -34,7 +34,7 @@ Jump to the [setup guide](/docs/setup) for different ways to install **_CHKware_
 
 ### Ask anything
 
-Please use tag `chkware-cli` with the question on [stackoverflow.com](https://stackoverflow.com/questions/tagged/chkware-cli) to ask or discuss anything. Follow the tag if you want to help others with your knowledge.
+Please use tag `chkware-cli` with the question on [stackoverflow.com](https://stackoverflow.com/questions/tagged/chkware-cli) to ask or [discuss anything](https://github.com/chkware/HEAD/discussions). Follow the tag if you want to help others with your knowledge.
 
 ### Contribute
 
