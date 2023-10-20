@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: About CHKware
 ---
 
 ![CHKware | Low-code API quality testing, and automation toolbox](./assets/github-hero-01.png)
