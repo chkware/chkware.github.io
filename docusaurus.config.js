@@ -83,7 +83,11 @@ const config = {
             title: "Issues",
             items: [
               {
-                label: "Github issues",
+                label: "🪲 Report an issue",
+                href: "https://github.com/chkware/cli/issues",
+              },
+              {
+                label: "🔖 Request a feature",
                 href: "https://github.com/chkware/cli/issues",
               },
             ],
@@ -92,34 +96,34 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Question",
+                label: "❓ Ask a question",
                 href: "https://stackoverflow.com/questions/tagged/chkware-cli",
               },
-              /* {
-                label: 'Discussion',
-                href: 'https://slack.com/',
-              }, */
+              {
+                label: "💬 Discussion forum",
+                href: "https://github.com/chkware/HEAD/discussions",
+              },
             ],
           },
           {
-            title: "Follow us",
+            title: "Follow CHKware",
             items: [
               {
-                label: "CHKware @ twitter",
+                label: "CHKware on Twitter / X",
                 href: "https://twitter.com/chkware",
               },
               {
-                label: "CHKware @ github",
+                label: "CHKware on Github",
                 href: "https://github.com/chkware/cli",
               },
               {
-                label: "CHKware @ pypi",
+                label: "CHK on PyPI",
                 href: "https://pypi.org/project/chk",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} CHKware.`,
+        copyright: `Copyright © 2021 - ${new Date().getFullYear()} CHKware.`,
       },
       metadata: [
         {
