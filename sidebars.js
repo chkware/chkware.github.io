@@ -21,18 +21,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "💡 Introduction",
-      id: "introduction",
+      label: "🏃‍♂️ Quick start",
+      id: "quick-start",
     },
     {
       type: "category",
-      label: "⚒️ Setup docs",
+      label: "⚒️ Setup CHKware",
       items: ["setup", "setup/setup-ext"],
-    },
-    {
-      type: "doc",
-      label: "🏃‍♂️ Quick start",
-      id: "quick-start",
     },
     {
       type: "category",
@@ -80,6 +75,11 @@ const sidebars = {
       type: "category",
       label: "⛵️ CHANGELOG",
       items: ["changelogs/cli"],
+    },
+    {
+      type: "doc",
+      label: "☑︎ About CHKware",
+      id: "about-chkware",
     },
   ],
 };
