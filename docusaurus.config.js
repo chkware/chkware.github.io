@@ -10,8 +10,8 @@ const TwitterSvg =
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CHKware",
-  tagline: "Low-code API quality testing, and automation toolbox",
-  url: "https://docs.chkware.com",
+  tagline: "Low-code API quality testing, and automation toolbox.",
+  url: "https://www.chkware.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -27,9 +27,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
-          breadcrumbs: false,
           editUrl: "https://github.com/chkware/chkware.github.io/tree/main",
         },
         blog: false,
@@ -151,6 +149,13 @@ const config = {
       },
     ],
   ],
+  customFields: {
+    indexCta: "docs/quick-start",
+    indexCtaTitle: "⏱️ 30 seconds to start",
+    shortDetails: "Low-code API quality testing, and automation toolbox.",
+    longDetails:
+      "API testing tool, a script-able HTTP client, and an API test automation tool for the API era.",
+  },
 };
 
 module.exports = config;
