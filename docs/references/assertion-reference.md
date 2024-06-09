@@ -10,7 +10,7 @@ title: Assertion reference
 
 :::
 
-Assertions are integral part of [Testcase spec.](/references/testcase-reference) Following are the assertion keys supported in most latest version of Testcase spec.
+Assertions are integral part of [Testcase spec.](/docs/references/testcase-reference) Following are the assertion keys supported in most latest version of Testcase spec.
 
 Assertions are used to validate data in testcase specification after http request execution has successfully returned the response.
 

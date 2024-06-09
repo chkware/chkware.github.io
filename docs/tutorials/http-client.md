@@ -4,15 +4,15 @@ title: Use as HTTP client
 
 :::note
 
-- **Prerequisite**: First, [setup **CHKware**](/setup) to continue
-- Find [more `http` examples](/examples/http-examples) here
+- **Prerequisite**: First, [setup **CHKware**](/docs/setup) to continue
+- Find [more `http` examples](/docs/examples/http-examples) here
 
 :::
 
 Let's call the [_XKCD.com JSON API_](https://xkcd.com/json.html) that returns a joke for given ID. Please do as follows:
 
 - Create a file called `xkcd-joke.chk` in any of your workspace
-- Open `xkcd-joke.chk` file, and add following spec. That is all you need to do a minimal HTTP GET request. See [Http example](/examples/http-examples) for other methods and types you can send with the requests.
+- Open `xkcd-joke.chk` file, and add following spec. That is all you need to do a minimal HTTP GET request. See [Http example](/docs/examples/http-examples) for other methods and types you can send with the requests.
 
   ```yaml
   ---
@@ -22,7 +22,7 @@ Let's call the [_XKCD.com JSON API_](https://xkcd.com/json.html) that returns a 
     method: GET
   ```
 
-  Here notice the `verison` string **`version: default:http:0.7.2`**, this is important for this specification to be a [http specification](/references/http-reference).
+  Here notice the `verison` string **`version: default:http:0.7.2`**, this is important for this specification to be a [http specification](/docs/references/http-reference).
 
 - Open a terminal. Hit enter after writing following command on terminal.
 
@@ -114,6 +114,6 @@ Let's call the [_XKCD.com JSON API_](https://xkcd.com/json.html) that returns a 
 
 This way you can use `chk http` as your script-able http client.
 
-Next, let's write a feature test or [testcase](/tutorials/feature-test) for this request.
+Next, let's write a feature test or [testcase](/docs//tutorials/feature-test) for this request.
 
 :wink::tada::confetti_ball:

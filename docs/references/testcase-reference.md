@@ -16,7 +16,7 @@ The _Testcase specification_ format is how anyone express one or more test case(
 
 Testcase specification document is a versioned document, meaning there MUST be a `version:` key on the document.
 
-It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/references/variable-reference)
+It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/docs/references/variable-reference)
 
 ### Reference as example
 
@@ -60,7 +60,7 @@ expose:
   - "{$_response}"
 ```
 
-#### 2. `request` in separate http spec. doc.
+#### 2. `request` in separate http spec. doc
 
 ```yaml
 # file: some-request.chk
@@ -103,20 +103,20 @@ expose: ~
 
 ### `version` (<small>_`required`_</small>)
 
-`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/references/version-reference).
+`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/docs/references/version-reference).
 
 ### `request`
 
 - _`required`_ if no external http spec. doc to be linked
 - _`must not`_ if `spec.execute.file` if a http specification doc is linked
 
-`request` is a top-level block that defines a http request. How to write a `request:` block, is [already defined here](/references/http-reference#request-required).
+`request` is a top-level block that defines a http request. How to write a `request:` block, is [already defined here](/docs/references/http-reference#request-required).
 
 `request` block, and `spec.execute.file` MUST NOT stay on same file. System will throw an error on that case.
 
 ### `variables`
 
-`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/references/variable-reference).
+`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/docs/references/variable-reference).
 
 ### `spec` (<small>_`required`_</small>)
 
@@ -169,7 +169,7 @@ spec:
       actual: "{$Response}"
 ```
 
-[More about assertions](/references/assertion-reference) can be found here.
+[More about assertions](/docs/references/assertion-reference) can be found here.
 
 ### `expose`
 
@@ -177,4 +177,4 @@ spec:
 
 For testcase specification document local variable called `_assertion_results` which holds after assertion output, and `_response` which holds response after request execute, are available.
 
-See docs on [expose node](/references/variable-reference#expose-node)
+See docs on [expose node](/docs/references/variable-reference#expose-node)

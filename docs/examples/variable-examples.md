@@ -15,7 +15,7 @@ Case-wise more example can be found in [https://github.com/chkware/cli](https://
 
 :::
 
-[Variable specification document reference](/references/variable-reference)
+[Variable specification document reference](/docs/references/variable-reference)
 
 We can also use variables inside a http and testcase specification file. See examples below.
 

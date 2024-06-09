@@ -16,7 +16,7 @@ API quality test, and automation management is not easy to develop, and maintain
 
 **_CHKware_** (pronounced as _/tʃek-wer/_, i.e. _check-ware_) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
 
-Read [about the problems](/introduction) _CHKware_ addresses. Find [changelog](https://github.com/chkware/cli/blob/main/docs/CHANGELOG.md).
+Read [about the problems](/docs/introduction) _CHKware_ addresses. Find [changelog](https://github.com/chkware/cli/blob/main/docs/CHANGELOG.md).
 
 ### Setup
 
@@ -26,11 +26,11 @@ With [**Python 3.11**](https://www.python.org/downloads/) and [**Pipx**](https:/
 pipx install chk
 ```
 
-Jump to the [setup guide](/setup) for different ways to install **_CHKware_**.
+Jump to the [setup guide](/docs/setup) for different ways to install **_CHKware_**.
 
 ### Usage
 
-[Get started](/quick-start) quickly here.
+[Get started](/docs/quick-start) quickly here.
 
 ### Ask anything
 
