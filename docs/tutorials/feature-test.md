@@ -4,17 +4,17 @@ title: Write feature test for API
 
 :::note
 
-- **Prerequisite**: First, [setup **CHKware**](/setup) to continue
-- Find [more `testcase` examples](/examples/testcase-examples) here
+- **Prerequisite**: First, [setup **CHKware**](/docs/setup) to continue
+- Find [more `testcase` examples](/docs/examples/testcase-examples) here
 
 :::
 
-Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-client) that we covered earlier. Please do as follows:
+Let's continue to test our [_XKCD.com JSON API http client_](/docs//tutorials/http-client) that we covered earlier. Please do as follows:
 
 - Create a file called `xkcd-joke-test.chk` on the same directory where your created `xkcd-joke.chk` early.
 - Open `xkcd-joke-test.chk` file, and add following spec.
 
-  As you can see, it's possible to combine both `http` request and `testcase` spec on same file. See [Testcase example](/examples/testcase-examples) for other asserts you can write.
+  As you can see, it's possible to combine both `http` request and `testcase` spec on same file. See [Testcase example](/docs/examples/testcase-examples) for other asserts you can write.
 
   ```yaml
   ---
@@ -30,7 +30,7 @@ Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-cli
       - { type: AssertEqual, actual: "{$_response.body.year}", expected: 2009 }
   ```
 
-  Here notice the `verison` string **`version: default:testcase:0.7.2`**, this is important for this specification to be a [testcase specification](/references/testcase-reference).
+  Here notice the `verison` string **`version: default:testcase:0.7.2`**, this is important for this specification to be a [testcase specification](/docs/references/testcase-reference).
 
 - Open a terminal. Hit enter after writing following command on terminal.
 
@@ -93,6 +93,6 @@ Let's continue to test our [_XKCD.com JSON API http client_](/tutorials/http-cli
 
 ---
 
-This way you can write API feature test. More [testcase examples](/examples/testcase-examples) here.
+This way you can write API feature test. More [testcase examples](/docs/examples/testcase-examples) here.
 
 :wink::tada::confetti_ball:

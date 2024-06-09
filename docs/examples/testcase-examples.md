@@ -15,7 +15,7 @@ Case-wise more example can be found in [https://github.com/chkware/cli](https://
 
 :::
 
-[Testcase specification document reference](/references/testcase-reference)
+[Testcase specification document reference](/docs/references/testcase-reference)
 
 ### A minimal Testcase with in-file request
 
@@ -45,7 +45,7 @@ On the `asserts`, we are asserting that
 - The response code is 201, or the resource was created
 - The response if a map / dictionary
 
-Assertion [reference with examples](/references/testcase-reference#assertions) can be found here.
+Assertion [reference with examples](/docs/references/testcase-reference#assertions) can be found here.
 
 ### A minimal Testcase with out-file request
 
@@ -118,4 +118,4 @@ spec:
 
 Please notice that if we do not set a `with` then request will be sent with default value.
 
-Assertion [reference with examples](/references/testcase-reference#assertions) can be found here.
+Assertion [reference with examples](/docs/references/testcase-reference#assertions) can be found here.

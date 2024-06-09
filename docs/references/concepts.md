@@ -15,7 +15,7 @@ There are two parts to **`CHKware`** tool.
 
   This sub command runs a file written in [http specification file](http-reference) format.
 
-  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `expose` key. see [usage](/examples/http-examples#request-with-form) and [documentation](/references/http-reference).
+  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `expose` key. see [usage](/docs/examples/http-examples#request-with-form) and [documentation](/docs/references/http-reference).
 
 #### Options
 
@@ -33,7 +33,7 @@ There are two parts to **`CHKware`** tool.
 
   This sub command runs a file written in [testcase specification file](testcase-reference) format.
 
-  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/examples/testcase-examples).
+  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/docs/examples/testcase-examples).
 
 #### Options
 

@@ -4,8 +4,8 @@ title: Quick Start
 
 :::note
 
-- **Prerequisite**: First, [setup **CHKware**](/setup) to continue
-- Find [More `http` examples](/examples/http-examples) here
+- **Prerequisite**: First, [setup **CHKware**](/docs/setup) to continue
+- Find [More `http` examples](/docs/examples/http-examples) here
 
 :::
 
@@ -56,13 +56,13 @@ Let's call an API that returns current bitcoin price in USD, and test it. Please
 
 ### Explanation
 
-We call this `bitcoin-usd-testcase.chk` a spec or specification file. The content that you put was a [testcase specification](/references/testcase-reference).
+We call this `bitcoin-usd-testcase.chk` a spec or specification file. The content that you put was a [testcase specification](/docs/references/testcase-reference).
 
 Let us look into the content and see what we wrote.
 
 On 1st line we wrote document version with `version:` same as we do on other config files i.e. terraform, ansible, etc. This is not all too important now.
 
-On 2nd line, we wrote a `request:` block, which define how to sent the request to server. More on this block on [http specification](/references/http-reference).
+On 2nd line, we wrote a `request:` block, which define how to sent the request to server. More on this block on [http specification](/docs/references/http-reference).
 
 Then we wrote a `asserts:` sub-section under `spec:` block which defines how to check the response those we received.
 

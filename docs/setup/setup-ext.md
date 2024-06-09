@@ -6,11 +6,11 @@ title: Setup VS Code extension
 
 Get started writing _CHKware_ configurations with VS Code doing following steps:
 
-- Step 1: Install [chkware](/setup), if you haven't done so already.
+- Step 1: Install [chkware](/docs/setup), if you haven't done so already.
 
 - Step 2: Install the [_CHKware_ extension](https://marketplace.visualstudio.com/items?itemName=chkware.chkware) for VS Code
 
-- Step 3: New to _CHKware_? Read the _CHKware_ [quick start](/quick-start) guide here.
+- Step 3: New to _CHKware_? Read the _CHKware_ [quick start](/docs/quick-start) guide here.
 
 ---
 
