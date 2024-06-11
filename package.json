@@ -5,7 +5,8 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "rm -rf ./build; docusaurus build",
+    "build": "docusaurus build",
+    "build:clean": "rm -rf ./node_modules ./build && npm ci && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
