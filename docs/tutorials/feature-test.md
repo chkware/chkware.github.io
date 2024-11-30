@@ -9,7 +9,7 @@ title: Write feature test for API
 
 :::
 
-Let's continue to test our [_XKCD.com JSON API http client_](/docs//tutorials/http-client) that we covered earlier. Please do as follows:
+Let's continue to test our [_XKCD.com JSON API http client_](/docs/tutorials/http-client) that we covered earlier. Please do as follows:
 
 - Create a file called `xkcd-joke-test.chk` on the same directory where your created `xkcd-joke.chk` early.
 - Open `xkcd-joke-test.chk` file, and add following spec.
