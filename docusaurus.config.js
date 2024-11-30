@@ -37,7 +37,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: "/docs/",
+          routeBasePath: "/docs",
           sidebarPath: "./sidebars.js",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -78,28 +78,22 @@ const config = {
         },
         items: [
           {
-            type: "doc",
-            docId: "introduction",
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Tutorials",
+            label: "How-to",
           },
           {
-            type: "doc",
-            docId: "introduction",
+            type: "docSidebar",
+            sidebarId: "docsSidebar",
             position: "left",
             label: "Docs",
           },
           {
-            type: "docsVersionDropdown",
-            position: "right",
+            to: '/blog',
+            label: 'Blog',
+            position: 'left'
           },
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
-          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: "https://github.com/orgs/chkware/discussions",
             position: "right",
