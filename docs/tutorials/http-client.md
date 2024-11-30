@@ -114,6 +114,6 @@ Let's call the [_XKCD.com JSON API_](https://xkcd.com/json.html) that returns a 
 
 This way you can use `chk http` as your script-able http client.
 
-Next, let's write a feature test or [testcase](/docs//tutorials/feature-test) for this request.
+Next, let's write a feature test or [testcase](/docs/tutorials/feature-test) for this request.
 
 :wink::tada::confetti_ball:
