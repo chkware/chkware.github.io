@@ -6,7 +6,7 @@ title: Bitcoin API parser
 
 - **Prerequisite**: First, [setup **CHKware**](/docs/setup) to continue
 - **Prerequisite**: Then, setup vscode extension for _CHKware_
-- Find [more `http` examples](/docs/examples/http-examples), and [more `testcase` examples](/docs/examples/testcase-examples) here.
+- Find [more `http` examples](/docs/examples/fetch-examples), and [more `testcase` examples](/docs/examples/testcase-examples) here.
 
 :::
 

@@ -33,7 +33,7 @@
       type: "category",
       label: "Examples",
       items: [
-        "examples/http-examples",
+        "examples/fetch-examples",
         "examples/testcase-examples",
         "examples/variable-examples",
       ],

@@ -5,7 +5,7 @@ title: Quick Start
 :::note
 
 - **Prerequisite**: First, [setup **CHKware**](/docs/setup) to continue
-- Find [More `http` examples](/docs/examples/http-examples) here
+- Find [More `http` examples](/docs/examples/fetch-examples) here
 
 :::
 
