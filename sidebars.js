@@ -24,7 +24,7 @@
       label: "Tutorials",
       items: [
         "tutorials/http-client",
-        "tutorials/feature-test",
+        "tutorials/validate-json",
         "tutorials/bitcoin-api-parser",
         "tutorials/automate-chucknorris-jokes",
       ],
