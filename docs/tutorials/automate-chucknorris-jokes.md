@@ -61,7 +61,7 @@ The process we are going to follow:
 
   The above `variables:` sections defines a variable called **`category`** with default value **"food"**. Then we use **`category`** variable's value in the URL with **`{$category}`**. So, if we don't pass any value to this file, then **"food"** will be used as default value. You will see below how you can pass value to this **`category`** variable from command-line.
 
-  More docs on [passing query params](/docs/examples/fetch-examples#request-with-query-string) here
+  More docs on [passing query params](/docs/examples/http-examples#request-with-query-string) here
 
   Now the `joke_for_category_rq.chk` file should look like:
 

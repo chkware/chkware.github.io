@@ -5,7 +5,7 @@ title: Use as HTTP client
 :::note
 
 * **Prerequisite**: [Setup **CHKware**](/docs/setup)
-* All [`fetch` examples](/docs/examples/fetch-examples)
+* All [`fetch` examples](/docs/examples/http-examples)
 
 :::
 
