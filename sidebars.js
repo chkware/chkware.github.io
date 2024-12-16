@@ -26,7 +26,6 @@
         "tutorials/http-client",
         "tutorials/validate-json",
         "tutorials/bitcoin-api-parser",
-        "tutorials/automate-chucknorris-jokes",
       ],
     },
     {
