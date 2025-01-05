@@ -33,7 +33,7 @@
       label: "Examples",
       items: [
         "examples/http-examples",
-        "examples/testcase-examples",
+        "examples/validate-examples",
         "examples/variable-examples",
       ],
     }

@@ -137,4 +137,4 @@ expose: ["{$_assertion_results.2.name_run}", "{$_assertion_results.2.is_success}
 ### Supported specification document
 
 - [Http specification document examples](/docs/examples/http-examples#variable-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/variables)
-- [Testcase specification document examples](/docs/examples/testcase-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/testcases)
+- [Testcase specification document examples](/docs/examples/validate-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/testcases)

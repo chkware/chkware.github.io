@@ -33,7 +33,7 @@ There are two parts to **`CHKware`** tool.
 
   This sub command runs a file written in [testcase specification file](testcase-reference) format.
 
-  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/docs/examples/testcase-examples).
+  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/docs/examples/validate-examples).
 
 #### Options
 

@@ -5,7 +5,7 @@ title: Validate JSON
 :::note
 
 * **Prerequisite**: [Setup **CHKware**](/docs/setup)
-* All [`validate` examples](/docs/examples/testcase-examples)
+* All [`validate` examples](/docs/examples/validate-examples)
 
 :::
 
@@ -19,7 +19,7 @@ Please do as follows:
 
   ```yaml
   ---
-  version: default:validation:0.7.2
+  version: default:validate:0.7.2
 
   asserts:
     - { type: Equal, actual: "<% _data.0.code %>", expected: 200 }
@@ -50,6 +50,6 @@ Please do as follows:
 
   You just tested a live API :rocket::star2:.
 
-That's how easy to make API feature test. More [testcase examples](/docs/examples/testcase-examples) here.
+That's how easy to make API feature test. More [testcase examples](/docs/examples/validate-examples) here.
 
 :wink::tada::confetti\_ball:
