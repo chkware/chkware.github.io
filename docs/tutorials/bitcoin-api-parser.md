@@ -63,7 +63,7 @@ Please follow the below steps:
 
   ```yml
   ---
-  version: default:validation:0.7.2
+  version: default:validate:0.7.2
 
   asserts:
     - { type: Equal, actual: <% _data.code %>, expected: 200, msg_pass: 'Response was successful with code `{type_actual}({value_actual})`' }
