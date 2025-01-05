@@ -36,6 +36,9 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        googleTagManager: {
+          containerId: "GTM-K2LQSGJV",
+        },
         docs: {
           routeBasePath: "/docs",
           sidebarPath: "./sidebars.js",
