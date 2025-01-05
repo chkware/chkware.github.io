@@ -8,7 +8,7 @@ Following YAML specs are working examples. This page should be use as reference 
 
 This page is **SUBJECT TO CHANGE**. It is requested to check this page frequently.
 
-Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/blob/main/tests/resources/storage/sample_config/bitcoin-usd-testcase.chk) repository
+These examples can be found [in here](https://github.com/chkware/chkware.github.io/tree/main/sample_specs/examples).
 
 :::
 

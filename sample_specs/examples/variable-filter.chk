@@ -1,0 +1,17 @@
+---
+version: default:http:0.7.2
+
+variables:
+  Email: "here.is.a.long.email.address@domain.ext"
+
+request:
+  url: https://httpbin.org/post
+  method: POST
+
+  body[json]:
+    email: <% Email %>
+    possibleUserName: <% Email | replace("@domain.ext", "") %>
+    possibleUserNameLen: <% Email | replace("@domain.ext", "") | length %>
+
+expose:
+  - <% _response %>
