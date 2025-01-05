@@ -1,0 +1,12 @@
+---
+version: default:http:0.7.2
+
+request:
+  url: https://dummyjson.com/products
+  url_params:
+    limit: 10
+    skip: 5
+  method: GET
+
+expose:
+  - <% _response %>

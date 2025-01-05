@@ -1,0 +1,19 @@
+---
+version: default:http:0.7.2
+
+request:
+  url: "https://httpbin.org/post"
+  method: POST
+
+  headers:
+    Accept-Encoding: gzip, deflate
+
+  body[form-data]:
+    firstName: "Some"
+    lastName: "O' Name"
+    age: 51,
+    cover_photo: file:///path/to/file/cover-iamge.png
+    profile_photo: file:///path/to/file/profile-iamge.png
+
+expose:
+  - <% _response %>
