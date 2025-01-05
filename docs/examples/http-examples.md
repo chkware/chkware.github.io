@@ -4,13 +4,13 @@ title: HTTP examples
 
 :::note
 
-Following YAML specs are working examples. This page should be use as reference for HTTP specification file. See [HTTP specification document reference](/docs/references/http-reference) here.
+Following YAML specs are working examples. This page should be use as reference for _HTTP_ specification file. See [HTTP specification document reference](/docs/references/http-reference) here.
 
 This page is **SUBJECT TO CHANGE**. It is requested to check this page frequently.
 
-We are using [DummyJSON](https://dummyjson.com/docs) and https://httpbin.org/. :clap: Thanks for their awesome services.
-
 These examples can be found [in here](https://github.com/chkware/chkware.github.io/tree/main/sample_specs/examples).
+
+We are using [DummyJSON](https://dummyjson.com/docs) and https://httpbin.org/. :clap: Thanks for their awesome services.
 
 :::
 
