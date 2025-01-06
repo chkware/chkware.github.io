@@ -6,7 +6,7 @@ CHKware `zipapp` is a self contained executable alike utility that once build ca
 
 Follow these steps to bundle `chkware` as [zipapp](https://docs.python.org/3/library/zipapp.html).
 
-- Please confirm that [Python 3.11.x](https://www.python.org/downloads) is installed and setup on this machine
+- Please confirm that [Python 3.13.x](https://www.python.org/downloads) is installed and setup on this machine
 
 - Clone the repo
 

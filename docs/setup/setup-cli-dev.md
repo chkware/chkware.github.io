@@ -6,7 +6,7 @@ title: Setup for toolbox developer
 
 Make sure you are doing following to develop `chk` cli toolbox in your machine.
 
-- Install [Python 3.11.x](https://www.python.org/downloads/)
+- Install [Python 3.13.x](https://www.python.org/downloads/)
   - You can use [Pyenv](https://github.com/pyenv/pyenv#installation) or [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) (using [Miniconda](https://docs.conda.io/en/latest/miniconda.html)) to manage multiple version of Python in your OS.
 - Install [Pipenv](https://pipenv.pypa.io/en/latest/install/#installing-pipenv)
 - Fork the `https://github.com/chkware/cli` repository

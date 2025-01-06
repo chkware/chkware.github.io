@@ -4,7 +4,7 @@ title: Pypi release process
 
 Follow the steps to do a manual release on PyPi.
 
-- Please confirm that [Python 3.11.x](https://www.python.org/downloads) with [Pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today) is installed and setup on this machine
+- Please confirm that [Python 3.13.x](https://www.python.org/downloads) with [Pipenv](https://pipenv.pypa.io/en/latest/#install-pipenv-today) is installed and setup on this machine
 
 - Clone the repo
 

@@ -7,7 +7,7 @@ hide_title: true
 ![CHKware | Low-code API quality testing, and automation toolbox](./assets/github-readme-01.png)
 
 [![PyPI version](https://badge.fury.io/py/chk.svg)](https://badge.fury.io/py/chk)
-[![Python 3.11](https://img.shields.io/badge/python-3.11-red.svg)](https://www.python.org/downloads/)
+[![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/downloads/)
 [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/chkware.svg?style=social&label=Follow%20%40chkware)](https://twitter.com/chkware)
 
 ### Introduction
@@ -20,7 +20,7 @@ Read [about the problems](/docs/about) _CHKware_ addresses. Find [changelog](htt
 
 ### Setup
 
-With [**Python 3.11**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) preinstalled, run following in your terminal to get _CHKware_ installed.
+With [**Python 3.13**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) preinstalled, run following in your terminal to get _CHKware_ installed.
 
 ```bash
 pipx install chk
