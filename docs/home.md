@@ -16,7 +16,7 @@ API quality test, and automation management is not easy to develop, and maintain
 
 **_CHKware_** (pronounced as _/tʃek-wer/_, i.e. _check-ware_) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
 
-Read [about the problems](/docs/introduction) _CHKware_ addresses. Find [changelog](https://github.com/chkware/cli/blob/main/docs/CHANGELOG.md).
+Read [about the problems](/docs/about) _CHKware_ addresses. Find [changelog](https://github.com/chkware/cli/blob/main/docs/CHANGELOG.md).
 
 ### Setup
 

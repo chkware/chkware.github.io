@@ -46,11 +46,6 @@
     },
     {
       type: "doc",
-      label: "💌 Introduction",
-      id: "introduction",
-    },
-    {
-      type: "doc",
       label: "🏎️ Quick start",
       id: "quick-start",
     },
@@ -90,7 +85,7 @@
     {
       type: "doc",
       label: "☑︎ About CHKware",
-      id: "about-chkware",
+      id: "about",
     },
   ],
 }
