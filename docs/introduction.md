@@ -4,56 +4,67 @@ title: Introduction
 
 ![CHKware | Low-code API quality testing, and automation toolbox](./assets/github-hero-01.png)
 
-_CHKware_ (pronounced as _/check:ware/_) is a low-code API testing tool, a script-able HTTP client, and an API test automation tool for the API era.
+**CHKware** (/check:ware/) is a low-code API testing tool and scriptable HTTP client, built for the API-driven era. It simplifies API test automation with minimal coding—fast, flexible, and tailored for modern needs.
 
-It is available as a command-line application. You write test specification files in a [YAML](https://yaml.org/)-based [DSL](https://en.wikipedia.org/wiki/Domain-specific_language). In that specification file you will define some structured configurations to be used for the following purpose:
+**CHKware** is a command-line tool where you write test specifications using a YAML-based DSL.  
 
-- Create reusable http request specification.
-- Create reusable test specifications.
+**Features:**  
 
-Afterward, you run those test specification files with _CHKware_, and get test results or even reuse them.
+- Reusable HTTP request and test specifications.  
+- Structured, easy-to-maintain configurations.  
+
+**Advantages:**  
+
+- Minimal setup, faster test creation.  
+- Simple reuse for consistent results.  
+
+**Benefits:** Run your tests effortlessly and reuse test configurations to streamline API automation.
 
 ---
 
 ### Motivation
 
-In today's world, API is one of the key fuels that drive business. It is the way web applications consume services from self-hosted or 3rd-party vendors. Recent technology movements are going to a fluid internet direction, where _vendor_A_ have one API, _vendor_B_ is another API provider, while we are the consumers (e-commerce, fin-tech) of those vendor APIs. We use those APIs to host our contents based on those APIs. Maybe we are _vendor_U_ hosting more complex APIs on top of those. So, with the upcoming complexity of integration we need better tooling for API testing. Testing tools for modularize api testing.
+APIs power modern businesses, connecting web apps to services from multiple vendors. As integrations grow more complex, maintaining reliability becomes critical. That’s why you need smarter, modular API testing tools—built for today’s fast-evolving ecosystem.
 
-API automation is playing a key role in this era. The benefits of API automation are clearly visible. There are plenty of tools to support all kinds of test automation. However, the complexity to create and maintain automated test cases using available tools is inescapable. No way it's quick to get started, or pick up without further education on the corresponding tools ecosystem. Furthermore, knowledge of the programming language that was used to develop the tools is also needed for advanced customization of test cases.
+API automation is essential, but existing tools are complex and require significant learning. Setting up and maintaining automated tests takes time and often demands programming expertise for customization. You need a faster, simpler solution—designed for effortless setup and minimal learning curves.
 
-API testing tools are costly as well, in-term of licensing, setup and maintenance. Some tools are available for free for simple use-cases, but have complex licensing for increased usage, most of the time that aren't worthwhile. Also, commercial applications have limited community support, and knowledge exchange medium. Above that, of course, there are less and less open-source tools to cover these scenarios.
+API testing tools are costly—not just in licensing but also in setup and maintenance. Free tools cover only basic use cases, while advanced features come with complex licensing and minimal community support. With fewer open-source alternatives, finding a scalable, affordable solution is harder than ever. That’s where an open, community-driven tool can fill the gap.
 
-For these reasons, the solutions are less scaling for actual use-cases. With additional business knowledge (that is ever-growing) required to start and maintain tests, you also need:
+These limitations make existing tools less scalable for real-world use. Effective API testing requires:
 
-1. Specific programming language knowledge, so it is not easy to jump-in quick
-2. Added complexity of maintaining supporting software stack, so there are side effects
-3. Above all, maintaining test cases based on code is more complex if you don't design your test code architecture well in the early days.
+- Mastery of specific programming languages, slowing onboarding.
+- Managing a complex software stack increases the risks of side effects.
+- Careful test code design upfront, or maintenance becomes a nightmare.
 
-So, clearly enough I think this situation needs to be improved. This is the motivation for _CHKware_.
+The result? Slower adoption and higher long-term costs. You need a solution that simplifies testing without the overhead.
+
+It’s clear—the current state of API testing needs improvement. That’s why we created CHKware: a smarter, faster, and scalable solution designed to simplify API automation.
 
 ---
 
 ### Audiences
 
-The focused users of **CHKware** are everyone involved in an API project, given they have some testing basics.
+The focused users of **CHKware** are everyone involved in an API project, given they have some level of understanding of testing basics. If you
 
-- People with zero programming knowledge need a tool that does not get in their way.
-- We need a tool that is relatively easy to write specifications, expressive, and customizable to the very core.
-- We need a tool that is very easy to learn, and fun to use.
+a. are a person with zero programming knowledge, and in need of a tool that does not get in your way,
+b. need a tool that is relatively easy to write test cases,
+c. and need a tool that is very easy to learn
 
-In practical cases, software testers / QAs, developers, PM/POs, are the people who should be able to use it rigorously.
+Then CHKware is for you. 🙌
 
-- This project is particularly helpful if you are developing an API oriented project.
-- Writing specification to test websites, or web interfaces are not in the project focus for now.
-- Also, seeding data, validating data in DB is out of this project scope for now.
+In practical cases, software testers, software quality assurance, developers, and PM / POs, are the people who should be able to use CHKware. This project is beneficial when
+
+- you are developing an API-oriented project,
+- writing website automation,
+- also, seeding data or validating data.
 
 ---
 
 ### Platform support
 
-This tool is tested to run on **Linux**, **Windows**, and **macOS** platform.
+This tool is tested to run on **Linux**, **Windows**, and **macOS** platforms.
 
-There is no native binary dependency, therefore it is expected on all the platform where supported Python version works. Please create an issue, if you need additional platform support.
+There is no native binary dependency, therefore it is expected on all the platforms where the supported Python version works. Please create an issue, if you need additional platform support.
 
 ---
 
@@ -61,7 +72,10 @@ There is no native binary dependency, therefore it is expected on all the platfo
 
 `CHKware` is a tool collection. Followings are stability by tools:
 
-| Command name   | Specification document | Stability |
-| -------------- | ---------------------- | --------- |
-| `chk http`     | Http                   | _alpha_   |
-| `chk testcase` | Testcase               | _alpha_   |
+| Command name   | Specification | Stability | Version   |
+| -------------- | ------------- | --------- | --------- |
+| `chk http`     | Http          | _alpha_   | < 0.5.0   |
+| `chk testcase` | Testcase      | _alpha_   | < 0.5.0   |
+| `chk fetch`    | Http          | _beta_    | >= 0.5.0  |
+| `chk validate` | Testcase      | _beta_    | >= 0.5.0  |
+| `chk workflow` | Testcase      | _beta_    | >= 0.5.0  |
