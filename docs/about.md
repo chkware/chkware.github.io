@@ -6,19 +6,20 @@ title: About CHKware
 
 **CHKware** (/check:ware/) is a low-code API testing tool and scriptable HTTP client, built for the API-driven era. It simplifies API test automation with minimal coding—fast, flexible, and tailored for modern needs.
 
-**CHKware** is a command-line tool where you write test specifications using a YAML-based DSL.  
-
 **Features:**  
 
-- Reusable HTTP request and test specifications.  
-- Structured, easy-to-maintain configurations.  
+- Reusable HTTP request, test specifications and workflow management.
+- Structured, quick to learn and easy-to-maintain test configurations.
 
 **Advantages:**  
 
 - Minimal setup, faster test creation.  
 - Simple reuse for consistent results.  
 
-**Benefits:** Run your tests effortlessly and reuse test configurations to streamline API automation.
+**Benefits:** 
+
+- Run cross-platform tests effortlessly.
+- Reuse test configurations to streamline API automation in CI/CD.
 
 ---
 
@@ -62,9 +63,17 @@ In practical cases, software testers, software quality assurance, developers, an
 
 ### Platform support
 
-This tool is tested to run on **Linux**, **Windows**, and **macOS** platforms.
+Following platforms are supported:
 
+> Make sure your OS version can install _Python 3.13.x_
+
+- **Linux**
+- **Windows**
+- **macOS**
+
+:::info
 There is no native binary dependency, therefore it is expected on all the platforms where the supported Python version works. Please create an issue, if you need additional platform support.
+:::
 
 ---
 
