@@ -14,9 +14,9 @@ hide_title: true
 
 API quality test, and automation management is not easy to develop, and maintain. It requires multitude of knowledge of programming libraries, business scenarios, infrastructure details, etc - unless you use **_CHKware_**.
 
-**_CHKware_** (pronounced as _/tʃek-wer/_, i.e. _check-ware_) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
+**_CHKware_** (say, _Check Ware_) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
 
-Read [about the problems](/docs/about) _CHKware_ addresses. Find [changelog](https://github.com/chkware/cli/blob/main/docs/CHANGELOG.md).
+🏎️💨 .. [**Get started**](/docs/quick-start) here.
 
 ### Setup
 
@@ -26,20 +26,13 @@ With [**Python 3.13**](https://www.python.org/downloads/) and [**Pipx**](https:/
 pipx install chk
 ```
 
-Jump to the [setup guide](/docs/setup) for different ways to install **_CHKware_**.
+> See other ways to install **_CHKware_** in [setup guide](/docs/setup).
 
-### Usage
+### Get help
 
-[Get started](/docs/quick-start) quickly here.
-
-### Ask anything
-
-Please use tag `chkware-cli` with the question on [stackoverflow.com](https://stackoverflow.com/questions/tagged/chkware-cli) to ask or [discuss anything](https://github.com/chkware/HEAD/discussions). Follow the tag if you want to help others with your knowledge.
-
+Have a question? [Ask anything](https://github.com/orgs/chkware/discussions/categories/q-a) on the forum.
+<!-- 
 ### Contribute
 
 Read [contribution guide](https://github.com/chkware/cli/blob/971e7400848f26f9f8d2be5fa9eef5fa80a6ded0/docs/CONTRIBUTING.md) and [code of conduct](https://github.com/chkware/cli/blob/971e7400848f26f9f8d2be5fa9eef5fa80a6ded0/docs/CODE_OF_CONDUCT.md) to start contributions.
-
----
-
-Licensed under [MPL v2.0](https://www.mozilla.org/en-US/MPL/2.0/) | Follow [@chkware](https://twitter.com/chkware) on Twitter | [`chk` project](https://pypi.org/project/chk/) on PyPi
+-->

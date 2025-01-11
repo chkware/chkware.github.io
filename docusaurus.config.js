@@ -156,7 +156,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © 2021 - ${new Date().getFullYear()} CHKware. Built with Docusaurus.`,
+        copyright: `Copyright © 2021 - ${new Date().getFullYear()} CHKware. Licensed under Mozilla Public License 2.0.`,
       },
       metadata: [
         {
