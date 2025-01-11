@@ -28,6 +28,14 @@ pipx install chk
 
 > See other ways to install **_CHKware_** in [setup guide](/docs/setup).
 
+This will install a command called `chk`. **`chk`** is a console command that runs your test configuration written in YAML.
+
+To verify installation, run:
+
+```shell
+chk --help
+```
+
 ### Get help
 
 Have a question? [Ask anything](https://github.com/orgs/chkware/discussions/categories/q-a) on the forum.
