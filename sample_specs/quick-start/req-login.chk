@@ -1,0 +1,13 @@
+version: default:http:0.7.2
+
+request:
+  url: https://dummyjson.com/user/login
+  method: POST
+
+  body[json]:
+    username: emilys
+    password: emilyspass
+    expiresInMins: 30
+
+expose:
+  - <% _response %>
