@@ -12,21 +12,21 @@ hide_title: true
 
 ### Introduction
 
-API quality test, and automation management is not easy to develop, and maintain. It requires multitude of knowledge of programming libraries, business scenarios, infrastructure details, etc - unless you use **_CHKware_**.
+API quality test, and automation management is not easy to develop, and maintain. It requires multitude of knowledge of programming libraries, business scenarios, infrastructure details, etc - unless you use ***CHKware***.
 
-**_CHKware_** (say, _Check Ware_) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
+***CHKware*** (say, _Check Ware_) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
 
 🏎️💨 .. [**Get started**](/docs/quick-start) here.
 
 ### Setup
 
-With [**Python 3.13**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) preinstalled, run following in your terminal to get _CHKware_ installed.
+With [**Python 3.13**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) preinstalled, run following in your terminal to get *CHKware* installed.
 
 ```bash
 pipx install chk
 ```
 
-> See other ways to install **_CHKware_** in [setup guide](/docs/setup).
+> See other ways to install ***CHKware*** in [setup guide](/docs/setup).
 
 This will install a command called `chk`. **`chk`** is a console command that runs your test configuration written in YAML.
 

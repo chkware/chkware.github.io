@@ -2,7 +2,7 @@
 title: Setup for extension developer
 ---
 
-### Local development environment setup for _CHKware_ extension
+### Local development setup for *CHKware* extension
 
 Make sure you are doing following to develop this extension further in your machine.
 
@@ -11,5 +11,7 @@ Make sure you are doing following to develop this extension further in your mach
 - Press `f5`
 - Wait for the new window to be opened
 - Open command palette by pressing `ctrl` + `shift` + `p`
-- Search for _CHKware_ commands
+
+- Search for *CHKware* commands
+
 - After code changes, run `Developer: Reload Window` in the new window from command palette

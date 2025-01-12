@@ -2,13 +2,13 @@
 title: Setup CHKware cli
 ---
 
-This section describe the installation process for [_CHKware_](https://github.com/chkware/cli). The currently supported python version is **_Python 3.13.x_**. You need to have this version of python in your OS to continue.
+This section describe the installation process for [*CHKware*](https://github.com/chkware/cli). The currently supported python version is **_Python 3.13.x_**. You need to have this version of python in your OS to continue.
 
 ### Install dependencies
 
 - [**_Python 3.13.x_**](https://www.python.org/downloads/)
 
-### Install _CHKware_ cli with Pipx
+### Install *CHKware* cli with Pipx
 
 :::info
 Pipx is a standard PyPi python application manager. Pipx creates separate virtual environment for given installable package. So, your system have less side effect.
@@ -23,7 +23,7 @@ The best way is to setup CHKware with [pipx](https://pipx.pypa.io/stable/). Foll
   pipx install chk
   ```
 
-### Install _CHKware_ cli with Pip
+### Install *CHKware* cli with Pip
 
 :::info
 If you have _Python 3.13.x_ installed, then you already have `pip` installed by default.
@@ -68,7 +68,7 @@ For windows users, please follow [**this nice article**](https://realpython.com/
 
   > To upgrade to the next released version, run the same command.
 
-### Update _CHKware_ cli
+### Update *CHKware* cli
 
 - If CHkware was installed with _pipx_ then to upgrade to latest released version.
 
@@ -76,11 +76,11 @@ For windows users, please follow [**this nice article**](https://realpython.com/
   pipx upgrade chk
   ```
 
-- If CHkware was installed with _pip_ then to upgrade to latest released version follow [Install _CHKware_ cli with Pip](#install-chkware-cli-with-pip) step 2 and step 3.
+- If CHkware was installed with _pip_ then to upgrade to latest released version follow [Install *CHKware* cli with Pip](#install-chkware-cli-with-pip) step 2 and step 3.
 
 ---
 
-### Install edge version of _CHKware_ cli [Advance users]
+### Install edge version of *CHKware* cli [Advance users]
 
 You can always install a tagged version directly from git
 
