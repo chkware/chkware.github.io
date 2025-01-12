@@ -1,15 +1,26 @@
 ---
-title: Setup for extension developer
+title: Extension developer setup
 ---
 
 ### Local development setup for *CHKware* extension
 
 Make sure you are doing following to develop this extension further in your machine.
 
-- Run `npm install` to install dependencies for the first time
-- Run `npm run watch`
-- Press `f5`
+- Run following to install dependencies
+
+  ```shell
+  npm i
+  ```
+
+- To run in watch more in development
+  ```shell
+  npm run watch
+  ```
+
+- Press `f5` to debug and preview / test update output
+
 - Wait for the new window to be opened
+
 - Open command palette by pressing `ctrl` + `shift` + `p`
 
 - Search for *CHKware* commands
