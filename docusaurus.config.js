@@ -12,7 +12,7 @@ const TwitterSvg =
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CHKware",
-  tagline: "Low-code API quality testing, and automation toolbox.",
+  tagline: "Reduce API regression cost, release API quickly.",
   favicon: "img/logo.png",
 
   // Set the production url of your site here
