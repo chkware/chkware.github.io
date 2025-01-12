@@ -4,6 +4,8 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
+const path = require('path');
+
 import { themes as prismThemes } from "prism-react-renderer";
 
 const TwitterSvg =
@@ -35,7 +37,7 @@ const config = {
     [
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         googleTagManager: {
           containerId: "GTM-K2LQSGJV",
         },
@@ -61,10 +63,43 @@ const config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/styles/main.scss'),
         },
-      }),
+      },
     ],
+  ],
+
+  plugins: [
+    function scssLoaderPlugin() {
+      return {
+        name: 'scss-loader',
+        configureWebpack() {
+          return {
+            module: {
+              rules: [
+                {
+                  test: /\.module\.scss$/, // Match only SCSS modules
+                  use: [
+                    'style-loader',
+                    {
+                      loader: 'css-loader',
+                      options: { modules: true }, // Enable CSS modules
+                    },
+                    'sass-loader',
+                  ],
+                  include: path.resolve(__dirname, './src'),
+                },
+                {
+                  test: /\.scss$/, // Match regular SCSS files
+                  use: ['style-loader', 'css-loader', 'sass-loader'],
+                  exclude: /\.module\.scss$/,
+                },
+              ],
+            },
+          };
+        },
+      };
+    },
   ],
 
   themeConfig:
@@ -205,5 +240,6 @@ const config = {
     longDetails:
       "API testing tool, a script-able HTTP client, and an API test automation tool for the API era.",
   },
+
 };
 export default config;
