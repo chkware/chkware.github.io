@@ -4,7 +4,7 @@ title: Home
 hide_title: true
 ---
 
-![CHKware | Low-code API quality testing, and automation toolbox](./assets/github-readme-01.png)
+![CHKware | Low-code API quality testing, and automation tool](./assets/github-readme-01.png)
 
 [![PyPI version](https://badge.fury.io/py/chk.svg)](https://badge.fury.io/py/chk)
 [![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)](https://www.python.org/downloads/)
@@ -14,7 +14,7 @@ hide_title: true
 
 API quality test, and automation management is not easy to develop, and maintain. It requires multitude of knowledge of programming libraries, business scenarios, infrastructure details, etc - unless you use ***CHKware***.
 
-***CHKware*** (say, _Check Ware_) is a low-code API quality testing, and automation toolbox. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
+*CHKware* (say, **Check+Ware**) is a low-code API quality testing, and automation tool. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
 
 🏎️💨 .. [**Get started**](/docs/quick-start) here.
 

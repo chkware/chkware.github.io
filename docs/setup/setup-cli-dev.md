@@ -2,9 +2,9 @@
 title: Console tool developer setup
 ---
 
-### Local development environment setup for *CHKware* cli toolbox
+### Local development environment setup for *CHKware* cli tool
 
-Make sure you are doing following to develop `chk` cli toolbox in your machine.
+Make sure you are doing following to develop `chk` cli tool in your machine.
 
 #### Prerequisite:
 

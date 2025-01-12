@@ -161,7 +161,7 @@ const config = {
       metadata: [
         {
           name: "CHKware",
-          content: "Low-code API quality testing, and automation toolbox",
+          content: "Low-code API quality testing, and automation tool",
         },
       ],
       image: "img/banner.png",
@@ -201,7 +201,7 @@ const config = {
   customFields: {
     indexCta: "docs/quick-start",
     indexCtaTitle: "⏱️ 30 seconds to start",
-    shortDetails: "Low-code API quality testing, and automation toolbox.",
+    shortDetails: "Low-code API quality testing, and automation tool.",
     longDetails:
       "API testing tool, a script-able HTTP client, and an API test automation tool for the API era.",
   },

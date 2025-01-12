@@ -19,7 +19,7 @@ The Version specification format is how someone write a document version. Usuall
 version: default:http:0.7.2
 ```
 
-Document version specifies which version of document current specification contents are written in. Simply think that, if someone wrote a document in a version that is not supported by the `chk` toolbox currently installed: It will exit with an error. For example, if you run following in command-line:
+Document version specifies which version of document current specification contents are written in. Simply think that, if someone wrote a document in a version that is not supported by the `chk` tool currently installed: It will exit with an error. For example, if you run following in command-line:
 
 ```bash
 chk
