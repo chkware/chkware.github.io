@@ -44,23 +44,25 @@ That's all needed for development setup.
 
 You should setup your IDE with [Ruff](https://docs.astral.sh/ruff/editors/setup/) and [Mypy](https://mon.school/courses/mypy-primer/learn/1.3).
 
-#### Run tests
+### Run tests
 
-- Use the following command to run tests
+We use PyTest as testing library. So, get your basic of understanding in it. We also use
 
-  ```shell
-  poetry run py.test -s ...
-  ```
-
-  or with `poe`
+#### Running specific test
 
   ```shell
-  poetry poe test
+  poetry run py.test -s tests/[FILE]::[TEST_CLASS]::[TEST_FUNC]
   ```
 
-#### Common development tasks
+#### Running `chk` while development
 
-##### Analyze linting and formatting issues
+  ```shell
+  poetry run python -m chk [SUB_COMMAND] [OPTIONS] [SPEC_FILE]
+  ```
+
+### Common development tasks
+
+#### Analyze linting and formatting issues
 
 :::warning
 Do this before doing merge request.
@@ -72,7 +74,7 @@ Run following to analyze linting and formatting issues.
 poetry poe fix
 ```
 
-##### Build package
+#### Build package
 
 Run following to build packages to be uploaded to Pypi.
 
@@ -84,7 +86,7 @@ poetry build
 Make sure to install the local package with `pipx` before Pypi release.
 :::
 
-##### Clear test run cache
+#### Clear test run cache
 
 Run following to clear test run cache.
 
@@ -92,7 +94,7 @@ Run following to clear test run cache.
 poetry poe clear-cache
 ```
 
-##### Create requirements for CI/CD
+#### Create requirements for CI/CD
 
 Run following to create requirements for CI/CD.
 
@@ -100,7 +102,7 @@ Run following to create requirements for CI/CD.
 poetry poe requirements
 ```
 
-##### Build `shiv` zipapp
+#### Build `shiv` zipapp
 
 :::warning
 This was tested in macOS only. Although, it's expected to work in any environment.
