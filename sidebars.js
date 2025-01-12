@@ -74,7 +74,6 @@
         "setup/setup-cli-dev",
         "setup/setup-site-dev",
         "setup/build-wheel",
-        "setup/build-zipapp",
       ],
     },
     {
