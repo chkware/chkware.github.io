@@ -2,15 +2,30 @@
 title: Setup VS Code extension
 ---
 
-### Install _CHKware_ extension for Visual Studio Code
+:::warning
+[CHKware vscode extension](https://marketplace.visualstudio.com/items?itemName=chkware.chkware) on visual studio marketplace it not updated.
+:::
+:::success
+Latest vscode extension can be found on project's Github [release page](#).
+:::
+
+### Install *CHKware* extension for Visual Studio Code
 
 Get started writing *CHKware* configurations with VS Code doing following steps:
 
 - Step 1: Install [chkware](/docs/setup), if you haven't done so already.
 
-- Step 2: Install the [*CHKware* extension](https://marketplace.visualstudio.com/items?itemName=chkware.chkware) for VS Code
+- Step 2: Download the [*CHKware* extension](#) for VS Code from Github project release page.
 
-- Step 3: New to *CHKware*? Read the *CHKware* [quick start](/docs/quick-start) guide here.
+- Step 3: Bring up command palette.
+
+    - Use `Cmd+Shift+P` on macOS
+    - Use `Ctrl+Shift+P` on Windows
+    - Use `Ctrl+Shift+P` on Linux
+
+- Step 4: Search for **`Extensions: Install from VSIX`**. Selecting the option should open a file opener dialog in your operating system.
+
+- Step 5: Select the **`chkware-vscode-ext.vsix`** file from the download location to load the extension.
 
 ---
 
