@@ -1,0 +1,34 @@
+// src/styles/main.scss
+
+// Variables
+$primary-color: #4caf50;
+$secondary-color: #333;
+$text-color: #fff;
+
+// Mixins
+@mixin center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Global Styles
+body {
+  font-family: Arial, sans-serif;
+  background-color: $primary-color;
+  color: $text-color;
+  margin: 0;
+}
+
+.header {
+  background-color: $secondary-color;
+  color: $text-color;
+  padding: 10px;
+}
+
+.footer {
+  background-color: $secondary-color;
+  color: $text-color;
+  text-align: center;
+  padding: 10px 0;
+}
