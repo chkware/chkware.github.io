@@ -9,11 +9,13 @@ title: Setup VS Code extension
 Latest vscode extension can be found on project's Github [release page](#).
 :::
 
+*CHKware VS Code extension* helps to write `.chk` files quick. It contains regular used snippets those makes test spec. development quick.
+
 ### Install *CHKware* extension for Visual Studio Code
 
 Get started writing *CHKware* configurations with VS Code doing following steps:
 
-- Step 1: Install [chkware](/docs/setup), if you haven't done so already.
+- Step 1: [Setup CHKware cli](/docs/setup), if you haven't done so already.
 
 - Step 2: Download the [*CHKware* extension](#) for VS Code from Github project release page.
 
@@ -36,4 +38,4 @@ Using VS Code command palette you can quickly select a snippet from added sample
 - Use `Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows, and `Ctrl+Shift+P` on Linux to bring up command palette.
 - Select a sample you need to use. More information about [vscode extension](https://github.com/chkware/vscode-ext/blob/main/README.md) here.
 
-![CHKware visual studio code extension](../assets/vsc-extension-usage.gif)
+![CHKware visual studio code extension](../assets/preview-01.gif)

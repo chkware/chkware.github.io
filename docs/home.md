@@ -14,7 +14,7 @@ hide_title: true
 
 API quality test, and automation management is not easy to develop, and maintain. It requires multitude of knowledge of programming libraries, business scenarios, infrastructure details, etc - unless you use ***CHKware***.
 
-*CHKware* (say, **Check+Ware**) is a low-code API quality testing, and automation tool. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
+*CHKware* (say, **Check-Ware**) is a low-code API quality testing, and automation tool. It helps you write accurate, robust, and expressive feature tests for your API in less time than usual.
 
 🏎️💨 .. [**Get started**](/docs/quick-start) here.
 
