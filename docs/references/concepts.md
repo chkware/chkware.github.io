@@ -1,5 +1,5 @@
 ---
-title: Command-line reference
+title: Concepts
 ---
 
 This page describes some key concepts before you use **`CHKware`**.
