@@ -2,7 +2,7 @@
 title: HTTP specification
 ---
 
-The **HTTP specification format** expresses a HTTP request. One *HTTP specification document* can define one HTTP request.
+The **HTTP specification format** represents a HTTP request. One *HTTP specification document* can define one HTTP request.
 
 HTTP specification document supports `default:http:0.7.2` version.
 
@@ -12,6 +12,10 @@ HTTP specification document supports `default:http:0.7.2` version.
   ```yml
   # Version of the document
   version: "default:http:X.X.X"
+
+  # Define variables
+  variables:
+    AVariable: Variable Value
 
   # Define HTTP request with this node
   request:
@@ -107,7 +111,7 @@ HTTP specification document supports `default:http:0.7.2` version.
       </catalog>
 
   expose:
-    - "{$_response}"
+    - <% _response %>
   ```
 </details>
 

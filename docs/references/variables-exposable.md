@@ -87,17 +87,6 @@ $ chk fetch request-someurl.chk --no-format
   - `_assertion_results.assert_fn` stores the assertion function used when assertion fails -->
 
 <!-- #### `expose` node
-
-Special block that can used to expose data from callee environment to caller environment. We can write any local variable data to be exposed from this section. `expose` node expects an array to be written. It also can be left as null.
-
-For example to expose response data after the request have been executed and got response successfully. eg:
-
-```yml
-expose:
-  - "{$_response.body}"
-  - "{$_response.code}"
-```
-
 or after a testcase execution is done
 
 ```yml
