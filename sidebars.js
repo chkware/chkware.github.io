@@ -62,7 +62,7 @@
         "references/version",
         "references/variables",
         "references/variables-exposable",
-        "references/http-reference",
+        "references/http-spec",
         "references/validate-reference",
         "references/workflow-reference",
         "references/assertion-reference",

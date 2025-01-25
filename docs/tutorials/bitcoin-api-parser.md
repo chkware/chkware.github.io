@@ -81,7 +81,7 @@ Please follow the below steps:
 
 #### 3. Writing the business case test with workflow
 
-In this section we'll prepare a testcase that combines those http spec and validation spec using a workflow spec file.
+In this section we'll prepare a testcase that combines those HTTP spec and validation spec using a workflow spec file.
 
 Please follow the below steps:
 

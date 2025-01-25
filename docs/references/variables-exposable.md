@@ -73,18 +73,6 @@ $ chk fetch request-someurl.chk --no-format
 
 <!-- For example:
 
-- `_response` is a local variable that is available in both http and testcase specifications. This special local variable named `_response` get added after the response received successfully.
-
-  These nodes are available under `_response` are `version`, `code`, `reason`, `headers`, `body`.
-
-  Therefore, to access `code` you're supposed to use `_response.code`.
-
-  - `_response.code` holds response status code. e.g. 200, 400, 401, etc
-  - `_response.headers` holds response headers.
-  - `_response.body` holds response body.
-  - `_response.reason` holds response reason. e.g. 'Created', 'Moved Permanently', etc [more here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
-  - `_response.version` holds response HTTP version. e.g. 'HTTP/1.1'
-
 - `_assertion_results` is a local variable that is available in testcase specifications. This special local variable named `_assertion_results` get added to local variable stack after all the assertion is resolved. `_assertion_results` holds a list of objects.
 
   Each objects those `_assertion_results` can hold have following nodes: `name`, `name_run`, `actual_original`, `is_success`, `message`, `assert_fn`

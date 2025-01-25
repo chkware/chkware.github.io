@@ -4,7 +4,7 @@ title: HTTP examples
 
 :::note
 
-Following YAML specs are working examples. This page should be use as reference for _HTTP_ specification file. See [HTTP specification document reference](/docs/references/http-reference) here.
+Following YAML specs are working examples. This page should be use as reference for _HTTP_ specification file. See [HTTP specification document reference](/docs/references/http-spec) here.
 
 This page is **SUBJECT TO CHANGE**. It is requested to check this page frequently.
 

@@ -4,7 +4,7 @@ title: Workflow specification reference
 
 :::note
 
-- This page should be use as reference for http specification files.
+- This page should be use as reference for HTTP specification files.
 - This page is subject to change. It is requested to check this page frequently.
 
 :::
@@ -15,7 +15,7 @@ HTTP specification document is a _**versioned document**_, meaning there MUST be
 
 It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/docs/references/variables)
 
-### All supported nodes in http specification document
+### All supported nodes in HTTP specification document
 
 ```yaml
 # Version of the document
@@ -118,7 +118,7 @@ expose:
 
 ---
 
-### `version` (<small>_`required`_</small>)
+### `version` (<small>*`required`*</small>)
 
 `version` is a top-level block that defines a document version. How to write a `version:` block is already defined in [_version reference_](/docs/references/version).
 
@@ -128,7 +128,7 @@ expose:
 
 One special local variable named `_response` get added after the response received successfully. This local variable is accessible under [_exposable block_](/docs/references/variables#exposable).
 
-### `request` (<small>_`required`_</small>)
+### `request` (<small>*`required`*</small>)
 
 `request` is a `_required_` block that defines a http request. This holds many other nodes that constructs an http request.
 
@@ -136,7 +136,7 @@ One special local variable named `_response` get added after the response receiv
 request: ...
 ```
 
-### `request.url` (<small>_`required`_</small>)
+### `request.url` (<small>*`required`*</small>)
 
 `request.url` is a `_required_` sub-block, that is used to define a valid `http://` or `https://` for now.
 
@@ -145,7 +145,7 @@ request:
   url: https://httpbin.org/get
 ```
 
-### `request.method` (<small>_`required`_</small>)
+### `request.method` (<small>*`required`*</small>)
 
 `request.method` is a `_required_` sub-block, that is used to define a valid [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). Acceptable values are `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD`.
 
@@ -302,6 +302,6 @@ request:
 
 `expose` is a sub-block, that can be used to expose local variable of this file to outer scope.
 
-For http specification document local variable called `_response` which holds successful response, is available.
+For HTTP specification document local variable called `_response` which holds successful response, is available.
 
 See docs on [expose node](/docs/references/variables#expose-node)

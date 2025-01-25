@@ -55,7 +55,7 @@ Options:
   --help                Show this message and exit.
 ```
 
-This sub command runs a file written in [http specification file](http-reference) format.
+This sub command runs a file written in [HTTP specification file](http-spec) format.
 
 #### Options
 
@@ -133,6 +133,6 @@ Test specification files are written in YAML, having file extension `.chk`, `.ya
 
 > In the future evolution path of **CHKware** we are going to introduce more and more specification options and specification types and versions.
 
-- [HTTP specification file](http-reference)
+- [HTTP specification file](http-spec)
 - [Validate specification file](validate-reference)
 - [Workflow specification file](workflow-reference)
