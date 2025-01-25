@@ -1,5 +1,5 @@
 ---
-title: Specification version
+title: Document version
 ---
 
 ### Introduction

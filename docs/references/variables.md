@@ -1,85 +1,149 @@
 ---
 title: Variables
 ---
-
-:::note
-
-- This page should be use as reference for specification files.
-- This page is subject to change. It is requested to check this page frequently.
-
-:::
-
 ### Introduction
 
-Variables are ways to hold value or computed values, like in programming language.
+Variables are ways to hold value or computed values in specification files, like in programming language.
 
 ### Variables
 
-Variables can be defined in two ways:
+Variables can be defined with `variables` section on a supported specification document.
 
-1. Variable specification file. Files with `version: default:variable:x.x.x` [**WIP** - not available yet]
-2. `variables` section on a supported specification document.
-
-```yaml
-version: default:http:0.7.2
-
-variables:
-  var1: value one
-  var_2: "value 2"
-```
-
-3. Variable can be also passed from a command-line invoke. e.g:
-
-Say a http spec. file looks following
-
-```yaml
+```yml
 version: default:http:0.7.2
 
 variables:
   var1: 22
+```
+
+This variables can be later used, i.e.
+
+```yml
+# ---
+# file name: request-someurl.chk
+# ---
+
+version: default:http:0.7.2
+
+variables:
+  # emailAddr: "user-<% range(1, 5) | random %>@domain.ext"
+  emailAddr: "user@domain.ext"
 
 request:
-  url: https://someurl.com?var-one={$var1}
+  url: "https://find-by-email.ext?emailAddress=<% $emailAddr %>"
+
+...
+```
+
+### Passing variables from console
+
+It's possible to pass variables from console while invoking `chk` command. e.g:
+
+So, for following HTTP specification:
+
+```yml
+# ---
+# file name: request-someurl.chk
+# ---
+
+version: default:http:0.7.2
+
+variables:
+  emailAddr: ~
+
+request:
+  url: "https://find-by-email.ext"
+  url_params:
+    emailAddress: <% $emailAddr %>
+
+...
+```
+```shell
+chk fetch request-someurl.chk -V {"emailAddress": "user@domain.ext"}
+```
+
+Then CHKware will replace `<% $emailAddr %>` with `"user@domain.ext"`, before making request. Also, when without passing variable from console, `<% $emailAddr %>` will be replaced with `null`.
+
+### Setting default value
+
+It's possible to set a default value for a variable. Consider following example:
+
+```yml
+# ---
+# file name: request-someurl.chk
+# ---
+
+version: default:http:0.7.2
+
+variables:
+  emailAddr: "user-<% range(1, 5) | random %>@domain.ext"
+
+request:
+  url: "https://find-by-email.ext"
+  url_params:
+    emailAddress: <% $emailAddr %>
+
+
+...
+```
+
+When invoked like:
+
+```shell
+chk fetch request-someurl.chk -V {"emailAddress": "user@domain.ext"}
+```
+
+Then CHKware will replace `<% $emailAddr %>` with `"user@domain.ext"`, before making request.
+
+However, if invoked like:
+
+```shell
+chk fetch request-someurl.chk
+```
+
+Then CHKware will replace `<% $emailAddr %>` with `"user-2@domain.ext"` (or with an email of randomly picked number).
+
+### Variable templating with Jinja2
+
+For variable templating *CHKware* uses Jinja2. Almost all of the [Jinja2 features](https://jinja.palletsprojects.com/en/stable/templates/) are supported. That makes it possible to change variables values. e.g:
+
+```yml
+version: default:http:0.7.2
+
+variables:
+  userId: <% range(1, 5) | random %>
+  emailAddr: "user-<% userId %>@domain.ext"
+
+request:
+  url: "https://find-by-email.ext"
+  url_params:
+    userId: <% $userId %>
+    emailAddress: <% $emailAddr %>
+
+...
+```
+
+### Exposable variables
+
+*Exposable variables* are special variables to exposes data to caller system. These exposable variables send data to caller system after a success or fail operation.
+
+> There are two caller systems available now: a) Console, b) Workflow module.
+
+Exposable variables can be defined with `expose:` node.
+
+```yml
+version: default:http:0.7.2
+
+variables:
   ...
+
+expose:
+  - <% _response %>
 ```
 
-and in the command-line you pass as following
+This YAML node is not required. However, if the node is not included, nothing will be displayed in console response.
 
-```bash
-chk http tests/xkcd-joke.chk var1=23
-```
-
-then CHKware will replace `{$var1}` with `23`, before making request
-
-```yaml
----
-# url: https://someurl.com?var-one={$var1}
-# to
-url: https://someurl.com?var-one=23
-```
-
-However in the command-line you if pass no variable. e.g.
-
-```bash
-chk http tests/xkcd-joke.chk
-```
-
-then CHKware will replace `{$var1}` with `22` as it's the default value, before making request
-
-```yaml
----
-# url: https://someurl.com?var-one={$var1}
-# to
-url: https://someurl.com?var-one=22
-```
-
-### Exposable
-
-There are some special hidden local variable those are available at runtime of the execution. Those are exposable variables.
-
-There is one special type of variable block that can be use in a http / testcase specification file to expose these exposable to callee environment. This exposeable section cab be defined with `expose` node.
-
-For example:
+<!-- For example:
 
 - `_response` is a local variable that is available in both http and testcase specifications. This special local variable named `_response` get added after the response received successfully.
 
@@ -104,15 +168,15 @@ For example:
   - `_assertion_results.actual_original` original variable that was supposed to be asserted
   - `_assertion_results.is_success` stores the boolean result of the
   - `_assertion_results.message` stores the error message if the assertion fails
-  - `_assertion_results.assert_fn` stores the assertion function used when assertion fails
+  - `_assertion_results.assert_fn` stores the assertion function used when assertion fails -->
 
-#### `expose` node
+<!-- #### `expose` node
 
 Special block that can used to expose data from callee environment to caller environment. We can write any local variable data to be exposed from this section. `expose` node expects an array to be written. It also can be left as null.
 
 For example to expose response data after the request have been executed and got response successfully. eg:
 
-```yaml
+```yml
 expose:
   - "{$_response.body}"
   - "{$_response.code}"
@@ -120,7 +184,7 @@ expose:
 
 or after a testcase execution is done
 
-```yaml
+```yml
 expose: [
   "{$_response.body}",
   "{$_response.code}",
@@ -132,9 +196,4 @@ expose: [
 # or
 
 expose: ["{$_assertion_results.2.name_run}", "{$_assertion_results.2.is_success}"]
-```
-
-### Supported specification document
-
-- [HTTP specification document examples](/docs/examples/http-examples#variable-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/variables)
-- [Testcase specification document examples](/docs/examples/validate-examples) | [More example](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/testcases)
+``` -->
