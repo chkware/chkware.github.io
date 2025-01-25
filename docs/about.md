@@ -83,8 +83,8 @@ There is no native binary dependency, therefore it is expected on all the platfo
 
 | Command name   | Specification | Stability | Version   |
 | -------------- | ------------- | --------- | --------- |
-| `chk http`     | Http          | _alpha_   | < 0.5.0   |
+| `chk http`     | HTTP          | _alpha_   | < 0.5.0   |
 | `chk testcase` | Testcase      | _alpha_   | < 0.5.0   |
-| `chk fetch`    | Http          | _beta_    | >= 0.5.0  |
+| `chk fetch`    | HTTP          | _beta_    | >= 0.5.0  |
 | `chk validate` | Testcase      | _beta_    | >= 0.5.0  |
 | `chk workflow` | Testcase      | _beta_    | >= 0.5.0  |

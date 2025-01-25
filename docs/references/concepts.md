@@ -51,5 +51,5 @@ Test specification files are written in YAML, having file extension `.chk`. So, 
 
 > In the future evolution path of **CHKware** we are going to introduce more and more specification options and specification types and versions.
 
-- [Http specification file](http-reference)
+- [HTTP specification file](http-reference)
 - [Testcase specification file](testcase-reference)

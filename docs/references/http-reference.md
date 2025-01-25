@@ -1,5 +1,5 @@
 ---
-title: Http specification reference
+title: HTTP specification reference
 ---
 
 :::note
@@ -9,9 +9,9 @@ title: Http specification reference
 
 :::
 
-The **Http specification format** is how anyone express a Http request. Following is the full reference to write Http specification file.
+The **HTTP specification format** is how anyone express a HTTP request. Following is the full reference to write HTTP specification file.
 
-Http specification document is a _**versioned document**_, meaning there MUST be a `version:` key on the document.
+HTTP specification document is a _**versioned document**_, meaning there MUST be a `version:` key on the document.
 
 It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/docs/references/variable-reference)
 
@@ -32,7 +32,7 @@ request:
     one: 1
     two: true
 
-  # Http method to use
+  # HTTP method to use
   method: GET # or POST, PUT, PATCH, DELETE, OPTIONS, HEAD
 
   # Send request headers, add any numbers of headers

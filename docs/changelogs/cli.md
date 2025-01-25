@@ -133,7 +133,7 @@ Tracked milestone: [M.2022-03](https://github.com/chkware/cli/milestone/2)
 ### Added
 
 - Improve error message on validation error [#34](https://github.com/chkware/cli/issues/34)
-- Http module: load config class by version string on file [#68](https://github.com/chkware/cli/issues/68)
+- HTTP module: load config class by version string on file [#68](https://github.com/chkware/cli/issues/68)
 - Advance request spec. config file validation [#48](https://github.com/chkware/cli/issues/48)
 - platform support for linux [#27](https://github.com/chkware/cli/issues/27)
 - platform support for windows [#28](https://github.com/chkware/cli/issues/28)
@@ -159,7 +159,7 @@ Tracked milestone: [M.2022-02](https://github.com/chkware/cli/milestone/1)
 
 ### Added
 
-- validation for Http spec file [#29](https://github.com/chkware/cli/issues/29)
+- validation for HTTP spec file [#29](https://github.com/chkware/cli/issues/29)
 - validate request .chk file [#7](https://github.com/chkware/cli/issues/7)
 - Find suitable libraries for going forward [#23](https://github.com/chkware/cli/issues/23)
 - Ready for 1st pre-release [#14](https://github.com/chkware/cli/issues/14)

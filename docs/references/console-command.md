@@ -29,7 +29,7 @@ Options:
   --help                Show this message and exit.
 
 Commands:
-  fetch     Command to run Http config files.
+  fetch     Command to run HTTP config files.
   validate  Command to run Validation specification files.
   workflow  Command to run Workflow specification files.
 ```
@@ -44,7 +44,7 @@ Commands:
 ```shell
 Usage: chk fetch [OPTIONS] FILE
 
-  Command to run Http config files.
+  Command to run HTTP config files.
   FILE: Any .chk, .yaml and .yml file, that has any of the following versions:
 
   - default.http.*
@@ -133,6 +133,6 @@ Test specification files are written in YAML, having file extension `.chk`, `.ya
 
 > In the future evolution path of **CHKware** we are going to introduce more and more specification options and specification types and versions.
 
-- [Http specification file](http-reference)
+- [HTTP specification file](http-reference)
 - [Validate specification file](validate-reference)
 - [Workflow specification file](workflow-reference)

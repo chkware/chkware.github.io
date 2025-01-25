@@ -10,7 +10,7 @@ title: Testcase specification reference
 
 :::
 
-The _Testcase specification_ format is how anyone express one or more test case(s) for a given _Http specification_. Following is the full reference to write _Testcase specification_ file.
+The _Testcase specification_ format is how anyone express one or more test case(s) for a given _HTTP specification_. Following is the full reference to write _Testcase specification_ file.
 
 ## Testcase specification
 
