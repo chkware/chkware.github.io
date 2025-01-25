@@ -110,12 +110,15 @@ Validate specification document exposes `_assertion_results` that contains asser
 - `_assertion_results.details[*].is_pass` Was the assertion as pass
 - `_assertion_results.details[*].message` The message to show
 - `_assertion_results.details[*].assert_entry` List of assert details, nodes of assert entry
-  - `assert_type` The type or key of assert
-  - `actual` Actual value after data replacements
-  - `expected` Expected value after data replacements
-  - `msg_pass` Message to show if the test case passes
-  - `msg_fail` Message to show if the test case fails
-  - `cast_actual_to` Cast operation that was used, if given.
-  - `actual_given` List of details assertion
-  - `actual_b4_cast` List of details assertion
-  - `extra_fields` List of details assertion
+
+`_assertion_results.details[*].assert_entry` object have following nodes
+
+- `assert_type` The type or key of assert
+- `actual` Actual value after data replacements
+- `expected` Expected value after data replacements
+- `msg_pass` Message to show if the test case passes
+- `msg_fail` Message to show if the test case fails
+- `cast_actual_to` Cast operation that was used, if given.
+- `actual_given` List of details assertion
+- `actual_b4_cast` List of details assertion
+- `extra_fields` List of details assertion
