@@ -1,5 +1,5 @@
 ---
-title: Variable specification reference
+title: Variables
 ---
 
 :::note

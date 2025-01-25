@@ -1,5 +1,5 @@
 ---
-title: Console reference
+title: Console commands
 ---
 
 **`CHKware`** console application `chk` command reference.

@@ -13,7 +13,7 @@ The **HTTP specification format** is how anyone express a HTTP request. Followin
 
 HTTP specification document is a _**versioned document**_, meaning there MUST be a `version:` key on the document.
 
-It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/docs/references/variable-reference)
+It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/docs/references/variables)
 
 ### All supported nodes in http specification document
 
@@ -120,13 +120,13 @@ expose:
 
 ### `version` (<small>_`required`_</small>)
 
-`version` is a top-level block that defines a document version. How to write a `version:` block is already defined in [_version reference_](/docs/references/version-reference).
+`version` is a top-level block that defines a document version. How to write a `version:` block is already defined in [_version reference_](/docs/references/version).
 
 ### `variables`
 
-`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block is already defined in [_variable-reference_](/docs/references/variable-reference).
+`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block is already defined in [_variables_](/docs/references/variables).
 
-One special local variable named `_response` get added after the response received successfully. This local variable is accessible under [_exposable block_](/docs/references/variable-reference#exposable).
+One special local variable named `_response` get added after the response received successfully. This local variable is accessible under [_exposable block_](/docs/references/variables#exposable).
 
 ### `request` (<small>_`required`_</small>)
 
@@ -304,4 +304,4 @@ request:
 
 For http specification document local variable called `_response` which holds successful response, is available.
 
-See docs on [expose node](/docs/references/variable-reference#expose-node)
+See docs on [expose node](/docs/references/variables#expose-node)

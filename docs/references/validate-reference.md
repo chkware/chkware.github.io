@@ -16,7 +16,7 @@ The _Testcase specification_ format is how anyone express one or more test case(
 
 Testcase specification document is a versioned document, meaning there MUST be a `version:` key on the document.
 
-It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/docs/references/variable-reference)
+It's also an _**exposable document**_ meaning you can expose local data using `expose:` key in the document. More on this in [variable spec. reference](/docs/references/variables)
 
 ### Reference as example
 
@@ -103,7 +103,7 @@ expose: ~
 
 ### `version` (<small>_`required`_</small>)
 
-`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/docs/references/version-reference).
+`version` is a top-level block that defines a document version. How to write a `version:` block, is [already defined here](/docs/references/version).
 
 ### `request`
 
@@ -116,7 +116,7 @@ expose: ~
 
 ### `variables`
 
-`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/docs/references/variable-reference).
+`variables` is a top-level block that defines local variables. These variables are file scoped. How to write a `variables:` block, is [already defined here](/docs/references/variables).
 
 ### `spec` (<small>_`required`_</small>)
 
@@ -177,4 +177,4 @@ spec:
 
 For testcase specification document local variable called `_assertion_results` which holds after assertion output, and `_response` which holds response after request execute, are available.
 
-See docs on [expose node](/docs/references/variable-reference#expose-node)
+See docs on [expose node](/docs/references/variables#expose-node)

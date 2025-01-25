@@ -59,8 +59,8 @@
       label: "🗂 References",
       items: [
         "references/console-command",
-        "references/version-reference",
-        "references/variable-reference",
+        "references/version",
+        "references/variables",
         "references/http-reference",
         "references/validate-reference",
         "references/workflow-reference",
