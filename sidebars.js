@@ -61,6 +61,7 @@
         "references/console-command",
         "references/version",
         "references/variables",
+        "references/variables-exposable",
         "references/http-reference",
         "references/validate-reference",
         "references/workflow-reference",
