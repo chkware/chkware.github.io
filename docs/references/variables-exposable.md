@@ -68,37 +68,3 @@ When invoked like:
 $ chk fetch request-someurl.chk --no-format
 [4, "user-@domain.ext"]
 ```
-
-
-
-<!-- For example:
-
-- `_assertion_results` is a local variable that is available in testcase specifications. This special local variable named `_assertion_results` get added to local variable stack after all the assertion is resolved. `_assertion_results` holds a list of objects.
-
-  Each objects those `_assertion_results` can hold have following nodes: `name`, `name_run`, `actual_original`, `is_success`, `message`, `assert_fn`
-
-  Therefore, to access `actual_original` you're supposed to use `_assertion_results.1.actual_original`.
-
-  - `_assertion_results.name` stores name of the assertion
-  - `_assertion_results.name_run` stores name of the specific name and run, this uniquely identifies and assertion
-  - `_assertion_results.actual_original` original variable that was supposed to be asserted
-  - `_assertion_results.is_success` stores the boolean result of the
-  - `_assertion_results.message` stores the error message if the assertion fails
-  - `_assertion_results.assert_fn` stores the assertion function used when assertion fails -->
-
-<!-- #### `expose` node
-or after a testcase execution is done
-
-```yml
-expose: [
-  "{$_response.body}",
-  "{$_response.code}",
-  "{$_assertion_results.2.name_run}",
-  "{$_assertion_results}",
-  "{$_response}"
-]
-
-# or
-
-expose: ["{$_assertion_results.2.name_run}", "{$_assertion_results.2.is_success}"]
-``` -->

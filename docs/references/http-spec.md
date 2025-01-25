@@ -125,8 +125,6 @@ This is a top-level block that defines the document version. Read details of [_v
 
 Read details of [*variables*](/docs/references/variables) here.
 
-<!-- One special local variable named `_response` get added after the response received successfully. This local variable is accessible under [_exposable block_](/docs/references/variables#exposable). -->
-
 ## `request` (<small>*`required`*</small>)
 
 `request` is a required block that defines a http request. This holds many other child nodes that constructs an http request.

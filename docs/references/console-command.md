@@ -85,7 +85,7 @@ Options:
   --help                Show this message and exit.
 ```
 
-This sub command runs a file written in [validate specification file](validate-reference) format.
+This sub command runs a file written in [validate specification file](validate-spec) format.
 
 #### Options
 
@@ -134,5 +134,5 @@ Test specification files are written in YAML, having file extension `.chk`, `.ya
 > In the future evolution path of **CHKware** we are going to introduce more and more specification options and specification types and versions.
 
 - [HTTP specification file](http-spec)
-- [Validate specification file](validate-reference)
+- [Validate specification file](validate-spec)
 - [Workflow specification file](workflow-reference)

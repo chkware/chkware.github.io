@@ -4,15 +4,15 @@ title: Assertion reference
 
 :::note
 
-- This page should be use as reference for asserts used in testcase specification files.
+- This page should be use as reference for asserts used in validate specification files.
 - This page is subject to change. It is requested to check this page frequently.
 - Currently JSON response is only supported type for assertions.
 
 :::
 
-Assertions are integral part of [Testcase spec.](/docs/references/testcase-reference) Following are the assertion keys supported in most latest version of Testcase spec.
+Assertions are integral part of [Validate spec.](/docs/references/testcase-reference) Following are the assertion keys supported in most latest version of Validate spec.
 
-Assertions are used to validate data in testcase specification after http request execution has successfully returned the response.
+Assertions are used to validate data in validate specification after http request execution has successfully returned the response.
 
 It supports a list of assertions to be supplied. Each of the list item consists of assertion object. Assertion object have following components:
 
