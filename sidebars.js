@@ -64,8 +64,8 @@
         "references/variables-exposable",
         "references/http-spec",
         "references/validate-spec",
+        "references/assertions",
         "references/workflow-reference",
-        "references/assertion-reference",
       ],
     },
     {

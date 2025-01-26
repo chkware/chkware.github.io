@@ -84,14 +84,14 @@ asserts:
 Explanation of possible nodes:
 
 - `assertItem.type` Type of assert or the assertion key.
-- `assertItem.actual` Actual data for validation. Variables or data can be used.
-- `assertItem.expected` Expected data for validation. Variables or data can be used.
+- `assertItem.actual` Actual data point for validation. Variables or data can be used.
+- `assertItem.expected` Expected data point for validation. Variables or data can be used.
 - `assertItem.other` Other data for compare. Variables or data can be used.
 - `assertItem.msg_pass` An alternative message to display on success
 - `assertItem.msg_fail` An alternative message to display on failure
 - `assertItem.cast_actual_to` Cast data to the type before assertion
 
-[More about assertions](/docs/references/assertion-reference) here.
+[More about assertions](/docs/references/assertions) here.
 
 ## `expose`
 

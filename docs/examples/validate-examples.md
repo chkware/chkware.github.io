@@ -139,4 +139,4 @@ expose:
   - <% _data %>
 ```
 
-Assertion [reference with examples](/docs/references/testcase-reference#assertions) can be found here.
+Assertion [reference](/docs/references/validate-spec) can be found here.

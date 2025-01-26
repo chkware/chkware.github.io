@@ -31,7 +31,7 @@ There are two parts to **`CHKware`** tool.
 
 - `chk testcase [Options] [FILE].chk`
 
-  This sub command runs a file written in [validate specification file](testcase-reference) format.
+  This sub command runs a file written in [validate specification file](validate-spec) format.
 
   After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/docs/examples/validate-examples).
 
@@ -52,4 +52,4 @@ Test specification files are written in YAML, having file extension `.chk`. So, 
 > In the future evolution path of **CHKware** we are going to introduce more and more specification options and specification types and versions.
 
 - [HTTP specification file](http-spec)
-- [Validate specification file](testcase-reference)
+- [Validate specification file](validate-spec)
