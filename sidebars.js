@@ -65,7 +65,7 @@
         "references/http-spec",
         "references/validate-spec",
         "references/assertions",
-        "references/workflow-reference",
+        "references/workflows",
       ],
     },
     {

@@ -115,7 +115,7 @@ Options:
   --help                Show this message and exit.
 ```
 
-This sub command runs a file written in [Workflow specification file](workflow-reference) format.
+This sub command runs a file written in [Workflow specification file](workflows) format.
 
 #### Options
 
@@ -135,4 +135,4 @@ Test specification files are written in YAML, having file extension `.chk`, `.ya
 
 - [HTTP specification file](http-spec)
 - [Validate specification file](validate-spec)
-- [Workflow specification file](workflow-reference)
+- [Workflow specification file](workflows)
