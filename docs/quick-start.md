@@ -39,7 +39,7 @@ cd [DIRECTORY]
 
 #### Login to get bearer *access_token*
 
-- Create a file called `req-login.chk`. File name has not special significance. Open `req-login.chk` file, and add following:
+- Create a file called `req-login.chk`. File name has no special significance. Open `req-login.chk` file, and add following:
 
 ```yaml
 ---
@@ -70,7 +70,7 @@ expose:
 
 #### Get user's info with bearer *access_token*
 
-- Create a file called `req-user-me.chk`. File name has not special significance. Open `req-user-me.chk` file, and add following:
+- Create a file called `req-user-me.chk`. File name has no special significance. Open `req-user-me.chk` file, and add following:
 
 ```yaml
 ---
@@ -100,7 +100,7 @@ expose:
 
 #### Create a post using bearer *access_token*
 
-- Create a file called `req-post-create.chk`. File name has not special significance. Open `req-post-create.chk` file, and add following:
+- Create a file called `req-post-create.chk`. File name has no special significance. Open `req-post-create.chk` file, and add following:
 
 ```yaml
 ---
@@ -134,7 +134,7 @@ expose:
 
 #### Create the test workflow
 
-- Create a file called `wf-user-post-create.chk`. File name has not special significance. Open `wf-user-post-create.chk` file, and add following:
+- Create a file called `wf-user-post-create.chk`. File name has no special significance. Open `wf-user-post-create.chk` file, and add following:
 
 ```yaml
 ---

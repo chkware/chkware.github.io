@@ -38,11 +38,8 @@ It's possible to pass variables from console while invoking `chk` command. e.g:
 
 So, for following HTTP specification:
 
-```yml
-# ---
-# file name: request-someurl.chk
-# ---
-
+```yml [title="request-someurl.chk"]
+---
 version: default:http:0.7.2
 
 variables:
@@ -65,11 +62,8 @@ Then CHKware will replace `<% emailAddr %>` with `"user@domain.ext"`, before mak
 
 It's possible to set a default value for a variable. Consider following example:
 
-```yml
-# ---
-# file name: request-someurl.chk
-# ---
-
+```yml [title="request-someurl.chk"]
+---
 version: default:http:0.7.2
 
 variables:
@@ -79,8 +73,6 @@ request:
   url: "https://httpbin.org/get"
   url_params:
     emailAddress: <% emailAddr %>
-
-
 ...
 ```
 
