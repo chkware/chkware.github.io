@@ -1,5 +1,5 @@
 ---
-title: Changelog for chkware/cli
+title: Console app v0.x changelog
 ---
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,54 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 Date: not-available
+
+---
+
+## 0.5.0 `beta`
+
+Date: 2025-02-01
+
+### Added
+
+- Implement Jinja3 for variable value and filters [#338](https://github.com/chkware/cli/issues/338)
+- Add new flag --data-input or -Di in validate module to get data from piped input [#337](https://github.com/chkware/cli/issues/337)
+- Enable global option for debugging [#323](https://github.com/chkware/cli/issues/323)
+- Chore: Python Dependency Manager and packaging process upgrade [#320](https://github.com/chkware/cli/issues/320)
+- Add sub-command to run a specific workflow [#317](https://github.com/chkware/cli/issues/317)
+- Workflow should point out the in step problems found - show error messages for broken steps [#314](https://github.com/chkware/cli/issues/314)
+- Pass arguments to tasks and validate [#274](https://github.com/chkware/cli/issues/274)
+- Pass arguments to tasks and validate [#274](https://github.com/chkware/cli/issues/274)
+- State variables should be passed in between steps in workflow module [#272](https://github.com/chkware/cli/issues/272)
+- Add support for state variables (for data produced in between steps) in workflow module [#271](https://github.com/chkware/cli/issues/271)
+- Add support for variables in workflow module [#269](https://github.com/chkware/cli/issues/269)
+- Add support for validate module in workflow module [#268](https://github.com/chkware/cli/issues/266)
+- Create a base module for workflow [#266](https://github.com/chkware/cli/issues/266)
+- Design spec for workflow [#265](https://github.com/chkware/cli/issues/265)
+- Support for workflow [#264](https://github.com/chkware/cli/issues/264)
+- [MODULE] Implement workflow module [#255](https://github.com/chkware/cli/issues/255)
+- Use tag for fetch module auth and body [#251](https://github.com/chkware/cli/issues/251)
+- Add message variables to assert [#219](https://github.com/chkware/cli/issues/219)
+- load from .env file and set values to `_ENV` [#211](https://github.com/chkware/cli/issues/211)
+- Add replaced value to `_assertion_result` items, and display in presentation [#210](https://github.com/chkware/cli/issues/210)
+- By default all testcase should return `_assertion_result` and `_response` [#209](https://github.com/chkware/cli/issues/209)
+- New assertions proposal [#199](https://github.com/chkware/cli/issues/199)
+- Read from .env file [#193](https://github.com/chkware/cli/issues/193)
+
+### Changed
+
+- An error occurred inside a step, should not break the flow, the error should get reported instead. [#316](https://github.com/chkware/cli/issues/316)
+- Coverage report broken [#283](https://github.com/chkware/cli/issues/283)
+- Convert commad-line variables arguments from key=value to json [#221](https://github.com/chkware/cli/issues/221)
+- Variables are not replaced in with statement #[217](https://github.com/chkware/cli/issues/217)
+- Fix $ issue in expose [#215](https://github.com/chkware/cli/issues/215)
+- Align variable usage [#207](https://github.com/chkware/cli/issues/207)
+- Insecure Xml Parser [#201](https://github.com/chkware/cli/issues/201)
+
+### Removed
+
+- Remove `http` module
+- Remove `testcase` module
+- Remove `{$ .. }`
 
 ---
 
