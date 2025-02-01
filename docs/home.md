@@ -20,7 +20,7 @@ API quality test, and automation management is not easy to develop, and maintain
 
 ### Setup
 
-With [**Python 3.13**](https://www.python.org/downloads/) and [**Pipx**](https://pypa.github.io/pipx/installation/#install-pipx) pre-installed, run following in your terminal to get *CHKware* installed.
+With [**Python 3.13**](https://www.python.org/downloads/) and [**pipx**](https://pypa.github.io/pipx/installation/#install-pipx) pre-installed, run following in your terminal to get *CHKware* installed.
 
 ```bash
 pipx install chk

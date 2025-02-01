@@ -8,17 +8,17 @@ This section describe the installation process for [*CHKware*](https://github.co
 
 - [**_Python 3.13.x_**](https://www.python.org/downloads/)
 
-### Install *CHKware* cli with Pipx
+### Install *CHKware* cli with `pipx`
 
 :::info
 
-Pipx is a standard PyPI python application manager. Pipx creates separate virtual environment for given installable package. So, your system have less side effect.
+`pipx` is a standard PyPI python application manager. `pipx` creates separate virtual environment for given installable package. So, your system have less side effect.
 
 :::
 
-The best way is to setup CHKware with [pipx](https://pipx.pypa.io/stable/). Follow the steps:
+The best way is to setup CHKware with [_pipx_](https://pipx.pypa.io/stable/). Follow the steps:
 
-1. [Setup Pipx](https://pipx.pypa.io/stable/installation/).
+1. [Setup `pipx`](https://pipx.pypa.io/stable/installation/).
 2. Run in console
 
   ```shell
@@ -92,7 +92,7 @@ For windows users, please follow [**this nice article**](https://realpython.com/
 
 You can always install a tagged version directly from git
 
-With Pipx
+With `pipx`
 
 ```shell
 # latest dev release
