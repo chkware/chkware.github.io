@@ -35,6 +35,7 @@
         "examples/http-examples",
         "examples/validate-examples",
         "examples/variable-examples",
+        "examples/workflow-examples",
       ],
     }
   ],

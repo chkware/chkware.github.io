@@ -1,10 +1,21 @@
-```yml
-import { SnippetItem } from ".";
+---
+title: Workflow examples
+---
 
-export const workflowMinimal = <SnippetItem>{
-  label: "workflow: Minimal workflow spec",
-  description: "",
-  snippet: `---
+:::note
+
+Following YAML specs are working examples. This page should be use as reference for _Workflow_ specification files.
+
+This page is **SUBJECT TO CHANGE**. It is requested to check this page frequently.
+
+These examples can be found [in here](https://github.com/chkware/chkware.github.io/tree/main/sample_specs/examples).
+
+:::
+
+### Minimal workflow spec.
+
+```yml
+---
 version: default:workflow:0.8.0
 
 name: Name your workflow
@@ -20,12 +31,12 @@ tasks:
 
 expose:
   - <% _steps %>
-`};
+```
 
-export const workflowPassArguments = <SnippetItem>{
-  label: "workflow: Set data for validate task",
-  description: "",
-  snippet: `---
+### Set data for validate task
+
+```yml
+---
 version: default:workflow:0.8.0
 
 name: Name your workflow
@@ -43,12 +54,12 @@ tasks:
 
 expose:
   - <% _steps %>
-`};
+```
 
-export const workflowPassArgumentsAndVariables = <SnippetItem>{
-  label: "workflow: Set variables and arguments (validate tasks)",
-  description: "",
-  snippet: `---
+### Set variables and arguments (validate tasks)
+
+```yml
+---
 version: default:workflow:0.8.0
 
 name: Name your workflow
@@ -69,12 +80,12 @@ tasks:
 
 expose:
   - <% _steps %>
-`};
+```
 
-export const workflowPassArgumentsAndDynVariables = <SnippetItem>{
-  label: "workflow: Set variables (dynamic) and arguments (validate tasks)",
-  description: "",
-  snippet: `---
+### Set variables (dynamic) and arguments (validate tasks)
+
+```yml
+---
 version: default:workflow:0.8.0
 
 name: Name your workflow
@@ -102,5 +113,4 @@ tasks:
 
 expose:
   - <% _steps %>
-`};
 ```
