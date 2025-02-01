@@ -100,7 +100,7 @@ const config = {
           {
             href: "https://github.com/orgs/chkware/discussions",
             position: "right",
-            label: "Forum"
+            label: "Discussion"
           },
           {
             href: "https://github.com/chkware/cli",

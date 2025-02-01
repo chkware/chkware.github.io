@@ -38,7 +38,7 @@ chk --help
 
 ### Get help
 
-Have a question? [Ask anything](https://github.com/orgs/chkware/discussions/categories/q-a) on the forum.
+Have a question? [Ask anything](https://github.com/orgs/chkware/discussions/categories/q-a) here.
 <!-- 
 ### Contribute
 
