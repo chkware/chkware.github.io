@@ -72,7 +72,9 @@ Following platforms are supported:
 - **macOS**
 
 :::info
+
 There is no native binary dependency, therefore it is expected on all the platforms where the supported Python version works. Please create an issue, if you need additional platform support.
+
 :::
 
 ---

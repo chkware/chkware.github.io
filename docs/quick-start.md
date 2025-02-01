@@ -3,7 +3,9 @@ title: Quick Start
 ---
 
 :::warning
+
 Prerequisite: [Setup **CHKware**](/docs/setup) to continue
+
 :::
 
 ### A real business story
@@ -203,7 +205,3 @@ That's basically it. Now,
 - These files can be commit to git. 
 - These files can be used by you or your teammate/s later to test the same workflow.
 - This workflow also can be used in CI/CD for this test case automation.
-
----
-
-The code [can be found here](#).

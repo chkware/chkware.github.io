@@ -11,7 +11,9 @@ This section describe the installation process for [*CHKware*](https://github.co
 ### Install *CHKware* cli with Pipx
 
 :::info
+
 Pipx is a standard PyPi python application manager. Pipx creates separate virtual environment for given installable package. So, your system have less side effect.
+
 :::
 
 The best way is to setup CHKware with [pipx](https://pipx.pypa.io/stable/). Follow the steps:
@@ -26,15 +28,21 @@ The best way is to setup CHKware with [pipx](https://pipx.pypa.io/stable/). Foll
 ### Install *CHKware* cli with Pip
 
 :::info
+
 If you have _Python 3.13.x_ installed, then you already have `pip` installed by default.
+
 :::
 :::info
+
 It is **RECOMMENDED** to use a virtual environment when using via `pip`.
 
 For windows users, please follow [**this nice article**](https://realpython.com/python-virtual-environments-a-primer/) to create and use virtual environment.
+
 :::
 :::warning
+
 `python` command below assumes it's 3.13.x version. Based on OS it also can be `py`, `python3` or `python3.13` based on the package manager that was used to install.
+
 :::
 
 1. Create python virtual environment.
@@ -97,7 +105,9 @@ pipx install git+https://github.com/chkware/cli.git@v0.5.0
 With Pip
 
 :::warning
+
 Make sure you activated virtual environment before doing this.
+
 :::
 
 

@@ -5,7 +5,6 @@ title: Bitcoin API test
 :::note
 
 * **Prerequisite**: [Setup **CHKware**](/docs/setup)
-* [Here are](#) the used code.
 
 :::
 

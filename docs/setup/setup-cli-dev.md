@@ -65,7 +65,9 @@ We use PyTest as testing library. So, get your basic of understanding in it. We 
 #### Analyze linting and formatting issues
 
 :::warning
+
 Do this before doing merge request.
+
 :::
 
 Run following to analyze linting and formatting issues.
@@ -83,7 +85,9 @@ poetry build
 ```
 
 :::note
+
 Make sure to install the local package with `pipx` before Pypi release.
+
 :::
 
 #### Clear test run cache
@@ -105,7 +109,9 @@ poetry poe requirements
 #### Build `shiv` zipapp
 
 :::warning
+
 This was tested in macOS only. Although, it's expected to work in any environment.
+
 :::
 
 CHKware `zipapp` is a self contained executable like packaging of the software, that once build can be used from anywhere.

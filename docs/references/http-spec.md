@@ -187,9 +187,12 @@ request:
 ```
 
 :::note
+
 Document having `request.auth[bearer]` defined already along with this block will behave unexpectedly.
+
 :::
 :::info
+
 This is same as writing following
 
 ```yml
@@ -197,6 +200,7 @@ request:
   headers:
     Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
 ```
+
 :::
 
 ### `request.auth[bearer]`
@@ -212,9 +216,12 @@ request:
 ```
 
 :::note
+
 Document having `request.auth[basic]` defined already along with this block will behave unexpectedly.
+
 :::
 :::info
+
 This is same as writing following
 
 ```yml
@@ -222,6 +229,7 @@ request:
   headers:
     Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ```
+
 :::
 
 ### `request.body[form]`
@@ -251,9 +259,11 @@ request:
 It only supports key value data, where both key and value should be scaler values. Request will submit multipart form data while using `request.body[form-data]`.
 
 :::info
+
 You can override `Content-Type` headers if you want, however that will override `Content-Type: multipart/form-data` header which is automatically set.
 
 Given a path to a file will upload the file. Note, that you can upload files in this way. Please follow [this section on wikipedia](https://en.wikipedia.org/wiki/File_URI_scheme#Examples) on `file://` to set path on different OS platform.
+
 :::
 
 ```yml

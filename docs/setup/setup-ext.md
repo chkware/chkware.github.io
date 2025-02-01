@@ -3,10 +3,14 @@ title: Setup VS Code extension
 ---
 
 :::warning
+
 [CHKware vscode extension](https://marketplace.visualstudio.com/items?itemName=chkware.chkware) on visual studio marketplace it not updated.
+
 :::
 :::success
-Latest vscode extension can be found on project's Github [release page](#).
+
+Latest vscode extension can be found on project's Github [release page](https://github.com/chkware/vscode-ext/releases).
+
 :::
 
 *CHKware VS Code extension* helps to write `.chk` files quick. It contains regular used snippets those makes test spec. development quick.
@@ -17,7 +21,7 @@ Get started writing *CHKware* configurations with VS Code doing following steps:
 
 - Step 1: [Setup CHKware cli](/docs/setup), if you haven't done so already.
 
-- Step 2: Download the [*CHKware* extension](#) for VS Code from Github project release page.
+- Step 2: Download the [*CHKware* extension](https://github.com/chkware/vscode-ext/releases) for VS Code from Github project release page.
 
 - Step 3: Bring up command palette.
 

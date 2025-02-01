@@ -546,7 +546,9 @@ asserts:
 ## List
 
 :::info
+
 `cast_actual_to` will convert all items on the list to the given datatype.
+
 :::
 
 ### List
@@ -623,7 +625,9 @@ asserts:
 ## Map [Dictionary / HashMap]
 
 :::info
+
 `cast_actual_to` will convert all items on the list to the given datatype.
+
 :::
 
 ### Map
