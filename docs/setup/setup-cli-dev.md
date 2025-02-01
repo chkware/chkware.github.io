@@ -78,7 +78,7 @@ poetry poe fix
 
 #### Build package
 
-Run following to build packages to be uploaded to Pypi.
+Run following to build packages to be uploaded to PyPI.
 
 ```shell
 poetry build
@@ -86,7 +86,7 @@ poetry build
 
 :::note
 
-Make sure to install the local package with `pipx` before Pypi release.
+Make sure to install the local package with `pipx` before PyPI release.
 
 :::
 

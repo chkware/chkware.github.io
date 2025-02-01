@@ -12,7 +12,7 @@ This section describe the installation process for [*CHKware*](https://github.co
 
 :::info
 
-Pipx is a standard PyPi python application manager. Pipx creates separate virtual environment for given installable package. So, your system have less side effect.
+Pipx is a standard PyPI python application manager. Pipx creates separate virtual environment for given installable package. So, your system have less side effect.
 
 :::
 

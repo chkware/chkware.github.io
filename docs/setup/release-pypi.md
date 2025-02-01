@@ -1,8 +1,8 @@
 ---
-title: Pypi release process checklist
+title: PyPI release process checklist
 ---
 
-Follow the steps to do a manual release on PyPi.
+Follow the steps to do a manual release on PyPI.
 
 - Make sure you followed the development setup steps up until [build package](/docs/setup/setup-cli-dev#build-package)
 
@@ -20,7 +20,7 @@ Follow the steps to do a manual release on PyPi.
 
 - Update _docs/CHANGELOG.md_ with the release _0.X.X_ information
 
-- Publish the package to PyPi will require your PyPi token.
+- Publish the package to PyPI will require your PyPI token.
 
   Setup with
 
