@@ -5,7 +5,8 @@ authors: [0hsn]
 tags: [release-notes]
 ---
 
-After months of waiting, we’re excited to share **CHKware _v0.5.0_**, the newest version of our lightweight, developer-friendly tool for testing APIs. Since the last update in March 2023, we’ve been busy improving performance, adding new features, and listening to your feedback to make CHKware even better.
+After months of waiting, we’re excited to share **CHKware _v0.5.0_**, the newest version of our lightweight, developer-friendly tool for testing APIs. Since the last update in March 2023, we’ve been busy improving performance, adding new features, and listening to your feedback to make CHKware even better. 
+<!-- truncate -->
 
 This isn’t just a small update—it’s a big step forward. Along with improvements to the core CLI tool, we’ve also updated the Visual Studio Code extension and added detailed documentation to help you get the most out of the new, more secure features.
 
