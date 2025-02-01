@@ -134,7 +134,7 @@ const config = {
             items: [
               {
                 label: "🎉 See what's new",
-                href: "https://github.com/orgs/chkware/discussions/categories/announcements",
+                href: "https://chkware.com/blog",
               },
             ],
           },
