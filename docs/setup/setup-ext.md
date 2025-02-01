@@ -17,11 +17,21 @@ Latest vscode extension can be found on project's Github [release page](https://
 
 ### Install *CHKware* extension for Visual Studio Code
 
-Get started writing *CHKware* configurations with VS Code doing following steps:
+Get started writing *CHKware* spec. file editing with VS Code doing following steps:
 
 - Step 1: [Setup CHKware cli](/docs/setup), if you haven't done so already.
 
 - Step 2: Download the [*CHKware* extension](https://github.com/chkware/vscode-ext/releases) for VS Code from Github project release page.
+
+#### Using Visual Studio Code
+
+- Step 3: Go to `Extensions` and do as follows:
+
+    ![VSCODE Install](../assets/code-visual-ins.png)
+
+- Step 4: Select the **`chkware-vscode-ext.vsix`** file from the download location to load the extension.
+
+#### Using Visual Studio Code (Command palette)
 
 - Step 3: Bring up command palette.
 
@@ -32,6 +42,7 @@ Get started writing *CHKware* configurations with VS Code doing following steps:
 - Step 4: Search for **`Extensions: Install from VSIX`**. Selecting the option should open a file opener dialog in your operating system.
 
 - Step 5: Select the **`chkware-vscode-ext.vsix`** file from the download location to load the extension.
+
 
 ---
 
