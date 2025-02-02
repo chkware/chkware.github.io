@@ -2,50 +2,49 @@ import clsx from "clsx";
 import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 
-// import rev from "@site/static/img/chkware_revolutionize_api_test.svg"
-// import acc from "@site/static/img/chkware_accelerate_api_dev.svg"
-// import def from "@site/static/img/chkware_define_expectations.svg"
-
 const FeatureList = [
   {
-    title: "Revolutionize Your API Testing – Achieve Up to 4x Faster Automation!",
-    Svg: require("@site/static/img/chkware_revolutionize_api_test.svg").default,
-    // Image: rev,
+    title:
+      "Revolutionize Your API Testing – Achieve Up to 4x Faster Automation!",
+    imageData: require("@site/static/img/chkware_revolutionize_api_test.png")
+      .default,
     description: (
       <>
-        Boost efficiency and deliver results with unmatched speed and reliability.
+        Boost efficiency and deliver results with unmatched speed and
+        reliability.
       </>
     ),
   },
   {
-    title: "Accelerate Your API Development – Launch Projects Faster Than Ever!",
-    Svg: require("@site/static/img/chkware_accelerate_api_dev.svg").default,
-    // Image: acc,
+    title:
+      "Accelerate Your API Development – Launch Projects Faster Than Ever!",
+    imageData: require("@site/static/img/chkware_accelerate_api_dev.png")
+      .default,
     description: (
       <>
-        Streamline your workflow with tools designed for speedy delivery and precision in mind.
+        Streamline your workflow with tools designed for speedy delivery and
+        precision in mind.
       </>
     ),
   },
   {
     title: "Define Your Expectations – Let Us Handle the Details!",
-    Svg: require("@site/static/img/chkware_define_expectations.svg").default,
-    // Image: def,
+    imageData: require("@site/static/img/chkware_define_expectations.png")
+      .default,
     description: (
       <>
-        Simplify API testing with low-code automation that delivers accuracy and robustness.
+        Simplify API testing with low-code automation that delivers accuracy and
+        robustness.
       </>
     ),
   },
 ];
 
-function Feature({ Svg, title, description }) {
-// function Feature({ Image, title, description }) {
+function Feature({ imageData, title, description }) {
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-        {/* <Image className={styles.featureSvg} /> */}
+        <img src={imageData} className={styles.featureSvg} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
