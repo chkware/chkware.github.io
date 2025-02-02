@@ -34,9 +34,9 @@ export default function Home() {
   return (
     <Layout title="Welcome" description={siteConfig.customFields.longDetails}>
       <HomepageHeader />
-      {/* <main>
+      <main>
         <HomepageFeatures />
-      </main> */}
+      </main>
     </Layout>
   );
 }
