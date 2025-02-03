@@ -1,89 +1,128 @@
 ---
-title: Bitcoin API parser
+title: Bitcoin API test
 ---
 
 :::note
 
-- **Prerequisite**: First, [setup **CHKware**](/docs/setup) to continue
-- **Prerequisite**: Then, setup vscode extension for _CHKware_
-- Find [more `http` examples](/docs/examples/http-examples), and [more `testcase` examples](/docs/examples/testcase-examples) here.
+* **Prerequisite**: [Setup **CHKware**](/docs/setup)
 
 :::
 
-Let's look into a simple automation scenario. This example shall give an idea of how CHKware, specifically the `chk` command, can be used as a part of automation to do the heavy lifting for an API automation process.
+Let's take a look into a simple business case. This example shows how *CHKware* can be used as a part of automation  process.
 
-We will create an HTTP spec. doc that calls a bitcoin API. Then, we will write a Python script to parse the response of the API call.
+#### Plan
 
-:arrow_upper_right: [Code sample](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_flow/python)
+  1. We will create an *HTTP spec file* that call Coinstats API https://docs.api.coinstats.app/reference/get-coin-by-id. Please get your API key.
+  2. We will write a *validation spec file* to validate the response of the API call.
+  3. We'll combine both functionality in a *workflow spec file* to test the whole business testcase.
 
-#### 1. HTTP spec. doc for public bitcoin API
+#### 1. HTTP spec. file for public bitcoin API
+
+We will create an *HTTP spec file* in this step to call Coinstats bitcoin price conversion API.
 
 Please follow the below steps:
 
-- Open vscode, then create and save a new file called `bitcoin-usd.chk`
+* Open a code editor and create a new file called `bitcoin-usd-request.chk`
+
   > You can name the file anything. For this example we'll assume the file is as above mentioned one.
-- In the vscode command pallet start type: chkware. In the available command dropdown find `CHKware: Add Http spec. snippet`. Then select `http: Minimal request` from the next dropdown.
-- Change the `url: ...` to look like following
 
-  ```yml
-  ---
-  request:
-    url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
-  ```
-
-- Then add a `expose:` section to just expose the response body after request is successful.
-
-  ```yml
-  ---
-  expose:
-    - "{$_response.body}"
-  ```
-
-- Now the final file should look like this
+* Put the following content
 
   ```yml
   ---
   version: default:http:0.7.2
+
   request:
-    url: https://api.coinstats.app/public/v1/coins/bitcoin?currency=USD
+    url: https://openapiv1.coinstats.app/coins/bitcoin?currency=USD
     method: GET
+    headers:
+      "X-API-KEY": <% _ENV.COINSTATS_API_KEY %>
+
   expose:
-    - "{$_response.body}"
+    - <% _response %>
   ```
 
-- Now again in the command pallet search and hit `CHKware: Run file` to see the response as output. :smiley:
+* Put API key in `"???"` below. In the console run following to see if it respond with success
 
-#### 2. Write _Python_ script to parse response
+  ```shell
+  COINSTATS_API_KEY="???" chk fetch -nf bitcoin-usd.chk
+  ```
 
-We are going to parse the json output that gets printed after `chk http bitcoin-usd.chk` get run, in the _Python_ script. There are many ways to do this. But, using _Python_ core modules we can write as following.
+* This should show successful response.
 
-> Scripting can also be done in any other programming language, such as _Javascript_, _Java_, _Kotlin_, etc.
+#### 2. Validation of HTTP response
 
-```python
-# bitcoin_sample_01.py
+In this step we'll create a file called `btc-usd-validate.chk` to validate response from the HTTP request we made for bitcoin API.
 
-import subprocess
-import json
+Please follow the below steps:
 
-# setup, run the file with `chk` and get response
+* Open a code editor and create a new file called `bitcoin-usd-validate.chk`.
 
-file_path = "tests/resources/storage/sample_flow/python/bitcoin-usd.chk"
-result = subprocess.check_output(["chk", "http", "--result", "--no-format", file_path])
+* Put the following content.
 
-# prepare and get bitcoin node in the response
+  ```yml
+  ---
+  version: default:validate:0.7.2
 
-output = json.loads(result.rstrip())
-btc = output[0]['coin']
+  asserts:
+    - { type: Equal, actual: <% _data.code %>, expected: 200, msg_pass: 'Response was successful with code `{type_actual}({value_actual})`' }
+    - { type: Map, actual: <% _data.headers %>, msg_pass: 'Header is a list', msg_fail: 'Header is not a list' }
+    - { type: Str, actual: <% _data.code %>, msg_pass: 'Code `{type_actual}({value_actual})` is a string', msg_fail: 'Code `{type_actual}({value_actual})` is not a string', cast_actual_to: int }
+    - { type: StrHave, actual: <% _data.info %>, other: "200 OK" }
+    - { type: Map, actual: <% _data.body %> }
+    - { type: List, actual: <% _data.body.explorers %> }
+    - { type: Float, actual: <% _data.body.price %> }
+    - { type: MapHasKeys, actual: <% _data.body %>, expected: [ "price", "priceBtc", "priceChange1d", "priceChange1h", "priceChange1w" ] }
 
-# to print current bitcoin price
+  expose:
+    - <% _asserts_response %>
+  ```
 
-print(f"BTC price now ${ btc['price'] }")
-```
+#### 3. Writing the business case test with workflow
 
-Run the script in the command line like
+In this section we'll prepare a testcase that combines those HTTP spec and validation spec using a workflow spec file.
 
-```sh
-python bitcoin_sample_01.py
-```
+Please follow the below steps:
 
-> \*\* Please create an github issue if you want to share your sample script included in the project.
+* Open a code editor and create a new file called `bitcoin-usd-workflow.chk`
+
+* Put the following content
+
+  ```yml
+  ---
+  version: default:workflow:0.8.0
+
+  name: simple Btc workflow
+  tasks:
+    - name: Fetch some content from URL
+      uses: fetch
+      file: ./btc-usd-request.chk
+
+    - name: Validate the content is okay
+      uses: validate
+      file: ./btc-usd-validate.chk
+      arguments:
+        data: <% _steps.0._response %>
+  expose:
+    - <% _steps %>
+  ```
+
+* Put API key in `"???"` below. In the console run following to see it respond with success
+
+  ```shell
+  $ COINSTATS_API_KEY="???" chk workflow sample_specs/tutorials/btc-usd-workflow.chk
+
+
+  Workflow: simple Btc workflow
+  Steps total: 2, failed: 1
+  ------
+  + [PASS] Task: Fetch some content from URL
+  >> GET https://openapiv1.coinstats.app/coins/bitcoin?currency=USD
+  ------
+  - [FAIL] Task: Validate the content is okay
+  >> Total tests: 8, Failed: 1
+  >> With message: None
+        >>> Code `int(200)` is not a string
+  ```
+
+It's possible to create workflow to satisfy business cases in combination of these tools. It takes very less time to develop those in this declarative approach.

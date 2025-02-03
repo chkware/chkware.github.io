@@ -1,0 +1,9 @@
+---
+version: default:validate:0.7.2
+
+asserts:
+  - { type: Equal, actual: 200, expected: 200 }
+  - { type: Integer, actual: 10 }
+
+expose:
+  - <% _asserts_response %>

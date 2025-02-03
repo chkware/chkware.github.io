@@ -1,0 +1,14 @@
+---
+version: default:http:0.7.2
+
+request:
+  url: "https://httpbin.org/post"
+  method: POST
+
+  headers:
+    Accept-Encoding: gzip, deflate
+
+  body[xml]: <?xml version="1.0"?><catalog><book id="bk101"><author>Gambardella, Matthew</author><title>XML Developer's Guide</title><genre>Computer</genre><price>44.95</price><publish_date>2000-10-01</publish_date><description>An in-depth look at creating applications  with XML.</description></book></catalog>
+
+expose:
+  - <% _response %>

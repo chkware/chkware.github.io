@@ -1,0 +1,14 @@
+---
+version: default:validate:0.7.2
+
+asserts:
+  - type: IntegerGreaterOrEqual
+    actual: <% _data.age %>
+    other: 10
+
+  - type: IntegerLess
+    actual: <% _data.name | length %>
+    other: 256
+
+expose:
+  - <% _asserts_response %>

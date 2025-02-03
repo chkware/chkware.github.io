@@ -1,0 +1,9 @@
+---
+version: default:http:0.7.2
+
+request:
+  url: https://xkcd.com/<% JokeId %>/info.0.json
+  method: GET
+
+expose:
+  - <% _response %>

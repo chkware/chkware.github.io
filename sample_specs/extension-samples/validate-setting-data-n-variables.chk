@@ -1,0 +1,25 @@
+---
+version: default:validate:0.7.2
+
+variables:
+  code: 200
+
+data:
+  price: 200.10
+
+asserts:
+  - type: Equal
+    actual: <% code %>
+    expected: 200
+    msg_pass: 'Response was successful'
+    msg_fail: 'Response was unsuccessful'
+
+  - type: Integer
+    actual: <% code %>
+
+  - type: Equal
+    actual: <% _data.price %>
+    expected: 200.10
+
+expose:
+  - <% _asserts_response %>

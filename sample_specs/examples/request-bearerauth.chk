@@ -1,0 +1,19 @@
+---
+version: default:http:0.7.2
+
+variables:
+  access_token: ~
+
+request:
+  url: "https://dummyjson.com/auth/me"
+  method: GET
+
+  headers:
+    Accept-Encoding: gzip, deflate
+    Content-Type: application/json
+
+  auth[bearer]:
+    token: <% access_token %>
+
+expose:
+  - <% _response %>

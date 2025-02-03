@@ -1,0 +1,13 @@
+---
+version: default:http:0.7.2
+
+request:
+  url: https://dummyjson.com/todos
+  method: GET
+
+  url_params:
+    limit: <% Limit %>
+    skip: <% Skip %>
+
+expose:
+  - <% _response %>

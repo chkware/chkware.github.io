@@ -1,5 +1,5 @@
 ---
-title: Command-line reference
+title: Concepts
 ---
 
 This page describes some key concepts before you use **`CHKware`**.
@@ -13,9 +13,9 @@ There are two parts to **`CHKware`** tool.
 
 - `chk http [Options] [FILE].chk [VARIABLEn=VALUEn]`
 
-  This sub command runs a file written in [http specification file](http-reference) format.
+  This sub command runs a file written in [HTTP specification file](http-spec) format.
 
-  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `expose` key. see [usage](/docs/examples/http-examples#request-with-form) and [documentation](/docs/references/http-reference).
+  After you execute this command `chk` should make request by given request format, and display the response. You can also customize the response with `expose` key. see [usage](/docs/examples/http-examples#request-with-form) and [documentation](/docs/references/http-spec).
 
 #### Options
 
@@ -31,9 +31,9 @@ There are two parts to **`CHKware`** tool.
 
 - `chk testcase [Options] [FILE].chk`
 
-  This sub command runs a file written in [testcase specification file](testcase-reference) format.
+  This sub command runs a file written in [validate specification file](validate-spec) format.
 
-  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/docs/examples/testcase-examples).
+  After you execute this command `chk` should re-use `http` utility to request as per given structure on the file, execute test assertions, and display the result of the assertions. See [example](/docs/examples/validate-examples).
 
 #### Options
 
@@ -51,5 +51,5 @@ Test specification files are written in YAML, having file extension `.chk`. So, 
 
 > In the future evolution path of **CHKware** we are going to introduce more and more specification options and specification types and versions.
 
-- [Http specification file](http-reference)
-- [Testcase specification file](testcase-reference)
+- [HTTP specification file](http-spec)
+- [Validate specification file](validate-spec)

@@ -4,86 +4,111 @@ title: Variable examples
 
 :::note
 
-- This page should be use as reference for specification files.
-- This page is subject to change. It is requested to check this page frequently.
+Following YAML specs are working examples. This page should be use as reference for _Variable_ specification files.
+
+This page is **SUBJECT TO CHANGE**. It is requested to check this page frequently.
+
+These examples can be found [in here](https://github.com/chkware/chkware.github.io/tree/main/sample_specs/examples).
 
 :::
 
-:::note
+Variables can be used inside any spec files. with a special `variables:` yaml node. `variables:` should contain YAML objects. Exposed variables is defined in `expose:` yaml node. `expose:` should contain YAML list.
 
-Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config/pass_cases/variables) repository
+> `expose:` is used to export value to the caller. Caller can be console, or workflow spec.
 
-:::
-
-[Variable specification document reference](/docs/references/variable-reference)
-
-We can also use variables inside a http and testcase specification file. See examples below.
-
-### Request with query string using variables
+### Variables to replace values
 
 ```yaml
 ---
 version: default:http:0.7.2
 
-# define local variables
 variables:
-  Foo: "bar"
-  Two: 2
-  Server: https://example.org/api
+  Limit: 10
+  Skip: 5
 
 request:
-  # put variables on the path for query string
-  url: "{$Server}/path?foo={$Foo}&two={$Two}"
+  url: https://dummyjson.com/todos
   method: GET
+
+  url_params:
+    limit: <% Limit %>
+    skip: <% Skip %>
+
+expose:
+  - <% _response %>
 ```
 
-### Request with basic authentication header using variables
+### Variables to replace values in string
 
 ```yaml
 ---
 version: default:http:0.7.2
 
-# define local variables
 variables:
-  userName: Some_USER
-  password: Some-P@$$W03D
-  content_type: application/json
-  Server: https://example.org/api
+  Limit: 10
+  Skip: 5
+  Endpoint: "todos"
 
 request:
-  url: "{$Server}/resource/id"
+  url: https://dummyjson.com/<% Endpoint %>
   method: GET
 
-  headers:
-    Accept-Encoding: gzip, deflate
-    Content-Type: "{$content_type}"
+  url_params:
+    limit: <% Limit %>
+    skip: <% Skip %>
 
-  auth[basic]:
-    username: "{$userName}"
-    password: "{$password}"
+expose:
+  - <% _response %>
 ```
 
-### Testcase using variables
+### Use filter with variables
 
 ```yaml
 ---
-version: "default:testcase:0.7.2"
+version: default:http:0.7.2
 
 variables:
-  Name: "Morpheus"
-  Job: "leader"
-  Server: https://reqres.in/api/v1
+  Email: "here.is.a.long.email.address@domain.ext"
 
 request:
-  url: "{$Server}/users"
+  url: https://httpbin.org/post
   method: POST
-  body[json]: { "name": "{$Name}", "job": "{$Job}" }
 
-spec:
-  execute:
-    file: ~
+  body[json]:
+    email: <% Email %>
+    possibleUserName: <% Email | replace("@domain.ext", "") %>
+    possibleUserNameLen: <% Email | replace("@domain.ext", "") | length %>
 
-  asserts:
-    - { type: AssertEqual, actual: "{$_response.code}", expected: 201 }
-    - { type: AssertIsMap, actual: "{$_response.body}" }
+expose:
+  - <% _response %>
 ```
+
+### Pass variable from console
+
+```yaml
+---
+version: default:http:0.7.2
+
+variables:
+  Limit: 10
+  Skip: 5
+
+request:
+  url: https://dummyjson.com/todos
+  method: GET
+
+  url_params:
+    limit: <% Limit %>
+    skip: <% Skip %>
+
+expose:
+  - <% _response %>
+```
+
+and in shell
+
+```shell
+chk fetch variable-console.chk -V '{"Limit": 20, "Skip": 5}'
+```
+
+In this above case, variables defined in the file will act as default value, in case no variable passed from console.

@@ -1,0 +1,9 @@
+---
+version: default:validate:0.7.2
+
+asserts:
+  - type: Integer
+    actual: <% _data.code %>
+
+expose:
+  - <% _asserts_response %>

@@ -1,0 +1,13 @@
+---
+version: default:validate:0.7.2
+
+asserts:
+  - { type: Equal, actual: <% _data.code %>, expected: 200 }
+  - { type: StrHave, actual: <% _data.info %>, other: "200 OK" }
+  - { type: Map, actual: <% _data.body %> }
+  - { type: List, actual: <% _data.body.explorers %> }
+  - { type: Float, actual: <% _data.body.price %> }
+  - { type: MapHasKeys, actual: <% _data.body %>, expected: [ "price", "priceBtc", "priceChange1d", "priceChange1h", "priceChange1w" ] }
+
+expose:
+  - <% _asserts_response %>

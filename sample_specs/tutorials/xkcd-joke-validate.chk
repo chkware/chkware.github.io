@@ -1,0 +1,10 @@
+---
+version: default:validate:0.7.2
+
+asserts:
+  - { type: Equal, actual: "<% _data.0.code %>", expected: 200 }
+  - { type: Integer, actual: "<% _data.0.body.num %>" }
+  - { type: Equal, actual: "<% _data.0.body.year %>", expected: 2009 }
+
+expose:
+  - <% _asserts_response %>

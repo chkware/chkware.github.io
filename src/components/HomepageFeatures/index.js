@@ -1,48 +1,53 @@
-import React from "react";
 import clsx from "clsx";
+import Heading from "@theme/Heading";
 import styles from "./styles.module.css";
 
 const FeatureList = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title:
+      "Revolutionize Your API Testing – Achieve Up to 4x Faster Automation!",
+    imageData: require("@site/static/img/chkware_revolutionize_api_test.png")
+      .default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Boost efficiency and deliver results with unmatched speed and
+        reliability.
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title:
+      "Accelerate Your API Development – Launch Projects Faster Than Ever!",
+    imageData: require("@site/static/img/chkware_accelerate_api_dev.png")
+      .default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Streamline your workflow with tools designed for speedy delivery and
+        precision in mind.
       </>
     ),
   },
   {
-    title: "Powered by React",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    title: "Define Your Expectations – Let Us Handle the Details!",
+    imageData: require("@site/static/img/chkware_define_expectations.png")
+      .default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Simplify API testing with low-code automation that delivers accuracy and
+        robustness.
       </>
     ),
   },
 ];
 
-function Feature({ Svg, title, description }) {
+function Feature({ imageData, title, description }) {
   return (
     <div className={clsx("col col--4")}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img src={imageData} className={styles.featureSvg} />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+        <Heading as="h3">{title}</Heading>
         <p>{description}</p>
       </div>
     </div>

@@ -1,0 +1,16 @@
+version: default:http:0.7.2
+
+variables:
+  userId: 4
+  emailAddr: "user-<% userId %>@domain.ext"
+
+request:
+  url: "https://httpbin.org/get"
+  url_params:
+    userId: <% userId %>
+    emailAddress: <% emailAddr %>
+  method: GET
+
+expose:
+  - <% userId %>
+  - <% emailAddr %>

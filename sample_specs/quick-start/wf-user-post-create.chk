@@ -1,0 +1,22 @@
+---
+version: default:workflow:0.8.0
+
+tasks:
+  - name: Login with user's credential
+    uses: fetch
+    file: "./req-login.chk"
+
+  - name: Get user's me
+    uses: fetch
+    file: "./req-user-me.chk"
+    variables:
+      AccessToken: <% _steps.0._response.body.accessToken %>
+
+  - name: Create a post
+    uses: fetch
+    file: "./req-post-create.chk"
+    variables:
+      AccessToken: <% _steps.0._response.body.accessToken %>
+
+expose:
+  - <% _steps %>

@@ -1,0 +1,15 @@
+---
+version: default:http:0.7.2
+
+variables:
+  AccessToken: ~
+
+request:
+  url: https://dummyjson.com/user/me
+  method: GET
+
+  auth[bearer]:
+    token: <% AccessToken %>
+
+expose:
+  - <% _response %>

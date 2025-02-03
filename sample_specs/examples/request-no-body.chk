@@ -1,0 +1,13 @@
+---
+version: default:http:0.7.2
+
+request:
+  url: "https://dummyjson.com/users/add"
+  method: POST
+
+  headers:
+    Accept-Encoding: gzip, deflate
+    Content-Type: application/json
+
+expose:
+  - <% _response %>

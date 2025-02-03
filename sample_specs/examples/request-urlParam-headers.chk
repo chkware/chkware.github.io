@@ -1,0 +1,17 @@
+---
+version: default:http:0.7.2
+
+request:
+  url: https://dummyjson.com/products
+
+  url_params:
+    limit: 10
+
+  method: GET
+
+  headers:
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+    Accept-Encoding: gzip, deflate
+
+expose:
+  - <% _response %>

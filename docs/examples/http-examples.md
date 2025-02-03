@@ -1,110 +1,146 @@
 ---
-title: Http examples
+title: HTTP examples
 ---
 
 :::note
 
-- This page should be use as reference for specification files.
-- This page is subject to change. It is requested to check this page frequently.
+Following YAML specs are working examples. This page should be use as reference for _HTTP_ specification file. See [HTTP specification document reference](/docs/references/http-spec) here.
 
-  :::
+This page is **SUBJECT TO CHANGE**. It is requested to check this page frequently.
 
-:::note
-Case-wise more example can be found in [https://github.com/chkware/cli](https://github.com/chkware/cli/tree/main/tests/resources/storage/sample_config) repository
+These examples can be found [in here](https://github.com/chkware/chkware.github.io/tree/main/sample_specs/examples).
+
+We are using [DummyJSON](https://dummyjson.com/docs) and https://httpbin.org/. :clap: Thanks for their awesome services.
+
 :::
-
-[Http specification document reference](/docs/references/http-reference)
-
-Following examples are using HTTP _GET_ and _POST_ method. Although all these example are still valid for _POST_, _PUT_, _PATCH_, _DELETE_, _OPTIONS_, _HEAD_ method as well. You can still send a request body with _GET_ or _HEAD_ method for the sake of testing API.
 
 ### Minimal request with HTTP GET method
 
-```yaml
+```yml
 ---
 version: default:http:0.7.2
+
 request:
-  url: https://example.org/api/path
-  method: GET
-```
-
-### Request with query string
-
-```yaml
----
-version: default:http:0.7.2
-request:
-  # put variables on the path for query string
-  url: https://example.org/api/path?foo=bar&two=2
-  method: GET
-```
-
-or you can also do like:
-
-```yaml
----
-version: default:http:0.7.2
-request:
-  url: https://example.org/api/path
+  url: https://dummyjson.com/test
   method: GET
 
-  # put variables as url_params entry for query string
-  url_params:
-    foo: bar
-    two: 2
-
-  # get only response code
 expose:
-  - "{$_response.code}"
+  - <% _response %>
+```
+
+### Minimal request with query string
+
+```yml
+---
+version: default:http:0.7.2
+
+request:
+  url: https://dummyjson.com/products?limit=10&skip=5
+  method: GET
+
+expose:
+  - <% _response %>
+```
+
+or it can be also written like,
+
+```yml
+---
+version: default:http:0.7.2
+
+request:
+  url: https://dummyjson.com/products
+  url_params:
+    limit: 10
+    skip: 5
+  method: GET
+
+expose:
+  - <% _response %>
 ```
 
 ### Request with query string and header
 
-```yaml
+```yml
 ---
 version: default:http:0.7.2
 
 request:
-  url: https://example.org/api/resource/action
-  method: GET
+  url: https://dummyjson.com/products
 
   url_params:
-    foo: bar
-    two: 2
+    limit: 10
+
+  method: GET
 
   headers:
     User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
     Accept-Encoding: gzip, deflate
+
+expose:
+  - <% _response %>
 ```
 
 ### Request with basic authentication header
 
-```yaml
+```yml
 ---
 version: default:http:0.7.2
 
 request:
-  url: https://example.org/api/resource/id
+  url: https://httpbin.org/basic-auth/user/passwd123
   method: GET
 
   headers:
     Accept-Encoding: gzip, deflate
+    Accept: application/json
     Content-Type: application/json
 
   auth[basic]:
-    username: Some_USER
-    password: "Some-P@$$W03D"
+    username: user
+    password: passwd123
+
+expose:
+  - <% _response %>
 ```
 
 `username` and `password` will be automatically transformed to secret string as per [Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme) scheme.
 
 ### Request with bearer authentication header
 
-```yaml
+<details>
+
+  <summary>Get the bearer token</summary>
+
+  ```yml
+  ---
+  version: default:http:0.7.2
+
+  request:
+    url: https://dummyjson.com/auth/login
+    method: "POST"
+
+    headers:
+      Accept-Encoding: gzip, deflate
+      Content-Type: application/json
+
+    body[json]:
+      username: emilys
+      password: emilyspass
+      expiresInMins: 30
+
+  expose:
+    - <% _response %>
+  ```
+
+</details>
+
+```yml
 ---
 version: default:http:0.7.2
 
 request:
-  url: https://example.org/api/resource/id
+  url: "https://dummyjson.com/auth/me"
   method: GET
 
   headers:
@@ -112,149 +148,139 @@ request:
     Content-Type: application/json
 
   auth[bearer]:
-    token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
+    token: [PUT-YOUR-TOKEN]
+
+expose:
+  - <% _response %>
 ```
 
 ### Request without a body
 
-```yaml
+```yml
 ---
 version: default:http:0.7.2
 
 request:
-  url: https://example.org/api/resource/action
+  url: "https://dummyjson.com/users/add"
   method: POST
 
   headers:
     Accept-Encoding: gzip, deflate
     Content-Type: application/json
 
-  auth[bearer]:
-    token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
+expose:
+  - <% _response %>
 ```
 
 ### Request with JSON body
 
-```yaml
+```yml
 ---
 version: default:http:0.7.2
 
 request:
-  url: https://example.org/api/resource/action
+  url: "https://dummyjson.com/users/add"
   method: POST
 
   headers:
     Accept-Encoding: gzip, deflate
-    Content-Type: application/json
 
-  auth[bearer]:
-    token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
+  body[json]:
+    firstName: "Some"
+    lastName: "O' Name"
+    age: 51,
 
-  body[json]: { user_id: 32, roll_no: 1, class: 2, name: "Student name" }
-
-# get every thing out of response received
-# not writing the following statement also does similar behavior
-expose: ~
+expose:
+  - <% _response %>
 ```
 
 ### Request with form
 
-Following example will submit a form with POST method. You do not need to set any special header for this.
+```yml
+---
+version: default:http:0.7.2
+
+request:
+  url: "https://httpbin.org/post"
+  method: POST
+
+  headers:
+    Accept-Encoding: gzip, deflate
+
+  body[form]:
+    firstName: "Some"
+    lastName: "O' Name"
+    age: 51,
+
+expose:
+  - <% _response %>
+```
 
 You can override `Content-Type` headers if you want, however that will override `Content-Type: application/x-www-form-urlencoded` header which is automatically set.
 
-Note, that you can not upload files in this way. See **Request with file upload** section for that purpose.
+### Request with file upload
 
-```yaml
+```yml
 ---
 version: default:http:0.7.2
 
 request:
-  url: https://example.org/api/resource/action
+  url: "https://httpbin.org/post"
   method: POST
 
   headers:
     Accept-Encoding: gzip, deflate
 
-  auth[bearer]:
-    token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
+  body[form-data]:
+    firstName: "Some"
+    lastName: "O' Name"
+    age: 51,
+    cover_photo: file:///path/to/file/cover-iamge.png
+    profile_photo: file:///path/to/file/profile-iamge.png
 
-  body[form]:
-    user_id: 32,
-    roll_no: 1,
-    class: 2,
-    name: "Student name"
-
-    # note: this will just set photo with file path as string,
-    # but will not upload the actual file
-    photo: file:///home/username/student-photo-01.png
-
-# get only response body; response headers, code, etc will be dropped
 expose:
-  - "{$_response.body}"
+  - <% _response %>
 ```
 
-### Request with file upload
-
-Following example will submit a form with binary image data in POST method. You do not need to set any special header for this.
+Follow [this section on wikipedia](https://en.wikipedia.org/wiki/File_URI_scheme#Examples) on `file://` to set path on different OS platform.
 
 You can override `Content-Type` headers if you want, however that will override `Content-Type: multipart/form-data` header which is automatically set.
 
-Note, that you can upload files in this way. Please follow [this section on wikipedia](https://en.wikipedia.org/wiki/File_URI_scheme#Examples) on `file://` to set path on different OS platform.
-
-```yaml
----
-version: default:http:0.7.2
-
-request:
-  url: https://example.org/api/resource/id
-  method: PUT
-
-  headers:
-    Accept-Encoding: gzip, deflate
-
-  auth[bearer]:
-    token: eyJhbGciOiJIU...4fwpMeJf36POk6yJV_adQssw5c
-
-  body[form-data]:
-    user_id: 32,
-    roll_no: 1,
-    class: 2,
-    name: "Student name"
-
-    # note: this will actually upload the file
-    photo: file:///home/username/student-photo-01.png
-    cover_photo: file:///home/username/student-cvphoto-01.png
-```
-
 ### Request with XML in body
 
-Following example will POST a plain xml content.
-
-You can override `Content-Type` headers if you want, however that will override ``Content-Type: application/xml` header which is automatically set.
-
-```yaml
+```yml
 ---
 version: default:http:0.7.2
 
 request:
-  url: https://example.org/api/resource/action
+  url: "https://httpbin.org/post"
   method: POST
 
   headers:
     Accept-Encoding: gzip, deflate
 
-  body[xml]: |
-    <?xml version="1.0"?>
-    <catalog>
-      <book id="bk101">
-          <author>Gambardella, Matthew</author>
-          <title>XML Developer's Guide</title>
-          <genre>Computer</genre>
-          <price>44.95</price>
-          <publish_date>2000-10-01</publish_date>
-          <description>An in-depth look at creating applications 
-          with XML.</description>
-      </book>
-    </catalog>
+  body[xml]: <?xml version="1.0"?><catalog><book id="bk101"><author>Gambardella, Matthew</author><title>XML Developer's Guide</title><genre>Computer</genre><price>44.95</price><publish_date>2000-10-01</publish_date><description>An in-depth look at creating applications  with XML.</description></book></catalog>
+
+expose:
+  - <% _response %>
 ```
+
+You can override `Content-Type` headers if you want, however that will override `Content-Type: application/xml` header which is automatically set.
+
+### Request with text in body
+
+```yml
+---
+version: default:http:0.7.2
+
+request:
+  url: "https://httpbin.org/post"
+  method: POST
+
+  body[text]: "Request from CHKware"
+
+expose:
+  - <% _response %>
+```
+
+You can override `Content-Type` headers if you want, however that will override `Content-Type: application/xml` header which is automatically set.

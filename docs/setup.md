@@ -1,53 +1,120 @@
 ---
-title: Setup toolbox
+title: Setup CHKware cli
 ---
 
-This section describe the installation process for [_CHKware_](https://github.com/chkware/cli). The currently supported python version is **_Python 3.11.x_**. You need to have this version of python in your OS to continue.
+This section describe the installation process for [*CHKware*](https://github.com/chkware/cli). The currently supported python version is **_Python 3.13.x_**. You need to have this version of python in your OS to continue.
 
-### Install _CHKware_ toolset with Pip
+### Install dependencies
 
-If you have _Python 3.11.x_ installed, then you already have `pip` installed by default. So, just run following command.
+- [**_Python 3.13.x_**](https://www.python.org/downloads/)
 
-```bash
-pip install -U chk
-```
+### Install *CHKware* cli with `pipx`
 
-To upgrade to the next released version, run the same command.
+:::info
 
-:::note
-
-- You can always install directly from git
-
-  ```bash
-  # to install latest stable version
-  pip install -U git+https://github.com/chkware/cli@main
-
-  # to install a tagged version, fx: v0.4.0
-  pip install -U git+https://github.com/chkware/cli@v0.4.0
-  ```
-
-- It is recommended to [use a virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments) when using via `pip`.
+`pipx` is a standard PyPI python application manager. `pipx` creates separate virtual environment for given installable package. So, your system have less side effect.
 
 :::
 
-### Install _CHKware_ toolset with Pipx
+The best way is to setup CHKware with [_pipx_](https://pipx.pypa.io/stable/). Follow the steps:
 
-The best way to setup any python app is manage it via [pipx](https://pypa.github.io/pipx/). Pipx is a standard PyPi python application manager. Pipx creates separate virtual environment for given installable package. So, your system have less side effect.
+1. [Setup `pipx`](https://pipx.pypa.io/stable/installation/).
+2. Run in console
 
-First, [Install pipx](https://pypa.github.io/pipx/installation/). Then run
+  ```shell
+  pipx install chk
+  ```
 
-```bash
-pipx install chk
+### Install *CHKware* cli with Pip
+
+:::info
+
+If you have _Python 3.13.x_ installed, then you already have `pip` installed by default.
+
+:::
+:::info
+
+It is **RECOMMENDED** to use a virtual environment when using via `pip`.
+
+For windows users, please follow [**this nice article**](https://realpython.com/python-virtual-environments-a-primer/) to create and use virtual environment.
+
+:::
+:::warning
+
+`python` command below assumes it's 3.13.x version. Based on OS it also can be `py`, `python3` or `python3.13` based on the package manager that was used to install.
+
+:::
+
+1. Create python virtual environment.
+  
+  ```shell
+  # On Linux and macOS
+  python -m venv ~/.chkware_global/
+
+  # On Windows
+  python -m venv C:\.chkware_global
+  ```
+
+2. Activate virtual environment.
+
+  ```shell
+  # On Linux and macOS
+  source ~/.chkware_global/bin/activate
+
+  # On Windows, In cmd.exe
+  C:\.chkware_global\Scripts\activate.bat
+
+  # On Windows, In PowerShell
+  C:\.chkware_global\Scripts\Activate.ps1
+  ```
+
+3. Install CHKware cli in the virtual environment.
+
+  ```shell
+  pip install -U chk
+  ```
+
+  > To upgrade to the next released version, run the same command.
+
+### Update *CHKware* cli
+
+- If CHkware was installed with _pipx_ then to upgrade to latest released version.
+
+  ```shell
+  pipx upgrade chk
+  ```
+
+- If CHkware was installed with _pip_ then to upgrade to latest released version follow [Install *CHKware* cli with Pip](#install-chkware-cli-with-pip) step 2 and step 3.
+
+---
+
+### Install edge version of *CHKware* cli [Advance users]
+
+You can always install a tagged version directly from git
+
+With `pipx`
+
+```shell
+# latest dev release
+pipx install git+https://github.com/chkware/cli.git@main
+
+# or a tagged version
+pipx install git+https://github.com/chkware/cli.git@v0.5.0
 ```
 
-**Update**
+With Pip
 
-If you have installed with _pipx_ then use following to upgrade to latest released version.
+:::warning
 
-```bash
-pipx upgrade chk
+Make sure you activated virtual environment before doing this.
+
+:::
+
+
+```shell
+# latest dev release
+pip install -U git+https://github.com/chkware/cli.git@main
+
+# or a tagged version
+pip install -U git+https://github.com/chkware/cli.git@v0.5.0
 ```
-
-Otherwise, if _pip_ was used to install then same process given above should work for upgrade as well.
-
-Alternatively, chkware tool can be build and use as a zipapp, [following this instruction](/docs/setup/build-zipapp).
