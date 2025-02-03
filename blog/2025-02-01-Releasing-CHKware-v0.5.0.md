@@ -5,7 +5,8 @@ authors: [0hsn]
 tags: [release-notes]
 ---
 
-After months of waiting, we’re excited to share **CHKware _v0.5.0_**, the newest version of our lightweight, developer-friendly tool for testing APIs. Since the last update in March 2023, we’ve been busy improving performance, adding new features, and listening to your feedback to make CHKware even better. 
+After months of waiting, we’re excited to share **CHKware _v0.5.0_**, the newest version of our lightweight, developer-friendly tool for testing APIs. Since the last update in March 2023, we’ve been busy improving performance, adding new features, and listening to your feedback to make CHKware even better.
+
 <!-- truncate -->
 
 This isn’t just a small update—it’s a big step forward. Along with improvements to the core CLI tool, we’ve also updated the Visual Studio Code extension and added detailed documentation to help you get the most out of the new, more secure features.
@@ -14,28 +15,38 @@ If you’re new to CHKware, it’s an open-source tool that makes API testing si
 
 Version 0.5.0 is a major milestone, fixing common issues and adding features to make your work easier and more secure. Whether you’ve been using CHKware for a while or just getting started, this update is all about making your API testing smoother, safer, and more efficient.
 
-Briefly, here are the changes those made to this release.
+Here’s a quick rundown of what’s new in this release:
 
-## Features
+### Features
 
-For console feature, we introduced a global debug feature. Which is enabled by default. Of course, we can disable the feature as well with `--no-debug` option.
+We’ve added a **global debug feature** to the console, which is turned on by default. If you don’t need it, you can easily disable it using the `--no-debug` option.
 
-Simplifying spec. file structure is another project we undertook for this release. The benefits are using more predictable YAML dsl. As part of the simplification process, we restructure asserts validates, workflow, etc spec. files node structure.
+We also worked on simplifying the _spec file structure_ to make it more intuitive and predictable. This includes reorganizing nodes for asserts, validations, workflows, and more. The goal is to make your YAML files cleaner and easier to work with.
 
-We have introduced more assertions for test cases in validate specs. See [_assert_ reference](../docs/references/assertions) for more.
+For test cases, we’ve added _more assertions_ to the validate specs. You can check out the full list of assertions in the [_assert_ reference](../docs/references/assertions).
 
-Implementing secure coding practices were are priority on this release. We had to fix a lot of security issues were introduced by many CVE issues. However, we understand security is an never-ending endeavour. Therefore the commitment to make the code, spec. files, and other subsystems secure to use shall be on going from up. Of course, we need your help in this matter.
+Security was a big focus in this release. We fixed several vulnerabilities, including those related to CVE issues. But we know security is an ongoing effort, so we’re committed to keeping the code, spec files, and other subsystems as secure as possible. And of course, we’d love your help in spotting and reporting any issues!
 
-## Modules update
+### Modules Update
 
-We introduced a new module called _fetch_, that replaces _HTTP_ module. Although, we maintained backward compatibility, therefore _fetch_ sub-command is able to run [_http spec._ file](../docs/examples/http-examples). This maintains 100% feature parity of previous module.
+We’re introducing a new module called _fetch_, which replaces the old _HTTP_ module. Don’t worry — we’ve kept backward compatibility, so the _fetch_ sub-command can still run your existing [_http spec files_](../docs/examples/http-examples) without any changes. It also brings 100% feature parity with the previous module.
 
-_Validate_ module introduced to replace _Testcase_ module. A new [spec. file structure](../docs/examples/validate-examples) is introduced with _Validate_ module.
+The _Validate_ module is here to replace the _Testcase_ module. It comes with a new [_spec file structure_](../docs/examples/validate-examples) that’s simpler and more powerful.
 
-With version 0.5.0, **CHKware** has a new sub-command and a module called _Workflow_. _Workflow_ module has a newly introduced [workflow spec. format](../docs/examples/workflow-examples). This module was introduced to glue together _HTTP_ and _Validate_. Workflow module works more like Github Actions, and it's YAML spec. is also follow familiar node structure.
+With v0.5.0, we’re excited to introduce a brand-new sub-command and module called _Workflow_. This module is designed to connect the _HTTP_ and _Validate_ modules seamlessly. Think of it like _GitHub Actions_ — it uses a YAML spec format that feels familiar and easy to use. Check out the [_workflow_ examples](../docs/examples/workflow-examples) to see it in action.
 
-We have modified _Variables_ module to accommodate more stability and use-cased for variable, with data manipulation and interpolation features as well. For first time, we have moved to using Jinja2 as underlying templating engine, from home-built one. Therefore, Jinja2 came with it's advantages like filters, global functions, control logics, etc.
+We’ve also updated the _Variables_ module to make it more stable and versatile. Now, it supports advanced data manipulation and interpolation features. Plus, we’ve switched to using **Jinja2** as the templating engine instead of our custom-built one. This brings a lot of benefits, like filters, global functions, and control logic, making your variable handling even more powerful.
 
-As you have already know, we are removed _Fetch_ and _Testcase_ module starting 0.5.0 and onward.
+As part of these changes, we’ve officially removed the _Fetch_ and _Testcase_ modules starting from v0.5.0.
+
+Thanks for being with us. We'll keep you updated here. Cheers!
+
+## Community
+
+We are trying to be more connected to our user via conversation. Hence, we'll be using [_**Github discussions**_](https://github.com/orgs/chkware/discussions). Anyone is expected to ask any question, share their thoughts, ask for improvement on the discussion boards.
+
+Please follow us on [_Twitter/X_](https://x.com/chkware).
+
+---
 
 See details [CHANGELOG](../docs/changelogs/cli) for specifics.
