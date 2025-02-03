@@ -24,9 +24,6 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -77,7 +74,8 @@ const config = {
         hideOnScroll: false,
         logo: {
           alt: "CHKware Logo",
-          src: "img/logo.png",
+          src: "img/logo-dark.png",
+          srcDark: "img/logo-white.png",
         },
         items: [
           {
@@ -103,7 +101,7 @@ const config = {
             label: "Discussion"
           },
           {
-            href: "https://github.com/chkware/cli",
+            href: "https://github.com/chkware",
             position: "right",
             label: "GitHub"
           },
@@ -134,7 +132,7 @@ const config = {
             items: [
               {
                 label: "🎉 See what's new",
-                href: "https://chkware.com/blog",
+                href: "/blog",
               },
             ],
           },
