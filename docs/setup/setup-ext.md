@@ -21,7 +21,7 @@ Get started writing *CHKware* spec. file editing with VS Code doing following st
 
 - Step 1: [Setup CHKware cli](/docs/setup), if you haven't done so already.
 
-- Step 2: Download the [*CHKware* extension](https://github.com/chkware/vscode-ext/releases) for VS Code from Github project release page.
+- Step 2: Download the [*CHKware* extension](https://github.com/chkware/vscode-ext/releases) `chkware-VERSION.vsix` file from Github project release page.
 
 #### Using Visual Studio Code
 
