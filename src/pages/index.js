@@ -18,10 +18,16 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
-            className="button button--secondary button--lg"
-            to={siteConfig.customFields.indexCta}
+            className="button button--danger button--lg"
+            to={siteConfig.customFields.primary.link}
           >
-            {siteConfig.customFields.indexCtaTitle}
+            {siteConfig.customFields.primary.title}
+          </Link>&nbsp;&nbsp;
+          <Link
+            className="button button--secondary button--lg"
+            to={siteConfig.customFields.secondary.link}
+          >
+            {siteConfig.customFields.secondary.title}
           </Link>
         </div>
       </div>

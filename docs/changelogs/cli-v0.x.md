@@ -1,21 +1,18 @@
 ---
 title: Console app v0.x changelog
 ---
+# Changelog
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
-
-Date: not-available
+## [Unreleased] - Date not-available
 
 ---
 
-## 0.5.0 `beta`
-
-Date: 2025-02-01
+## [0.5.0 `beta`] - 2025-02-01
 
 ### Added
 
@@ -61,9 +58,7 @@ Date: 2025-02-01
 
 ---
 
-## 0.4.3 `alpha`
-
-Date: 2023-03-09
+## [0.4.3 `alpha`] - 2023-03-09
 
 ### Added
 

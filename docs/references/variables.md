@@ -1,24 +1,24 @@
 ---
 title: Variables
 ---
-### Introduction
-
 Variables are ways to hold value or computed values in specification files, like in programming language.
 
-### Variables
+## Variables node
 
-Variables can be defined with `variables` node on a supported specification document.
+Variables can be defined with `variables` node on a specification document. This node is support on all kind of spec.
 
-```yml
+```yml {3-4}
 version: default:http:0.7.2
 
 variables:
   var1: 22
+
+...  
 ```
 
-This variables can be later used, i.e.
+This variables can be used later, e.g.
 
-```yml
+```yml {3-4,7}
 version: default:http:0.7.2
 
 variables:
@@ -26,19 +26,33 @@ variables:
 
 request:
   url: "https://httpbin.org/get?emailAddress=<% emailAddr %>"
-
-...
+  ...
 ```
 
-It is not possible to name a variable prefixing an *underscore* (`_`). So, `_Name` is an invalid name. Variable names can include `A-Z, a-z, 0-9, ., -, _`.
+::::tip [Naming variables]
 
-### Passing variables from console
+Variable names can include
 
-It's possible to pass variables from console while invoking `chk` command. e.g:
+- `A-Z`
+- `a-z`
+- `0-9`
+- `.` dot
+- `-` dash
+- `_` underscore
 
-So, for following HTTP specification:
+:::warning
 
-```yml [title="request-someurl.chk"]
+It is not possible to start a variable name with _underscore_ (`_`). Therefore, `_Name` is an invalid name, when `Name_` is valid.
+
+:::
+
+::::
+
+## Passing variables from console
+
+It's possible to pass variables from console while invoking `chk` command. Let's have following HTTP specification:
+
+```yml [title="request-someurl.chk"] {5,10}
 ---
 version: default:http:0.7.2
 
@@ -49,20 +63,20 @@ request:
   url: "https://httpbin.org/get"
   url_params:
     emailAddress: <% emailAddr %>
-
 ...
 ```
+
 ```shell
 chk fetch request-someurl.chk -V {"emailAddress": "user@domain.ext"}
 ```
 
 Then CHKware will replace `<% emailAddr %>` with `"user@domain.ext"`, before making request. When variable not passed from console, `<% emailAddr %>` will be replaced with `null`.
 
-### Setting default value
+## Setting default value
 
 It's possible to set a default value for a variable. Consider following example:
 
-```yml [title="request-someurl.chk"]
+```yml [title="request-someurl.chk"] {5,10}
 ---
 version: default:http:0.7.2
 
@@ -76,7 +90,7 @@ request:
 ...
 ```
 
-When invoked like:
+When invoked in the console like:
 
 ```shell
 chk fetch request-someurl.chk -V {"emailAddress": "user@domain.ext"}
@@ -84,19 +98,19 @@ chk fetch request-someurl.chk -V {"emailAddress": "user@domain.ext"}
 
 Then CHKware will replace `<% emailAddr %>` with `"user@domain.ext"`, before making request.
 
-However, if invoked like:
+However, if invoked in the console like:
 
 ```shell
 chk fetch request-someurl.chk
 ```
 
-Then CHKware will replace `<% emailAddr %>` with something like `"user-2@domain.ext"` (or with an email of randomly picked number).
+Then CHKware will replace `<% emailAddr %>` with something like `"user-2@domain.ext"` (or with an email of randomly picked number) since we set default value to `user-<% range(1, 5) | random %>@domain.ext`.
 
-### Variable templating with Jinja2
+## Variable templating with Jinja2
 
-For variable templating *CHKware* uses Jinja2. Almost all of the [Jinja2 features](https://jinja.palletsprojects.com/en/stable/templates/) are supported. That makes it possible to change variables values. e.g:
+For variable templating _CHKware_ uses Jinja2. Almost all of the [Jinja2 features](https://jinja.palletsprojects.com/en/stable/templates/) are supported. That makes it possible to change variables values. e.g:
 
-```yml
+```yml [title="request-someurl.chk"] {4-5,10-11}
 version: default:http:0.7.2
 
 variables:
@@ -108,6 +122,5 @@ request:
   url_params:
     userId: <% userId %>
     emailAddress: <% emailAddr %>
-
 ...
 ```

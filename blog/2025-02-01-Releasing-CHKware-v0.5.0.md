@@ -49,4 +49,4 @@ Please follow us on [_Twitter/X_](https://x.com/chkware).
 
 ---
 
-See details [CHANGELOG](../docs/changelogs/cli) for specifics.
+See details [CHANGELOG](../docs/changelogs/cli-v0.x) for specifics.

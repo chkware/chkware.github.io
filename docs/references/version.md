@@ -1,10 +1,7 @@
 ---
 title: Document version
 ---
-
-### Introduction
-
-Each `.chk`, `.yaml` or `.yml` files containing *CHKware* YAML-dsl is a spec. or specification file. Each of these file **MUST** contain a YAML node called *version:*. E.g:
+Each `.chk`, `.yaml` or `.yml` [specification files](./console-command#specification-files) or spec contains *CHKware* YAML-dsl. Each of these file **MUST** contain a YAML node called *version:*. E.g:
 
 ```yml
 version: default:http:0.7.2
@@ -15,11 +12,9 @@ The version string contains a document version. Document version show which vers
 
 The `chk` tool will exit with an error when unsupported document version found.
 
-It's encouraged for user to write document version on the very top of a spec. document, so that it's clearly visible. However it can be written as a top-level key on any place of the document.
+Although `version:` can be written as a top-level key on any place of the spec, it's encouraged to write `version:` on the very top, so that it's clearly visible.
 
-Supported document version can be found on corresponding specification reference.
-
-### Format
+## Document version format
 
 This version string have 3 parts: `<plugin>:<module>:<number>`, e.g: `default:http:0.8.0`
 

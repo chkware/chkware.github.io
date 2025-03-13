@@ -83,7 +83,7 @@
     {
       type: "category",
       label: "⛵️ CHANGELOG",
-      items: ["changelogs/cli"],
+      items: ["changelogs/cli-v0.x"],
     },
     {
       type: "doc",
