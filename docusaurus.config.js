@@ -188,8 +188,14 @@ const config = {
     ],
   ],
   customFields: {
-    indexCta: "docs/quick-start",
-    indexCtaTitle: "⏱️ Takes 10 minutes to start",
+    primary: {
+      link: "docs/setup",
+      title: "pipx install chk",
+    },
+    secondary: {
+      link: "docs/quick-start",
+      title: "10 minutes quick start",
+    },
     shortDetails: "Low-code API quality testing, and automation tool.",
     longDetails:
       "API testing tool, a script-able HTTP client, and an API test automation tool for the API era.",
