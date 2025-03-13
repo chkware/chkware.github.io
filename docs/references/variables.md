@@ -1,7 +1,6 @@
 ---
 title: Variables
 ---
-
 Variables are ways to hold value or computed values in specification files, like in programming language.
 
 ## Variables node
@@ -73,7 +72,7 @@ chk fetch request-someurl.chk -V {"emailAddress": "user@domain.ext"}
 
 Then CHKware will replace `<% emailAddr %>` with `"user@domain.ext"`, before making request. When variable not passed from console, `<% emailAddr %>` will be replaced with `null`.
 
-### Setting default value
+## Setting default value
 
 It's possible to set a default value for a variable. Consider following example:
 
@@ -107,7 +106,7 @@ chk fetch request-someurl.chk
 
 Then CHKware will replace `<% emailAddr %>` with something like `"user-2@domain.ext"` (or with an email of randomly picked number) since we set default value to `user-<% range(1, 5) | random %>@domain.ext`.
 
-### Variable templating with Jinja2
+## Variable templating with Jinja2
 
 For variable templating _CHKware_ uses Jinja2. Almost all of the [Jinja2 features](https://jinja.palletsprojects.com/en/stable/templates/) are supported. That makes it possible to change variables values. e.g:
 
