@@ -28,7 +28,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         gtag: {
-          trackingID: "GT-WB29LF9R",
+          trackingID: "G-YXHE6GS6TR",
         },
         docs: {
           routeBasePath: "/docs",
