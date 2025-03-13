@@ -28,7 +28,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         googleTagManager: {
-          containerId: "GTM-K2LQSGJV",
+          containerId: "GT-WB29LF9R",
         },
         docs: {
           routeBasePath: "/docs",
