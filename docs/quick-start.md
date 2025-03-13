@@ -2,7 +2,7 @@
 title: Quick Start
 ---
 
-:::warning
+:::info
 
 Prerequisite: [Setup **CHKware**](/docs/setup) to continue
 
