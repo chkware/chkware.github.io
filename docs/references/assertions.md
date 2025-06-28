@@ -4,12 +4,28 @@ title: Assertions
 
 Assertions are integral part of [_Validate specification_](/docs/references/validate-spec).
 
-Assertions are used for the validation of specific data point. Asserts are written in _validate specification_.
+Assertions are used for the validation of specific data point. Asserts are written in _validate specification. It looks like following:
+
+```yml {6-11}
+version: default:validate:0.7.2
+
+data:
+  code: 200
+
+asserts:
+  - type: Equal
+    actual: <% _data.code %>
+    expected: 200
+    msg_pass: 'Response was successful'
+    msg_fail: 'Response was unsuccessful'
+
+  - # [assertItem] 
+```
 
 ## Assert items
 _CHKware_ have a collection of built-in assert items. Assertion item object have following components:
 
-- `type` Type of assertion to be executed or the assertion key.
+- `type` Type of assertion to be executed or the assertion key. [See here](#assert-types)
 
 - `actual` Actual data point for validation. Variables or data can be used.
 
@@ -17,59 +33,51 @@ _CHKware_ have a collection of built-in assert items. Assertion item object have
 
 - `other` Other data point for compare. Variables or data can be used. Some assert item have `other` alternative to `expected`. Both can not exist in same assert item at the same time.
 
-- `format` Format of a date. Only supported with [Date assert](#date) items
+- `format` Format of a date. Only supported with [`Date` assert](#date) items. Supports these [format code](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).
 
-  :::tip
+- `msg_pass` An alternative message to display on success. It is possible to pass formatted string to `msg_pass`.
 
-  Supports these [format code](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).
+  <details>
+    <summary>Supported values are:</summary>
 
-  :::
+    - assert_type : Assert item type, e.g: `Str`, `Integer`, `Count`, etc
+    - type_actual : Type of the actual given on spec file
+    - type_expected : Type of the expected given on spec file
+    - value_expected : Value of the expected given on spec file
+    - value_actual : Value of the actual after cast conversion
+    - value_actual_given : Value of the actual given on spec file
+    - value_actual_b4_cast : Value of the actual before cast conversion
 
-- `msg_pass` An alternative message to display on success.
+    ---
+    E.g: "actual `{type_actual}({value_actual})` is equal to expected `{type_expected}({value_expected})`"
 
-  :::tip
+  </details>
 
-  It is possible to pass formatted string to `msg_pass`. Following values are supported:
+- `msg_fail` An alternative message to display on failure. It is possible to pass formatted string to `msg_fail`.
 
-  - assert_type : Assert item type, e.g: `Str`, `Integer`, `Count`, etc
-  - type_actual : Type of the actual given on spec file
-  - type_expected : Type of the expected given on spec file
-  - value_expected : Value of the expected given on spec file
-  - value_actual : Value of the actual after cast conversion
-  - value_actual_given : Value of the actual given on spec file
-  - value_actual_b4_cast : Value of the actual before cast conversion
+  <details>
+    <summary>Supported values are:</summary>
+  
+    - assert_type : Assert item type, e.g: `Str`, `Integer`, `Count`, etc
+    - type_actual : Type of the actual given on spec file
+    - type_expected : Type of the expected given on spec file
+    - value_expected : Value of the expected given on spec file
+    - value_actual : Value of the actual after cast conversion
+    - value_actual_given : Value of the actual given on spec file
+    - value_actual_b4_cast : Value of the actual before cast conversion
+    
+    ---
+    E.g: "actual `{type_actual}({value_actual})` is not equal to expected `{type_expected}({value_expected})`"
 
-  E.g: "actual `{type_actual}({value_actual})` is equal to expected `{type_expected}({value_expected})`"
+  </details>
 
-  :::
+- `cast_actual_to` Cast data to the type before assertion. It is possible to cast type of `actual` value before comparison with `expected` with variables.
+  
+  <details>
+    <summary>Supported values are:</summary>
 
-- `msg_fail` An alternative message to display on failure
-
-  :::tip
-
-  It is possible to pass formatted string to `msg_fail`. Following values are supported:
-
-  - assert_type : Assert item type, e.g: `Str`, `Integer`, `Count`, etc
-  - type_actual : Type of the actual given on spec file
-  - type_expected : Type of the expected given on spec file
-  - value_expected : Value of the expected given on spec file
-  - value_actual : Value of the actual after cast conversion
-  - value_actual_given : Value of the actual given on spec file
-  - value_actual_b4_cast : Value of the actual before cast conversion
-
-  E.g: "actual `{type_actual}({value_actual})` is not equal to expected `{type_expected}({value_expected})`"
-
-  :::
-
-- `cast_actual_to` Cast data to the type before assertion
-
-  :::tip
-
-  It is possible to cast type of `actual` value before comparison with `expected` with `cast_actual_to`.
-
-  These types are supported: `int_or_float`, `int`, `float`, `bool`, `none`, `map`, `list`, `str`, `auto`
-
-  :::
+    These types are supported: `int_or_float`, `int`, `float`, `bool`, `none`, `map`, `list`, `str`, `auto`
+  </details>
 
 <details>
   <summary>All supported nodes in assert item</summary>

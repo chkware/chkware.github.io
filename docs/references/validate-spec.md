@@ -124,7 +124,7 @@ variables:
 
 asserts:
   - type: Equal
-    actual: <% code %>
+    actual: <% _data.code %>
     expected: 200
     msg_pass: 'Response was successful'
     msg_fail: 'Response was unsuccessful'
