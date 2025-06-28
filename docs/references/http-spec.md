@@ -117,7 +117,7 @@ HTTP specification document supports `default:http:0.7.2` version.
 
 ## `version` (<small>*`required`*</small>)
 
-This is a top-level block that defines the document version. Read details of [_version reference_](/docs/references/version) here.
+This is a top-level block that defines the spec. document version. Read details of [_version reference_](/docs/references/version) here.
 
 ```yml {1}
 version: "default:http:0.7.2"
