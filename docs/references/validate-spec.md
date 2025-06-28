@@ -96,11 +96,24 @@ This is a top-level block to defines list of assertions. These assertions can ta
 
 Data type for `asserts` node is list of assert item.
 
+```yml {9}
+version: default:validate:0.7.2
+
+data:
+  code: 200
+
+variables:
+  Name: "Variable Value"
+
+asserts:
+  - # [assertItem] 
+```
+
 ### `asserts[*].assertItem` (<small>*`required`*</small>)
 
 Assert items define assertion for one specific case. It looks like following:
 
-```yml
+```yml {10-14}
 version: default:validate:0.7.2
 
 data:
