@@ -8,40 +8,46 @@ Prerequisite: [Setup **CHKware**](/docs/setup) to continue
 
 :::
 
-### A real business story
+### 1.  A business story
 
-DummyJSON service a JSON response faker for API. Let's think of a business case based on the [listed APIs](https://dummyjson.com/docs).
+DummyJSON service a JSON request / response faker for API. Let's think of a business case based on the [listed APIs](https://dummyjson.com/docs).
 
-#### Business scenario:
+#### Business case:
 
 User should be able to add a post on DummyJSON service.
 
 #### Test cases:
 
-Suppose our webapp have a page to add a new post. This page also shows some user information. Let's imagine the API test workflow for this page.
+Suppose our web application has a page to add a new post. This page also shows some user information.
+
+Let's assume the API test workflow for this page looks like following:
 
 1. User is able to login. API response have a bearer *access_token*.
 2. User is able to get *self* or *me* URL to show user information on page.
 3. User is able to create a post using that bearer *access_token*.
 
-### Test implementation
+Let's create API test cases for these steps.
+
+### 2. Test implementation
 
 To implement the above test cases we need to be able to fetch an API response. Fetch multiple different APIs in a flow. Let's do in with *CHKware*.
 
 #### Prepare for the project.
 
-- Create a directory in anywhere in your system and give it a meaningful name.
-- Now open the console terminal where `chk` command is install. Follow setup steps if it hasn't been done already.
-- Go to the directory in console using
+- Create a directory called `my-api-project-tests` in anywhere in your system. You can give it any meaningful name.
+- Now open the console terminal. Please make sure `chk` command is installed globally. Follow [setup steps](./setup.md) if it hasn't been done already.
+- Go to the `my-api-project-tests` directory in console using
+
 ```shell
-cd [DIRECTORY]
+cd path/to/my-api-project-tests
 ```
 
 #### Login to get bearer *access_token*
 
-- Create a file called `req-login.chk`. File name has no special significance. Open `req-login.chk` file, and add following:
+- Create a file called `req-login.chk`. 
+- Open `req-login.chk` file in your favourite text editor, and add following:
 
-```yaml
+```yaml title="path/to/my-api-project-tests/req-login.chk"
 ---
 version: default:http:0.7.2
 
@@ -61,7 +67,7 @@ expose:
 <details>
   <summary>Explanation</summary>
 
-  This file is called *HTTP specification* or *HTTP spec* file in *CHKware*. This file holds configuration to call an URL.
+  This file is called *HTTP specification* or *HTTP spec* file in *CHKware*. This file holds configuration to make one HTTP request.
   
   With `request:` node, we define what to request, and with `expose:` section we mention what to return. In this case the HTTP response body that was received.
 
@@ -72,7 +78,7 @@ expose:
 
 - Create a file called `req-user-me.chk`. File name has no special significance. Open `req-user-me.chk` file, and add following:
 
-```yaml
+```yaml title="path/to/my-api-project-tests/req-user-me.chk"
 ---
 version: default:http:0.7.2
 
@@ -102,7 +108,7 @@ expose:
 
 - Create a file called `req-post-create.chk`. File name has no special significance. Open `req-post-create.chk` file, and add following:
 
-```yaml
+```yaml title="path/to/my-api-project-tests/req-post-create.chk"
 ---
 version: default:http:0.7.2
 
@@ -136,7 +142,7 @@ expose:
 
 - Create a file called `wf-user-post-create.chk`. File name has no special significance. Open `wf-user-post-create.chk` file, and add following:
 
-```yaml
+```yaml title="path/to/my-api-project-tests/wf-user-post-create.chk"
 ---
 version: default:workflow:0.8.0
 
