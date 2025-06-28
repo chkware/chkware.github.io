@@ -8,7 +8,7 @@ title: Exposable variables
 
 Exposable variables can be defined with `expose:` node.
 
-```yml
+```yml {6-7} title="a-request-file.chk"
 version: default:http:0.7.2
 
 variables:
@@ -24,7 +24,7 @@ This YAML node is not required. However, if the node is not included, nothing wi
 
 All variables defined or pass (from caller) can be also exposed. For example this is also valid.
 
-```yml
+```yml {9-11} title="a-request-file.chk"
 version: default:http:0.7.2
 
 variables:
@@ -43,7 +43,7 @@ expose:
 In the console invoking `chk` command with `--no-format, -nf` will return a JSON representation of exposable variables. The returned JSON is always a JSON-list with object or scaler value in it. e.g:
 
 
-```yml
+```yml {14-16} title="a-request-file.chk"
 version: default:http:0.7.2
 
 variables:
