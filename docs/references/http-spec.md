@@ -119,15 +119,44 @@ HTTP specification document supports `default:http:0.7.2` version.
 
 This is a top-level block that defines the document version. Read details of [_version reference_](/docs/references/version) here.
 
+```yml {1}
+version: "default:http:0.7.2"
+
+request:
+  url: https://httpbin.org/get
+...
+```
+
 ## `variables`
 
 `variables` is a top-level block that defines local variables. These variables are not accessible outside of this file scope.
+
+```yml {3-4,7}
+version: "default:http:0.7.2"
+
+variables:
+  Name: "Variable Value"
+
+request:
+  url: https://httpbin.org/get?query=<% Name %>
+...
+```
+
 
 Read details of [*variables*](/docs/references/variables) here.
 
 ## `request` (<small>*`required`*</small>)
 
 `request` is a required block that defines a http request. This holds many other child nodes that constructs an http request.
+
+```yml {3}
+version: "default:http:0.7.2"
+
+request:
+  url: https://httpbin.org/get
+  method: OPTIONS
+```
+
 
 ### `request.url` (<small>*`required`*</small>)
 
