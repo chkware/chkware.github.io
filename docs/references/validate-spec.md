@@ -10,7 +10,6 @@ Validate specification document supports `version: default:validate:0.7.2` versi
   <summary>All supported nodes in Validate specification document</summary>
 
   ```yml
-  ---
   version: default:validate:0.7.2
 
   variables:
@@ -43,11 +42,35 @@ Validate specification document supports `version: default:validate:0.7.2` versi
 
 ## `version` (<small>*`required`*</small>)
 
-This is a top-level block that defines the document version. Read details of [_version reference_](/docs/references/version) here.
+This is a top-level block that defines the spec. document version. Read details of [_version reference_](/docs/references/version) here.
+
+```yml {1}
+version: default:validate:0.7.2
+
+data:
+  ...
+
+asserts:
+  ...
+...
+```
 
 ## `variables`
 
 `variables` is a top-level block that defines local variables. These variables are not accessible outside of this file scope.
+
+```yml {3-4}
+version: default:validate:0.7.2
+
+variables:
+  Name: "Variable Value"
+
+data:
+  code: 200
+
+asserts:
+  ...
+```
 
 Read details of [*variables*](/docs/references/variables) here.
 
@@ -57,28 +80,56 @@ Read details of [*variables*](/docs/references/variables) here.
 
 `data` only supports YAML maps, where keys holds strings and values contains YAML collection (dictionary / hashmap) or scaler values.
 
-```yml
+```yml {3-4}
+version: default:validate:0.7.2
+
 data:
   code: 200
+
+asserts:
+  ...
 ```
 
 ## `asserts` (<small>*`required`*</small>)
 
-This is a top-level block to defines list of assertions. This assertions can target both data and variables.
+This is a top-level block to defines list of assertions. These assertions can target both data and variables.
 
 Data type for `asserts` node is list of assert item.
+
+```yml {9}
+version: default:validate:0.7.2
+
+data:
+  code: 200
+
+variables:
+  Name: "Variable Value"
+
+asserts:
+  - # [assertItem] 
+```
 
 ### `asserts[*].assertItem` (<small>*`required`*</small>)
 
 Assert items define assertion for one specific case. It looks like following:
 
-```yml
+```yml {10-14}
+version: default:validate:0.7.2
+
+data:
+  code: 200
+
+variables:
+  Name: "Variable Value"
+
 asserts:
   - type: Equal
-    actual: <% code %>
+    actual: <% _data.code %>
     expected: 200
     msg_pass: 'Response was successful'
     msg_fail: 'Response was unsuccessful'
+
+  - # [assertItem] 
 ```
 
 Explanation of possible nodes:

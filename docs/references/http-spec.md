@@ -117,11 +117,31 @@ HTTP specification document supports `default:http:0.7.2` version.
 
 ## `version` (<small>*`required`*</small>)
 
-This is a top-level block that defines the document version. Read details of [_version reference_](/docs/references/version) here.
+This is a top-level block that defines the spec. document version. Read details of [_version reference_](/docs/references/version) here.
+
+```yml {1}
+version: "default:http:0.7.2"
+
+request:
+  url: https://httpbin.org/get
+...
+```
 
 ## `variables`
 
 `variables` is a top-level block that defines local variables. These variables are not accessible outside of this file scope.
+
+```yml {3-4,7}
+version: "default:http:0.7.2"
+
+variables:
+  Name: "Variable Value"
+
+request:
+  url: https://httpbin.org/get?query=<% Name %>
+...
+```
+
 
 Read details of [*variables*](/docs/references/variables) here.
 
@@ -129,21 +149,32 @@ Read details of [*variables*](/docs/references/variables) here.
 
 `request` is a required block that defines a http request. This holds many other child nodes that constructs an http request.
 
+```yml {3}
+version: "default:http:0.7.2"
+
+request:
+  url: https://httpbin.org/get
+  method: OPTIONS
+```
+
+
 ### `request.url` (<small>*`required`*</small>)
 
 `request.url` is a required child node to define a valid `http://` or `https://`.
 
-```yml
+```yml {2}
 request:
   url: https://httpbin.org/get
+  method: OPTIONS
 ```
 
 ### `request.method` (<small>*`required`*</small>)
 
 `request.method` is a required child node to define a valid [HTTP request method](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). All defined methods are `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD`. It is also possible to use any custom method server recognizes.
 
-```yml
+```yml {3}
 request:
+  url: https://httpbin.org/get
   method: OPTIONS
 ```
 
@@ -153,20 +184,26 @@ request:
 
 E.g. the following block represents `https://httpbin.org/get?sort_by=projects&sort_order=DESC` URL.
 
-```yml
+```yml {4-6}
 request:
   url: https://httpbin.org/get
+
   url_params:
     sort_by: "projects"
     sort_order: "DESC"
+
+  method: OPTIONS
 ```
 
 ### `request.headers`
 
 `request.headers` is a child node to define a set of request headers. It only supports YAML maps, where both keys and values scaler values.
 
-```yml
+```yml {5-8}
 request:
+  url: https://httpbin.org/get
+  method: GET
+
   headers:
     User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
     Accept-Encoding: "gzip, deflate"
@@ -179,29 +216,43 @@ request:
 
 Here only `username` and `password` is supported. Adding any other value to it is expected to be fruitless.
 
-```yml
+```yml {10-12}
 request:
+  url: https://httpbin.org/get
+  method: GET
+
+  headers:
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
   auth[basic]:
     username: admin
     password: "test1234"
 ```
 
-:::note
-
-Document having `request.auth[bearer]` defined already along with this block will behave unexpectedly.
-
-:::
-:::info
+::::info
 
 This is same as writing following
 
-```yml
+```yml {9}
 request:
+  url: https://httpbin.org/get
+  method: GET
+
   headers:
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
     Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==
 ```
+:::note
+
+HTTP spec. document having both `request.auth[bearer]` and `request.auth[basic]` on same file will behave unexpectedly.
 
 :::
+
+::::
 
 ### `request.auth[bearer]`
 
@@ -209,56 +260,91 @@ request:
 
 Here only `token` is supported. Adding any other value to it is expected to be fruitless.
 
-```yml
+```yml {10-11}
 request:
+  url: https://httpbin.org/get
+  method: GET
+
+  headers:
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
   auth[bearer]:
     token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ```
 
-:::note
-
-Document having `request.auth[basic]` defined already along with this block will behave unexpectedly.
-
-:::
-:::info
+::::info
 
 This is same as writing following
 
-```yml
+```yml {9}
 request:
+  url: https://httpbin.org/get
+  method: GET
+
   headers:
+    User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36"
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
     Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 ```
+:::note
+
+HTTP spec. document having both `request.auth[bearer]` and `request.auth[basic]` on same file will behave unexpectedly.
 
 :::
+
+::::
 
 ### `request.body[form]`
 
-`request.body[form]` is a child node to submit a plain html form. This adds `application/x-www-form-urlencoded` form `enctype` in request header.
+`request.body[form]` is a child node of `request:` to submit a plain html form. This adds `application/x-www-form-urlencoded` form `enctype` in request header.
 
-It only supports key value data, where both key and value should be scaler values. Request will only submit scaler form data while using `request.body[form]`.
+It only supports key value data, where both key and value should be scaler values. Request will only submit scaler form data, when using `request.body[form]`.
 
-:::info
-You can override `Content-Type` headers if you want, however that will override `Content-Type: application/x-www-form-urlencoded` header which is automatically set.
-
-Given a path to a file will not upload the file.
-:::
-
-```yml
+```yml {9-12}
 request:
+  url: https://httpbin.org/post
+  method: POST
+
+  headers:
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
   body[form]:
     "var 1": "var str 1"
     var-2: "var str 2"
     var_3: file:///home/username/.vimrc
 ```
+:::note
+You can override `Content-Type` headers if you want, however that will override `Content-Type: application/x-www-form-urlencoded` header which is automatically set.
+
+Given a path to a file will not upload the file.
+:::
 
 ### `request.body[form-data]`
 
-`request.body[form-data]` is a child node to submit a multipart html form. This adds `multipart/form-data` form `enctype` in request header.
+`request.body[form-data]` is a child node of `request` to submit a multipart html form. This adds `multipart/form-data` form `enctype` in request header.
 
 It only supports key value data, where both key and value should be scaler values. Request will submit multipart form data while using `request.body[form-data]`.
 
-:::info
+```yml {9-13}
+request:
+  url: https://httpbin.org/post
+  method: POST
+
+  headers:
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
+  body[form-data]:
+    "var 1": 1
+    var-2: "var str 2"
+    var_3: file:///home/username/.vimrc
+    var4: file:///home/username/Documents/CID-25601.IpPhone.rtf
+```
+:::note
 
 You can override `Content-Type` headers if you want, however that will override `Content-Type: multipart/form-data` header which is automatically set.
 
@@ -266,30 +352,35 @@ Given a path to a file will upload the file. Note, that you can upload files in 
 
 :::
 
-```yml
-request:
-  body[form-data]:
-    "var 1": 1
-    var-2: "var str 2"
-    var_3: file:///home/username/.vimrc
-    var4: file:///home/username/Documents/CID-25601.IpPhone.rtf
-```
-
 ### `request.body[text]`
 
 `request.body[text]` is a child node to submit a plain text. This adds `text/plain` form `enctype`in request header. 
 
 It only supports string. Multiple line of string is also supported.
 
-```yml
+```yml {9}
 request:
+  url: https://httpbin.org/post
+  method: POST
+
+  headers:
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
   body[text]: Some plain text here
 ```
 
 or can set multiline text. i.e:
 
-```yml
+```yml {9-11}
 request:
+  url: https://httpbin.org/post
+  method: POST
+
+  headers:
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
   body[text]: |
     Some plain text here
     Other line here
@@ -301,8 +392,15 @@ request:
 
 It supports key value data, where key should be scaler, and value can be of YAML collection type those are convertible to json.
 
-```yml
+```yml {9-14}
 request:
+  url: https://httpbin.org/put
+  method: PUT
+
+  headers:
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
   body[json]:
     user_id: 32
     roll_no: 1
@@ -317,8 +415,15 @@ request:
 
 It only supports string data.
 
-```yml
+```yml {9-22}
 request:
+  url: https://httpbin.org/put
+  method: PUT
+
+  headers:
+    Accept-Encoding: "gzip, deflate"
+    Accept: "*/*"
+
   body[xml]: |
     <?xml version="1.0"?>
     <catalog>
